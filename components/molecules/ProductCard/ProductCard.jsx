@@ -1,14 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ProductType } from "./types";
 import { getImageUrl } from "./util";
-import { FC } from 'react'
 
-const ProductCard: FC<ProductType> = ({ product, type }) => {
+
+const ProductCard = ({ product, type }) => {
     const imageUrl = getImageUrl(product.node);
     const { node } = product;
     const nestPath = type === 'cat' ? `category/` : ''
-    const renderPriceRange = (prices: { maxVariantPrice: { amount: any; }; minVariantPrice: { amount: any; }; }) => {
+    const renderPriceRange = (prices) => {
         const maxPrice = prices.maxVariantPrice.amount;
         const minPrice = prices.minVariantPrice.amount;
         return minPrice === maxPrice ? <span>${minPrice}</span> : <span>${minPrice} - ${maxPrice}</span>

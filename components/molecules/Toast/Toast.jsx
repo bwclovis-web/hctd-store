@@ -1,9 +1,7 @@
 import classNames from "classnames";
 import { formatPrice } from "../../../lib/formatPrice";
-import { FC } from "react"
-import { ToastT } from "./types";
 
-const Toast: FC<ToastT> = ({ item, openToast }) => {
+const Toast = ({ item, openToast }) => {
     const { amount, currencyCode } = item.variants.edges[0].node.priceV2;
     const itemPrice = formatPrice(amount, currencyCode);
     const ToastClasses = classNames({

@@ -1,8 +1,6 @@
-import { FC } from "react"
 import Image from "next/image"
-import { HeroTypes } from "./Types"
 
-const HeroComponent: FC<HeroTypes> = ({ src, title, heading }) => (
+const HeroComponent = ({ src, title, heading }) => (
   <div className="flex relative w-full justify-center items-center h-[70vh]">
     <Image
       alt={''}

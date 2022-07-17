@@ -1,9 +1,7 @@
-import { FC } from "react"
 import classNames from "classnames"
 import ProductCard from "../ProductCard/ProductCard"
-import { DisplayGridI } from "./DisplayGridI"
 
-const DisplayGrid: FC<DisplayGridI> = ({ data, cols, type, filter }) => {
+const DisplayGrid = ({ data, cols, type, filter }) => {
     const GridClasses = classNames({
         'grid grid-cols-1 md:grid-cols-2 gap-4': true,
         'lg:grid-cols-4': cols === 4,
