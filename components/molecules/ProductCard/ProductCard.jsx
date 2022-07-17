@@ -37,6 +37,7 @@ const ProductCard = ({ product, type, key }) => {
                             group-focus:w-auto
                             group-hover:items-center
                             group-focus:items-center
+                            group-hover:p-5
                             group-hover:flex-col
                             group-hover:text-white
                             group-hover:shadow
