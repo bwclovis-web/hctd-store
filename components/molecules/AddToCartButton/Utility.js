@@ -1,7 +1,7 @@
 export const textUtil = () => {
     let config = {text: 'ADD TO CART', status: 'avail', disableButton: false}
 
-    checkout.lineItems.map((item) => {
+    checkout?.lineItems?.map((item) => {
         if(item.quantity >= 1 && (item.variant.id === passedId)) {
             config.text = 'ITEM IN CART'
             config.status = 'cart'

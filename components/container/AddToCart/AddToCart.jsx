@@ -9,7 +9,8 @@ const AddToCart = ({ variant, availableForSale }) => {
     const [cartDisplayPrice, setCartDisplayPrice] = useState('')
 
     useEffect(() => {
-        setCartDisplayPrice(getPriceByVariantId(variant, variationId))
+        console.log('WAT',variationId)
+        variationId && setCartDisplayPrice(getPriceByVariantId(variant, variationId))
     }, [variationId])
 
     return (

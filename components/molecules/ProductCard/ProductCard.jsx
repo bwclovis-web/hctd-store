@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getImageUrl } from "./util";
 
 
-const ProductCard = ({ product, type }) => {
+const ProductCard = ({ product, type, key }) => {
     const imageUrl = getImageUrl(product.node);
     const { node } = product;
     const nestPath = type === 'cat' ? `category/` : ''
@@ -13,7 +13,7 @@ const ProductCard = ({ product, type }) => {
         return minPrice === maxPrice ? <span>${minPrice}</span> : <span>${minPrice} - ${maxPrice}</span>
     }
     return (
-        <li className={`h-full relative overflow-hidden`}>
+        <li className={`h-full relative overflow-hidden`} key={key}>
             <Link href={`/shop/${nestPath}[slug]`} as={`/shop/${nestPath}${node.handle}`} className="">
                 <a className="group">
                     <div className="bg-slate-400 
