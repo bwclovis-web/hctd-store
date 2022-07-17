@@ -1,0 +1,52 @@
+import { getAllCurrentTags, getAllItemsByTag } from "lib/shopifyGraphql"
+import { NextSeo } from "next-seo"
+import { FC, useEffect } from "react"
+import { RelatedPageTypes } from "Types"
+import DisplayGrid from "~/molecules/DisplayGrid/DisplayGrid"
+
+const RelatedTagPage: FC<RelatedPageTypes> = ({ products, title }) => {
+    useEffect(() => {
+        const text = async () => {
+            const bob = await getAllCurrentTags()
+        }
+        text()
+    }, [])
+    return (
+        <>
+            <NextSeo
+                title={`Shop | Tags | ${title}`}
+            />
+            <article className="container container-condensed">
+                <h1>All things {title}</h1>
+                <DisplayGrid data={products} />
+            </article>
+        </>
+    )
+}
+
+export const getStaticProps = async ({ params }: any) => {
+    const allItemsByTag = await getAllItemsByTag(params.tag)
+    return {
+        props: {
+            products: allItemsByTag,
+            title: params.tag
+        },
+        revalidate: 1000
+    }
+}
+
+export const getStaticPaths = async () => {
+    const allTags = await getAllCurrentTags()
+    const paths = allTags.map((item) => ({
+        params: {
+            tag: item
+        }
+    }))
+
+    return {
+        paths,
+        fallback: false
+    }
+}
+
+export default RelatedTagPage
