@@ -2,7 +2,7 @@ import Image from "next/image"
 import { useRef } from "react";
 
 const ProductThumbnails = ({ thumbnails, action }) => {
-    const buttonRef = useRef<HTMLButtonElement>(null)
+    const buttonRef = useRef(null)
     const handleThumbnailClick = () => {
         buttonRef?.current?.dataset.url && action(buttonRef.current.dataset.url)
     }
