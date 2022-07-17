@@ -1,8 +1,7 @@
-import { useContext, useEffect, useState, FC } from "react";
+import { useContext, useEffect, useState } from "react";
 import { textUtil } from "./Utility";
-// import Button from "../../atoms/Button/Button";
+import Button from "../../atoms/Button/Button";
 import CartContext from "../../../provider/AppProvider";
-import { AddCartT } from './types'
 
 const AddToCartButton = ({ varId, available }) => {
   const { addVariantToCart, loading, checkout, toggleToast } = useContext(CartContext)
@@ -23,13 +22,17 @@ const AddToCartButton = ({ varId, available }) => {
   }
 
   return (
-    <button
+    <Button
       type="submit"
       onClick={() => addToCart()}
+      itemStatus={itemStatus}
+      disabled={loading || disableButton || !varId}
+      size="large"
+      config="default"
 
     >
       {buttonText}
-    </button>
+    </Button>
   )
 }
 export default AddToCartButton
