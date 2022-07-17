@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { formatPrice } from "../../../lib/formatPrice";
 import { getImageUrl } from "./util";
 
 
@@ -10,7 +11,7 @@ const ProductCard = ({ product, type, key }) => {
     const renderPriceRange = (prices) => {
         const maxPrice = prices.maxVariantPrice.amount;
         const minPrice = prices.minVariantPrice.amount;
-        return minPrice === maxPrice ? <span>${minPrice}</span> : <span>${minPrice} - ${maxPrice}</span>
+        return minPrice === maxPrice ? <span>{formatPrice(minPrice, "USD")}</span> : <span>{formatPrice(minPrice,"USD")} - {formatPrice(maxPrice,"USD")}</span>
     }
     return (
         <li className={`h-full relative overflow-hidden`} key={key}>

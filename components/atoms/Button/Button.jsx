@@ -10,7 +10,7 @@ const Button = forwardRef(({ children, size, config, onClick, type, disabled }, 
         'bg-emerald-700/80 hover:bg-emerald-700 text-white border-emerald-700': config === 'success',
         'border-0 shadow-none': config === 'svg',
         'bg-indigo-500 hover:bg-indigo-700 hover:border-indigo-500 text-white': config === 'default',
-        'bg-slate-300 text-slate-400': disabled === true
+        'bg-slate-300 text-slate-400 focus:bg-slate-300': disabled === true
     })
     return (
         <button ref={ref} className={ButtonClasses} onClick={onClick} disabled={disabled} type={type ? type : 'button'}>
