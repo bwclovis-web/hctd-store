@@ -11,14 +11,6 @@ const AddToCartButton = ({ varId, available }) => {
 
   console.log(checkout)
 
-  // useEffect(() => {
-    
-  //   const config = textUtil(checkout, available, varId)
-  //   setButtonText(config.text)
-  //   setItemStatus(config.status)
-  //   setDisableButton(config.disableButton)
-  // }, [available, checkout, varId, loading])
-
   const addToCart = () => {
     addVariantToCart(varId, '1')
     toggleToast()
