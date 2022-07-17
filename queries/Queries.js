@@ -1,4 +1,4 @@
-export const singleProductPageQuery = (handle: any) => `{
+export const singleProductPageQuery = (handle) => `{
     product(handle:"${handle}" ){
       availableForSale
       id
@@ -71,7 +71,7 @@ export const allProductsQuery = `{
   }
 }`
 
-export const productByCollection = (handle: string) => `{
+export const productByCollection = (handle) => `{
   collection(handle:"${handle}"){
     title
     products(first: 20) {
