@@ -32,7 +32,7 @@ const HomePage = ({ products, collections }) => {
       </section>
       <DyeShopBanner />
       
-      <section className='container py-4 text-2xl font-semibold tracking-wider text-center'>
+      <section className='container py-4 text-2xl tracking-wider text-center'>
         <p>Hey we just added
           <Link href={`shop/${firstProduct.slug}`}>
             <a className='px-1 bg-blue-600 rounded text-slate-100 mx-1 font-black'>{firstProduct.title}</a>
