@@ -77,6 +77,12 @@ export const CartProvider = ({ children }) => {
       },
     ]
 
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    })
+
     return await shopClient.checkout
       .addLineItems(checkoutID, lineItemsToUpdate)
       .then((res) => {
