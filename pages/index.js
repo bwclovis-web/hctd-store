@@ -30,7 +30,8 @@ const HomePage = ({ products, collections }) => {
           <DisplayGrid data={collections} cols={5} type='cat' />
         </div>
       </section>
-      <VendingCalendarComponent />
+      <DyeShopBanner />
+      
       <section className='container py-4 text-2xl font-semibold tracking-wider text-center'>
         <p>Hey we just added
           <Link href={`shop/${firstProduct.slug}`}>
@@ -44,7 +45,7 @@ const HomePage = ({ products, collections }) => {
           <DisplayGrid data={products} cols={4} />
         </div>
       </section>
-      <DyeShopBanner />
+      <VendingCalendarComponent />
     </>
   )
 }

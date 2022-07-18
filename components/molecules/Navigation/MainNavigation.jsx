@@ -13,7 +13,7 @@ const MainNavigation = () => {
                         {
                             navData.map(item => {
                                 return (
-                                    <li key={item.id} className="pr-4 last:pr-0">
+                                    <li key={item.id} className="pr-3 lg:pr-4 last:pr-0">
                                         <Link href={item.src}>
                                             <a className='uppercase'>{item.title}</a>
                                         </Link>
