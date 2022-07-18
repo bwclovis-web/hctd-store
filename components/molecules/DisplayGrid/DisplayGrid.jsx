@@ -10,7 +10,7 @@ const DisplayGrid = ({ data, cols, type, filter }) => {
 
     return (
         <ul className={GridClasses}>
-            {data?.map(item => {
+            {data?.map((item ,i) => {
                 const filterType = item.node?.collections?.edges[0].node.handle
                 if (filter && filter === filterType) {
                     return <ProductCard product={item} display={cols} key={item.node.id} type={type} />

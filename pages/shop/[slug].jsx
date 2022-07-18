@@ -38,7 +38,7 @@ const SingleProductPage = ({ product }) => {
                     </div>
                 </section>
                 <section className='lg:w-3/5'>
-                    <h1 className='text-6xl font-display mb-2'>{title}</h1>
+                    <h1 className='text-h3-dynamic font-display mb-2'>{title}</h1>
                     <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} className="mb-6 text-lg" />
                     <AddToCart
                         variant={variant}

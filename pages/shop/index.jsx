@@ -16,11 +16,11 @@ const ShopPage = ({ products }) => {
         </div>
         <div>
           <h2 className='text-2xl pb-4'>Whats in the Shop</h2>
-          <DisplayGrid data={products} filter="tops" />
+          <DisplayGrid data={products} filter="tops" cols={4} />
         </div>
         <div>
           <h2 className='text-2xl pb-4'>Whats in the Shop</h2>
-          <DisplayGrid data={products} filter="dyes" />
+          <DisplayGrid data={products} filter="dyes" cols={4}/>
         </div>
 
         <div>

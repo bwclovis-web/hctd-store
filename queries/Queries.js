@@ -151,7 +151,7 @@ export const homePageQuery = `{
 }`
 
 export const shopPageQuery = `{
-  products(first: 8) {
+  products(sortKey: UPDATED_AT, first: 40) {
       edges {
         node {
           title

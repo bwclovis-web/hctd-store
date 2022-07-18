@@ -31,15 +31,16 @@ const HomePage = ({ products, collections }) => {
         </div>
       </section>
       <VendingCalendarComponent />
-      <section className='container py-4 text-2xl font-black tracking-wider text-center'>
+      <section className='container py-4 text-2xl font-semibold tracking-wider text-center'>
         <p>Hey we just added
           <Link href={`shop/${firstProduct.slug}`}>
-            <a className='px-1 bg-blue-600 rounded text-slate-100 mx-1'>{firstProduct.title}</a>
+            <a className='px-1 bg-blue-600 rounded text-slate-100 mx-1 font-black'>{firstProduct.title}</a>
           </Link>
           to the store under {firstProduct.category}!</p>
       </section>
       <section style={{ backgroundColor: "rgb(82, 204, 186)" }}>
         <div className="container py-dynamic-container-y">
+          <h2 className='font-display text-h2-dynamic'>New to the shop</h2>
           <DisplayGrid data={products} cols={4} />
         </div>
       </section>

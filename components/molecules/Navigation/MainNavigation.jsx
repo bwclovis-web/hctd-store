@@ -4,9 +4,9 @@ import Link from 'next/link'
 const MainNavigation = () => {
     return (
         <nav className="container">
-            <div className='px-4 flex justify-center items-center md:justify-between py-5 flex-col md:flex-row'>
+            <div className='lg:px-4 flex justify-center items-center md:justify-between py-5 flex-col md:flex-row'>
                 <Link href="/">
-                    <a className="text-6xl font-display">Happy Cat Tie Dye</a>
+                    <a className="text-h3-dynamic font-display">Happy Cat Tie Dye</a>
                 </Link>
                 <div className='flex content-center items-center mt-5 md:mt-0'>
                     <ul className='flex justify-around'>
