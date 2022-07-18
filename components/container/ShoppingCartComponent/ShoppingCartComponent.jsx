@@ -73,7 +73,7 @@ const ShoppingCartComponent = () => {
                                     </p>
                                 </div>
                                 <div className="flex justify-between items-center fixed bg-red-400 min-w-full left-0 bottom-0 px-8 py-4">
-                                    <Button config="secondary" onClick={handleCheckout} size="sm" disabled={loading}>GO TO CHECKOUT</Button>
+                                    <Button config="secondary" onClick={handleCheckout} size="small" disabled={loading}>GO TO CHECKOUT</Button>
                                     <Link href={'/shop'} >
                                         <a onClick={() => toggleCart()} className="underline underline-offset-4">Continue Shopping</a>
                                     </Link>

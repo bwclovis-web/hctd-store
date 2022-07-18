@@ -28,7 +28,7 @@
 
 @layer utilities {
     .ghost-link {
-        @apply text-white border-4 text-2xl rounded-lg font-semibold p-3 uppercase tracking-wide bg-black/30 hover:underline 
+        @apply text-white border-4 text-xl rounded-lg font-semibold p-3 uppercase tracking-wide bg-black/30 hover:underline 
     }
     .container {
         @apply mx-auto px-dynamic-container-x w-full max-w-[2000px];
