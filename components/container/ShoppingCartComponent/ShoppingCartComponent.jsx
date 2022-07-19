@@ -1,6 +1,7 @@
 import { useEffect, useRef, useContext } from "react";
 import ShoppingCartItem from "./bones/ShoppingCardItem";
-import CartContext from "../../../provider/AppProvider";
+import CartContext from "../../../provider/ShopProvider";
+import AppContext from "../../../provider/AppProvider"
 import EmptyCart from "./bones/EmptyCart";
 import Button from "../../atoms/Button/Button";
 import { formatPrice } from "../../../lib/formatPrice";
@@ -8,7 +9,8 @@ import classNames from "classnames";
 import Link from "next/link";
 
 const ShoppingCartComponent = () => {
-    const { toggleCart, cartOpen, checkout, loading } = useContext(CartContext)
+    const {  checkout, loading } = useContext(CartContext)
+    const {toggleCart, cartOpen } = useContext(AppContext)
     const emptyCart = checkout.lineItems.length === 0
     const cartRef = useRef()
 

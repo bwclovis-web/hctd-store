@@ -1,5 +1,5 @@
 import {useContext} from "react";
-import CartContext from "../../../../provider/AppProvider";
+import CartContext from "../../../../provider/ShopProvider";
 import {FaTrash} from 'react-icons/fa'
 
 const DeleteFromCartButton = ({id}) => {

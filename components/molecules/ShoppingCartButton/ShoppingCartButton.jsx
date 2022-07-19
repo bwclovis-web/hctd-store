@@ -1,13 +1,16 @@
 import { useContext, useEffect, useState } from "react"
 import { RiShoppingCartLine, RiShoppingCartFill } from 'react-icons/ri'
 import ShoppingCartComponent from "../../container/ShoppingCartComponent/ShoppingCartComponent"
-import CartContext from "../../../provider/AppProvider"
+import CartContext from "../../../provider/ShopProvider"
+import AppContext from "../../../provider/AppProvider"
 import Button from "../../atoms/Button/Button"
 
 const ShoppingCartButton = () => {
+    const { checkout } = useContext(CartContext);
+    const { toggleCart } = useContext(AppContext);
     const [itemsInCart, setItemsInCart] = useState(0);
     const [buttonText, setButtonText] = useState('open cart');
-    const { toggleCart, checkout } = useContext(CartContext);
+    
 
     useEffect(() => {
         setItemsInCart(checkout.lineItems.length)
