@@ -5,9 +5,9 @@ const ctxDefaults = {
   addVariantToCart: (id, amount) => { },
   removeLineItem: () => { },
   updateLineItem: () => { },
-  cartOpen: false,
+  setCartDisplayPrice: () => {},
   loading: false,
-  toast: false,
+  cartDisplayPrice: '',
   shopClient,
   checkout: {
     id: '',
@@ -15,7 +15,7 @@ const ctxDefaults = {
   },
 }
 
-const AppContext = createContext(ctxDefaults)
+const ShopContext = createContext(ctxDefaults)
 
 const isBrowser = typeof window !== `undefined`
 const localStorageKey = `shopify_checkout_id`
@@ -24,6 +24,7 @@ export const CartProvider = ({ children }) => {
   const [checkout, setCheckout] = useState(ctxDefaults.checkout)
   const [loading, setLoading] = useState(false)
   const [didJustAddToCart, setDidJustAddToCart] = useState(false)
+  const [cartDisplayPrice, setCartDisplayPrice] = useState('')
 
   const setCheckoutItem = (checkout) => {
     if (isBrowser) {
@@ -114,7 +115,7 @@ export const CartProvider = ({ children }) => {
   }
 
   return (
-    <AppContext.Provider value={{
+    <ShopContext.Provider value={{
       ...ctxDefaults,
       addVariantToCart,
       removeLineItem,
@@ -122,11 +123,13 @@ export const CartProvider = ({ children }) => {
       checkout,
       loading,
       didJustAddToCart,
-      shopClient
+      shopClient,
+      cartDisplayPrice,
+      setCartDisplayPrice
     }}>
       {children}
-    </AppContext.Provider>
+    </ShopContext.Provider>
   )
 }
 
-export default AppContext;
+export default ShopContext;

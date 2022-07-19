@@ -1,16 +1,19 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 
 import RadioSelect from '../../atoms/RadioButtons/RadioButtons'
 import { getPriceByVariantId } from './utility'
 import AddToCartButton from '../../molecules/AddToCartButton/AddToCartButton'
+import ShopContext from '../../../provider/ShopProvider'
 
 const AddToCart = ({ variant, availableForSale }) => {
     const [variationId, setVariationId] = useState(variant[0].node.id)
-    const [cartDisplayPrice, setCartDisplayPrice] = useState('')
+    const {setCartDisplayPrice, cartDisplayPrice} = useContext(ShopContext)
 
     useEffect(() => {
         variationId && setCartDisplayPrice(getPriceByVariantId(variant, variationId))
     }, [variationId])
+
+    console.log(cartDisplayPrice)
 
     return (
         <div>

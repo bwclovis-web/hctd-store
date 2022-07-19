@@ -1,9 +1,9 @@
-import classNames from "classnames";
-import { formatPrice } from "../../../lib/formatPrice";
+import { useContext } from "react"
+import classNames from "classnames"
+import ShopContext from "../../../provider/ShopProvider"
 
 const Toast = ({ item, openToast }) => {
-    const { amount, currencyCode } = item.variants.edges[0].node.priceV2;
-    const itemPrice = formatPrice(amount, currencyCode);
+    const {cartDisplayPrice} = useContext(ShopContext)
     const ToastClasses = classNames({
         'fixed bg-green-700 z-20 bottom-0 right-0 opacity-0 p-4 text-white translate-x-full transition-all': true,
         'opacity-100 translate-x-0': openToast
@@ -12,7 +12,7 @@ const Toast = ({ item, openToast }) => {
     return (
         <div className={ToastClasses}>
             <p>{item.title} has been added to cart</p>
-            <p>Price: {itemPrice}</p>
+            <p>Price: {cartDisplayPrice}</p>
         </div>
     )
 }
