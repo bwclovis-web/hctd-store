@@ -50,7 +50,7 @@ const HomePage = ({ products, collections }) => {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const pageProps = await getHomePageProps()
   return {
     props: {
