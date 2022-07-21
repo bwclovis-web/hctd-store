@@ -27,7 +27,7 @@ export const getStaticProps = async ({ params }) => {
         props: {
             collection: JSON.parse(JSON.stringify(productsByCollection))
         },
-        revalidate: 1000
+        revalidate: 120
     }
 }
 

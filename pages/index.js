@@ -57,7 +57,7 @@ export async function getStaticProps() {
       products: pageProps.products.edges,
       collections: pageProps.collections.edges,
     },
-    revalidate: 60
+    revalidate: 120
   }
 }
 
