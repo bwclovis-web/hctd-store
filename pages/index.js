@@ -57,7 +57,6 @@ export async function getServerSideProps() {
       products: pageProps.products.edges,
       collections: pageProps.collections.edges,
     },
-    revalidate: 1000
   }
 }
 
