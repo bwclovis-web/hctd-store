@@ -50,13 +50,14 @@ const HomePage = ({ products, collections }) => {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const pageProps = await getHomePageProps()
   return {
     props: {
       products: pageProps.products.edges,
       collections: pageProps.collections.edges,
     },
+    revalidate: 60
   }
 }
 
