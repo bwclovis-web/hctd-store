@@ -6,7 +6,8 @@ import Accordion from '../../components/container/Accordion/Accordion';
 import AddToCart from '../../components/container/AddToCart/AddToCart';
 import ProductThumbnails from '../../components/container/ThumbnailSwap/ThumbnailSwap';
 import Toast from '../../components/molecules/Toast/Toast';
-import data from '../../Data/care.json';
+import careData from '../../Data/care.json';
+import dyeData from '../../Data/dyeCare.json'
 import { getSingleProductPageProps, getAllProductsQuery, getAllCurrentTags } from '../../lib/shopifyGraphql'
 import AppCtx from '../../provider/AppProvider'
 
@@ -17,6 +18,8 @@ const SingleProductPage = ({ product }) => {
     const variant = variants.edges
     const collection = collections.edges[0].node
     const thumbnailArray = images.edges
+    const data = collection.handle === 'dyes' ? dyeData : careData
+    console.log('collection', collection)
 
     return (
         <div>
@@ -27,7 +30,6 @@ const SingleProductPage = ({ product }) => {
                 <section className='w-1/2 mr-8'>
                     <div>
                         <Image
-                            // className='product-image'
                             src={imageUrl}
                             alt=""
                             layout='responsive'

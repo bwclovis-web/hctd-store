@@ -4,7 +4,6 @@ import { useRef } from "react";
 const ProductThumbnails = ({ thumbnails, action }) => {
     const buttonRef = useRef(null)
     const handleThumbnailClick = (evt) => {
-   
         buttonRef?.current?.dataset.url && action(evt.currentTarget.dataset.url)
     }
 
