@@ -13,8 +13,6 @@ const AddToCart = ({ variant, availableForSale }) => {
         variationId && setCartDisplayPrice(getPriceByVariantId(variant, variationId))
     }, [variationId])
 
-    console.log(cartDisplayPrice)
-
     return (
         <div>
             <div className='flex gap-2 mb-4'>

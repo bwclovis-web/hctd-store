@@ -19,7 +19,6 @@ const SingleProductPage = ({ product }) => {
     const collection = collections.edges[0].node
     const thumbnailArray = images.edges
     const data = collection.handle === 'dyes' ? dyeData : careData
-    console.log('collection', collection)
 
     return (
         <div>

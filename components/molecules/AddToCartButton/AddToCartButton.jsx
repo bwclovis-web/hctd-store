@@ -11,8 +11,6 @@ const AddToCartButton = ({ varId, available }) => {
   const [itemStatus, setItemStatus] = useState("avail")
   const [disableButton, setDisableButton] = useState(false)
 
-  console.log(checkout)
-
   const addToCart = () => {
     addVariantToCart(varId, '1')
     toggleToast()

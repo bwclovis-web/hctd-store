@@ -55,8 +55,6 @@ export const CartProvider = ({ children }) => {
 
       const newCheckout = await shopClient.checkout.create()
       setCheckoutItem(newCheckout)
-
-      console.log(newCheckout)
     }
 
     initializeCheckout()
