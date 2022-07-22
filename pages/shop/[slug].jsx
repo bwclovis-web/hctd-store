@@ -24,14 +24,14 @@ const SingleProductPage = ({ product }) => {
                 title={`Shop | ${title}`}
             />
             <article className="content-container mt-10 flex flex-col gap-6 lg:flex-row justify-around border-fuchsia-100 border-2 py-20 rounded-md lg:w-5/6">
-                <section>
+                <section className='w-1/2'>
                     <div>
                         <Image
-                            className='product-image'
+                            // className='product-image'
                             src={imageUrl}
                             alt=""
-                            layout='intrinsic'
-                            width={600}
+                            layout='responsive'
+                            width={500}
                             height={600}
                         />
                         {thumbnailArray.length && <ProductThumbnails thumbnails={thumbnailArray} action={setImageUrl} />}
