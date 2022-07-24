@@ -10,7 +10,7 @@ const RelatedTagPage= ({ products, title }) => {
                 title={`Shop | Tags | ${title}`}
             />
             <article className="container container-condensed">
-                <h1 className="font-h2-dynamic">All things {title}</h1>
+                <h1 className="text-h2-dynamic font-display capitalize">All things {title}</h1>
                 <DisplayGrid data={products} />
             </article>
         </>

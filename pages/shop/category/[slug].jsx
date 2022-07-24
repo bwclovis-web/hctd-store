@@ -9,7 +9,7 @@ const CategoryProducts = ({ collection }) => (
             title={`Shop | Category | ${collection.title}}`}
         />
         <article className="container container-condensed">
-            <h1 className='text-h2-dynamic font-display uppercase'>{collection.title}</h1>
+            <h1 className='text-h2-dynamic font-display capitalize'>{collection.title}</h1>
             {collection.products.edges.length ?
                 <DisplayGrid data={collection.products.edges} cols={4} /> :
                 <div className='pt-10'>
