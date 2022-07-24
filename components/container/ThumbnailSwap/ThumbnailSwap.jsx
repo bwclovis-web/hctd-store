@@ -4,7 +4,11 @@ import { useRef } from "react";
 const ProductThumbnails = ({ thumbnails, action }) => {
     const buttonRef = useRef(null)
     const handleThumbnailClick = (evt) => {
-        buttonRef?.current?.dataset.url && action(evt.currentTarget.dataset.url)
+        
+        buttonRef?.current?.dataset.url && action({
+            url: evt.currentTarget.dataset.url,
+            alt: evt.currentTarget.dataset.caption
+        })
     }
 
     return (
@@ -16,6 +20,7 @@ const ProductThumbnails = ({ thumbnails, action }) => {
                         className="h-40 w-1/5 overflow-hidden"
                         key={img.node.id}
                         data-url={img.node.url}
+                        data-caption={img.node.altText}
                         onClick={(evt) => handleThumbnailClick(evt)}
                     >
                         <Image

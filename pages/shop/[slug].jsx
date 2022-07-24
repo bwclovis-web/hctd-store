@@ -1,4 +1,4 @@
-import { useState, useContext } from "react"
+import { useState, useContext, useEffect } from "react"
 import Image from "next/image"
 import Link from 'next/link'
 import careData from '../../Data/care.json';
@@ -13,15 +13,22 @@ import Toast from '../../components/molecules/Toast/Toast';
 import { getSingleProductPageProps, getAllProductsQuery, getAllCurrentTags } from '../../lib/shopifyGraphql'
 import AppCtx from '../../provider/AppProvider'
 import TagList from "../../components/molecules/TagList/TagList";
+import DisplayGrid from "../../components/molecules/DisplayGrid/DisplayGrid";
 
 const SingleProductPage = ({ product }) => {
     const { toast } = useContext(AppCtx)
     const { featuredImage, tags, title, descriptionHtml, availableForSale, variants, collections, images } = product
-    const [imageUrl, setImageUrl] = useState(featuredImage.url)
+    const [image, setImage] = useState({url:featuredImage.url, alt:featuredImage.altText })
     const variant = variants.edges
     const collection = collections.edges[0].node
     const thumbnailArray = images.edges
     const data = collection.handle === 'dyes' ? dyeData : careData
+
+    useEffect(() => {
+        setImage({
+            url:featuredImage.url, alt:featuredImage.altText
+        })
+    },[featuredImage])
 
     return (
         <div>
@@ -32,13 +39,14 @@ const SingleProductPage = ({ product }) => {
                 <section className='w-1/2 mr-8'>
                     <div>
                         <Image
-                            src={imageUrl}
-                            alt=""
+                            src={image.url}
+                            alt={image.alt}
                             layout='responsive'
                             width={500}
                             height={600}
                         />
-                        {thumbnailArray.length && <ProductThumbnails thumbnails={thumbnailArray} action={setImageUrl} />}
+                        <p className="text-base text-center py-2">Displaying {image.alt}</p>
+                        {thumbnailArray.length && <ProductThumbnails thumbnails={thumbnailArray} action={setImage} />}
                     </div>
                 </section>
                 <section className='lg:w-3/5'>
@@ -53,14 +61,14 @@ const SingleProductPage = ({ product }) => {
                     <Accordion data={data} />
                 </section>
             </article>
-            <section>
+            <section className="bg-violet-400/30 pb-10 pt-5 mt-12">
                 <div className="container">
-                    <h2>
+                    <h2 className="text-h3-dynamic font-display mb-2">
                         <Link href={`/shop/category/${collection.handle}`}>
-                            <a>{`Other items in ${collection.title}`}</a>
+                            <a className="underline">{`Other items in ${collection.title}`}</a>
                         </Link>
                     </h2>
-                    {/* <DataGrid data={collection.products.edges} /> */}
+                    <DisplayGrid data={collection.products.edges} cols={4}/>
                 </div>
             </section>
             <Toast item={product} openToast={toast} />

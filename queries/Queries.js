@@ -10,11 +10,13 @@ export const singleProductPageQuery = (handle) => `{
           node {
             id
             url
+            altText
           }
         }
       }
       featuredImage{
         url
+        altText
       }
       variants(first:6) {
         edges {
@@ -65,6 +67,7 @@ export const allProductsQuery = `{
         tags
         featuredImage {
           url
+          altText
         }
       }
     }
