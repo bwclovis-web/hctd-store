@@ -1,5 +1,6 @@
-import { useState, useEffect, createContext } from 'react'
+import { useState, useEffect, createContext, useContext } from 'react'
 import { shopClient } from '../lib/shop-client'
+import AppContext from './AppProvider'
 
 const ctxDefaults = {
   addVariantToCart: (id, amount) => { },
@@ -25,6 +26,7 @@ export const CartProvider = ({ children }) => {
   const [loading, setLoading] = useState(false)
   const [didJustAddToCart, setDidJustAddToCart] = useState(false)
   const [cartDisplayPrice, setCartDisplayPrice] = useState('')
+  const {toggleCart} = useContext(AppContext)
 
   const setCheckoutItem = (checkout) => {
     if (isBrowser) {
@@ -82,6 +84,7 @@ export const CartProvider = ({ children }) => {
         setCheckout(res)
         setLoading(false)
         setDidJustAddToCart(true)
+        toggleCart()
         setTimeout(() => setDidJustAddToCart(false), 3000)
       })
   }

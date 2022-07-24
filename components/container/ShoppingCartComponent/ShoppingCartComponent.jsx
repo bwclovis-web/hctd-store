@@ -45,7 +45,7 @@ const ShoppingCartComponent = () => {
                     <div className="flex items-center justify-between px-8 py-2 bg-white/20">
                         <p className="text-lg uppercase">Items in cart</p>
                         <span className="bg-blue-400 rounded-full w-8 h-8 flex justify-center items-center">
-                            <Button onClick={() => toggleCart()} config="svg" aria-label="close cart">
+                            <Button id="cart-close" onClick={() => toggleCart()} config="svg" aria-label="close cart">
                                 x
                             </Button>
                         </span>
