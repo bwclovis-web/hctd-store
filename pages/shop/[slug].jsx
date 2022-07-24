@@ -50,15 +50,15 @@ const SingleProductPage = ({ product }) => {
                     </div>
                 </section>
                 <section className='lg:w-3/5'>
-                    <h1 className='text-h2-dynamic font-display mb-2'>{title}</h1>
-                    <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} className="mb-6 text-lg" />
+                    <h1 className='text-h2-dynamic font-display leading-tight mb-2'>{title}</h1>
+                    <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} className="text-lg" />
                     <AddToCart
                         variant={variant}
                         availableForSale={availableForSale}
                         collection={collection.handle}
                     />
                     {tags.length ? <TagList tags={tags} /> : null}
-                    <Accordion data={data} />
+                    <div className="border-t border-blue-400 mt-12 pt-3"><Accordion data={data} /></div>
                 </section>
             </article>
             <section className="bg-violet-400/30 pb-10 pt-5 mt-12">

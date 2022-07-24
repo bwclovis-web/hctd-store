@@ -14,7 +14,7 @@ const ProductCard = ({ product, type, key }) => {
         return minPrice === maxPrice ? <span>{formatPrice(minPrice, "USD")}</span> : <span>{formatPrice(minPrice,"USD")} - {formatPrice(maxPrice,"USD")}</span>
     }
     return (
-        <li className={`h-full relative overflow-hidden`} key={key}>
+        <li className={`h-full relative overflow-hidden rounded-md`} key={key}>
             <Link href={`/shop/${nestPath}[slug]`} as={`/shop/${nestPath}${node.handle}`} className="">
                 <a className="group">
                     <div className="bg-slate-400 
@@ -32,7 +32,7 @@ const ProductCard = ({ product, type, key }) => {
                     >
                         <p className="text-lg
                             tracking-wider font-medium uppercase
-                            rounded flex justify-between w-full px-3
+                            rounded-md flex justify-between w-full px-3
                             group-hover:bg-emerald-700
                             group-hover:w-auto
                             group-focus:w-auto

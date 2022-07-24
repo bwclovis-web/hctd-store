@@ -22,7 +22,7 @@ const AddToCart = ({ variant, availableForSale }) => {
                     })
                 }
             </div>
-            <span className='text-xl font-semibold'>{cartDisplayPrice}</span>
+            <p className='text-5xl font-display pt-3 pb-5'>Price: <span className='text-violet-600'>{cartDisplayPrice}</span></p>
             <div className='my-4'>
                 <AddToCartButton
                     varId={variationId}
