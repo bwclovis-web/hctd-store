@@ -8,7 +8,7 @@ const TagList = ({ tags }) => {
                 {tags.map((tag) => {
                     return (
                         <li key={tag}>
-                            <Link href={`/shop/tags/[tag]`}>
+                            <Link href={`/shop/tags/${tag}`}>
                                 <a>{tag}</a>
                             </Link>
                         </li>

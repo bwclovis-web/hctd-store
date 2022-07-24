@@ -1,15 +1,18 @@
-import { NextSeo } from 'next-seo';
+import { useState, useContext } from "react"
 import Image from "next/image"
-import Link from 'next/link';
-import { useState, useContext } from "react";
+import Link from 'next/link'
+import careData from '../../Data/care.json';
+import dyeData from '../../Data/dyeCare.json'
+
+import { NextSeo } from 'next-seo';
 import Accordion from '../../components/container/Accordion/Accordion';
 import AddToCart from '../../components/container/AddToCart/AddToCart';
 import ProductThumbnails from '../../components/container/ThumbnailSwap/ThumbnailSwap';
 import Toast from '../../components/molecules/Toast/Toast';
-import careData from '../../Data/care.json';
-import dyeData from '../../Data/dyeCare.json'
+
 import { getSingleProductPageProps, getAllProductsQuery, getAllCurrentTags } from '../../lib/shopifyGraphql'
 import AppCtx from '../../provider/AppProvider'
+import TagList from "../../components/molecules/TagList/TagList";
 
 const SingleProductPage = ({ product }) => {
     const { toast } = useContext(AppCtx)
@@ -46,9 +49,8 @@ const SingleProductPage = ({ product }) => {
                         availableForSale={availableForSale}
                         collection={collection.handle}
                     />
+                    {tags.length ? <TagList tags={tags} /> : null}
                     <Accordion data={data} />
-
-                    {/* {tags.length && <TagList tags={tags} />} */}
                 </section>
             </article>
             <section>
