@@ -23,7 +23,7 @@ const ShoppingCartButton = () => {
 
     return (
         <>
-            <Button onClick={() => toggleCart()} config="svg" aria-label={buttonText}>
+            <Button onClick={() => toggleCart()} config="svg" label={buttonText}>
                 {itemsInCart === 0 ? <RiShoppingCartLine size={30} /> : <RiShoppingCartFill size={30} />}
             </Button>
             <ShoppingCartComponent />
