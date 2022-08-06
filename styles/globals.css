@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    .cart-open {
+        @apply overflow-hidden
+    }
+}
+
 @layer components {
     .checkout-details {
         p {
@@ -52,9 +58,5 @@
         > .container {
             @apply px-0
         }
-    }
-
-    .cart-open {
-        @apply overflow-hidden
     }
 }
