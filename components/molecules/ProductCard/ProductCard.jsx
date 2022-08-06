@@ -16,10 +16,10 @@ const ProductCard = ({ product, type, key }) => {
     return (
         <li className={`h-full relative overflow-hidden rounded-md`} key={key}>
             <Link href={`/shop/${nestPath}[slug]`} as={`/shop/${nestPath}${node.handle}`} className="">
-                <a className="group">
+                <a className="group font-normal">
                     <div className="bg-slate-400 
                         h-full w-full 
-                        absolute z-10 translate-y-[88%] 
+                        absolute z-10 translate-y-[86%] 
                         group-hover:translate-y-0
                         group-hover:bg-slate-400/60
                         group-focus:bg-slate-400/60

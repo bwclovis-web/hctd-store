@@ -36,7 +36,7 @@ const SingleProductPage = ({ product }) => {
                 title={`Shop | ${title}`}
             />
             <article className="content-container mt-10 flex flex-col gap-6 lg:flex-row justify-around border-fuchsia-100 border-2 py-20 rounded-md lg:w-5/6">
-                <section className='w-1/2 mr-8'>
+                <section className='lg:w-1/2 lg:mr-8'>
                     <div>
                         <Image
                             src={image.url}
