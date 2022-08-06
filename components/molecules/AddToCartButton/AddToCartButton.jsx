@@ -24,7 +24,6 @@ const AddToCartButton = ({ varId, available }) => {
       disabled={loading || disableButton || !varId}
       size="large"
       config="default"
-
     >
       {buttonText}
     </Button>

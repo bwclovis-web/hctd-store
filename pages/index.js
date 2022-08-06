@@ -9,7 +9,6 @@ import DisplayGrid from '../components/molecules/DisplayGrid/DisplayGrid'
 
 import { getHomePageProps } from '../lib/shopifyGraphql'
 
-
 const HomePage = ({ products, collections }) => {
   const [firstProduct] = useState({
     title: products[0].node.title,
@@ -41,8 +40,7 @@ const HomePage = ({ products, collections }) => {
       </section>
       <section style={{ backgroundColor: "rgb(82, 204, 186)" }}>
         <div className="container py-dynamic-container-y">
-          <h2 className='font-display text-h2-dynamic'>New to the shop</h2>
-          <DisplayGrid data={products} cols={4} />
+          <DisplayGrid data={products} cols={4} title="New to the shop"/>
         </div>
       </section>
       <VendingCalendarComponent />

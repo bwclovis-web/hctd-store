@@ -154,7 +154,7 @@ export const homePageQuery = `{
 }`
 
 export const shopPageQuery = `{
-  products(sortKey: UPDATED_AT, first: 40) {
+  dyeProducts: products(sortKey:UPDATED_AT, query:"product_type:dyes", first:4) {
       edges {
         node {
           title
@@ -168,11 +168,84 @@ export const shopPageQuery = `{
               amount
             }
           }
-          collections(first: 10) {
-            edges {
-              node {
-                handle
-              }
+          featuredImage {
+            url
+          }
+        }
+      }
+    }
+    tops:products(sortKey:UPDATED_AT, query:"product_type:tops", first:4) {
+      edges {
+        node {
+          title
+          handle
+          availableForSale
+          priceRange {
+            maxVariantPrice {
+              amount
+            }
+            minVariantPrice {
+              amount
+            }
+          }
+          featuredImage {
+            url
+          }
+        }
+      }
+    },
+    bottoms:products(sortKey:UPDATED_AT, query:"product_type:bottoms", first:4) {
+      edges {
+        node {
+          title
+          handle
+          availableForSale
+          priceRange {
+            maxVariantPrice {
+              amount
+            }
+            minVariantPrice {
+              amount
+            }
+          }
+          featuredImage {
+            url
+          }
+        }
+      }
+    }
+    outerwear:products(sortKey:UPDATED_AT, query:"product_type:outerwear", first:4) {
+      edges {
+        node {
+          title
+          handle
+          availableForSale
+          priceRange {
+            maxVariantPrice {
+              amount
+            }
+            minVariantPrice {
+              amount
+            }
+          }
+          featuredImage {
+            url
+          }
+        }
+      }
+    }
+    accessories:products(sortKey:UPDATED_AT, query:"product_type:accessories", first:4) {
+      edges {
+        node {
+          title
+          handle
+          availableForSale
+          priceRange {
+            maxVariantPrice {
+              amount
+            }
+            minVariantPrice {
+              amount
             }
           }
           featuredImage {

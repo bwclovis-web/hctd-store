@@ -2,7 +2,7 @@ import { NextSeo } from 'next-seo';
 import { getShopPageProps } from '../../lib/shopifyGraphql';
 import DisplayGrid from '../../components/molecules/DisplayGrid/DisplayGrid';
 
-const ShopPage = ({ products }) => {
+const ShopPage = ({ dyes, tops, bottoms, outerwear, accessories }) => {
   return (
     <>
       <NextSeo
@@ -10,24 +10,11 @@ const ShopPage = ({ products }) => {
         description="Custom tye die clothing and dyes for sale."
       />
       <section className="container flex flex-col lg:gap-7">
-        <div>
-          <h1 className='text-2xl pb-4'>Whats in the Shop</h1>
-          <DisplayGrid data={products} cols={4} />
-        </div>
-        <div>
-          <h2 className='text-2xl pb-4'>Whats in the Shop</h2>
-          <DisplayGrid data={products} filter="tops" cols={4} />
-        </div>
-        <div>
-          <h2 className='text-2xl pb-4'>Whats in the Shop</h2>
-          <DisplayGrid data={products} filter="dyes" cols={4}/>
-        </div>
-
-        <div>
-          <h2 className='text-2xl pb-4'>Whats in the Shop</h2>
-          <DisplayGrid data={products} filter="bottoms" />
-        </div>
-
+        <DisplayGrid data={dyes} cols={4} title="new dyes"/>
+        <DisplayGrid data={tops} cols={4} title="new tops"/>
+        <DisplayGrid data={bottoms} cols={4} title="new bottoms"/>
+        <DisplayGrid data={outerwear}  cols={4} title="new outerwear"/>
+        <DisplayGrid data={accessories} cols={4} title="new accessories"/>
       </section>
       <div>
         <section className="container" >
@@ -41,10 +28,14 @@ const ShopPage = ({ products }) => {
 
 export async function getStaticProps() {
   const pageProps = await getShopPageProps()
+  console.log('da props', pageProps)
   return {
     props: {
-      products: pageProps.products.edges,
-      collections: pageProps.collections.edges,
+      dyes: pageProps.dyeProducts.edges,
+      tops: pageProps.tops.edges,
+      bottoms: pageProps.bottoms.edges,
+      outerwear: pageProps.outerwear.edges,
+      accessories: pageProps.accessories.edges
     },
     revalidate: 120
   }
