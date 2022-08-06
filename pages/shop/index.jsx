@@ -28,7 +28,6 @@ const ShopPage = ({ dyes, tops, bottoms, outerwear, accessories }) => {
 
 export async function getStaticProps() {
   const pageProps = await getShopPageProps()
-  console.log('da props', pageProps)
   return {
     props: {
       dyes: pageProps.dyeProducts.edges,
