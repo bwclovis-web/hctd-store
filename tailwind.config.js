@@ -9,7 +9,7 @@ module.exports = {
     },
     extend: {
       padding: {
-        'dynamic-container-y': 'clamp(2.6rem, 6vw, 10rem)',
+        'dynamic-container-y': 'clamp(2.6rem, 6vw, 8rem)',
         'dynamic-container-x': 'clamp(1rem, 3vw, 2rem)'
       },
       fontSize:{
