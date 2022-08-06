@@ -9,7 +9,7 @@ const {removeLineItem, checkout} = useContext(CartContext)
     }
 
     return (
-        <button onClick={handleDeleteItem}>
+        <button onClick={handleDeleteItem} className="justify-self-end">
             <FaTrash size={24}/>
         </button>
     )

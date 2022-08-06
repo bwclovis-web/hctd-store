@@ -6,16 +6,12 @@ const EmptyCart = () => {
     const { toggleCart } = useContext(CartContext)
     return (
         <section className="flex justify-center h-2/4 flex-col text-lg items-center">
-            <p className="font-semibold text-xl mb-8">There nothing in your cart</p>
+            <p className="font-semibold text-2xl mb-10">Your cart is empty</p>
             <div>
                 <Link href="/shop">
                     <a onClick={toggleCart} className="ghost-link _small">Go to shop page</a>
                 </Link>
             </div>
-            <span className="p-4 font-semibold">or</span>
-            <Link href="/shop/category">
-                <a className="underline" onClick={toggleCart}>shop by category</a>
-            </Link>
         </section>
     )
 }
