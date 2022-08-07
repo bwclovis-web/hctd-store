@@ -9,7 +9,7 @@ import ShoppingCartComponent from "components/container/ShoppingCartComponent/Sh
 
 const ShoppingCartButton = () => {
   const { checkout } = useContext(ShopContext)
-  const { toggleCart } = useContext(AppContext)
+  const { toggleCart, setCartTrigger } = useContext(AppContext)
   const [ itemsInCart, setItemsInCart ] = useState(0)
   const [ buttonText, setButtonText ] = useState('open cart')
 
@@ -22,9 +22,14 @@ const ShoppingCartButton = () => {
     }
   }, [checkout])
 
+  const handleOpenCart = () => {
+    toggleCart()
+    setCartTrigger("hctd-cart")
+  }
+
   return (
     <>
-      <Button onClick={() => toggleCart()} config="svg" label={buttonText}>
+      <Button id="hctd-cart" onClick={handleOpenCart} config="svg" label={buttonText}>
         {itemsInCart === 0 ? <RiShoppingCartLine size={30} /> : <RiShoppingCartFill size={30} />}
       </Button>
       <ShoppingCartComponent />

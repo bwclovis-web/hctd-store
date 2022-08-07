@@ -26,7 +26,7 @@ export const CartProvider = ({ children }) => {
   const [ loading, setLoading ] = useState(false)
   const [ didJustAddToCart, setDidJustAddToCart ] = useState(false)
   const [ cartDisplayPrice, setCartDisplayPrice ] = useState('')
-  const { toggleCart } = useContext(AppContext)
+  const { toggleCart, setCartTrigger } = useContext(AppContext)
 
   const setCheckoutItem = checkout => {
     if (isBrowser) {
@@ -83,6 +83,7 @@ export const CartProvider = ({ children }) => {
         setLoading(false)
         setDidJustAddToCart(true)
         toggleCart()
+        setCartTrigger('add-to-cart')
         setTimeout(() => setDidJustAddToCart(false), 3000)
       })
   }
@@ -101,7 +102,7 @@ export const CartProvider = ({ children }) => {
   const updateLineItem = async (checkoutID, lineItemID, quantity) => {
     setLoading(true)
 
-    const lineItemsToUpdate = [{ id: lineItemID, quantity: parseInt(quantity, 10) }, ]
+    const lineItemsToUpdate = [{ id: lineItemID, quantity: parseInt(quantity, 10) },]
 
     return await shopClient.checkout
       .updateLineItems(checkoutID, lineItemsToUpdate)
