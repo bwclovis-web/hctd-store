@@ -22,7 +22,7 @@ const DisplayGrid = ({ data, cols, type, title, cat }) => {
     <div className={containerClasses}>
       {title ? <h2 className="font-display text-h2-dynamic capitalize">{title}</h2> : null}
       <ul className={GridClasses}>
-        {data?.map(item => <ProductCard product={item} display={cols} key={item.node.id} type={type} />)}
+        {data?.map((item, index) => <ProductCard product={item} display={cols} key={index} index={item.node.id} type={type} />)}
       </ul>
       {
         (data.length >= 4 && cat) &&

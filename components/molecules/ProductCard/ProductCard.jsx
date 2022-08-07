@@ -4,7 +4,7 @@ import { formatPrice } from "lib/formatPrice"
 import { getImageUrl } from "./util"
 
 
-const ProductCard = ({ product, type, key }) => {
+const ProductCard = ({ product, type, index }) => {
   const imageUrl = getImageUrl(product.node)
   const { node } = product
   const nestPath = type === 'cat' ? `category/` : ''
@@ -14,15 +14,15 @@ const ProductCard = ({ product, type, key }) => {
     return minPrice === maxPrice ? <span>{formatPrice(minPrice, "USD")}</span> : <span>{formatPrice(minPrice, "USD")} - {formatPrice(maxPrice, "USD")}</span>
   }
   return (
-    <li className={`h-full relative overflow-hidden rounded-md`} key={key}>
-      <Link href={`/shop/${nestPath}[slug]`} as={`/shop/${nestPath}${node.handle}`} className="">
+    <li className={`h-full relative overflow-hidden rounded-md border border-fuchsia-600 shadow-md`} key={index}>
+      <Link href={`/shop/${nestPath}[slug]`} as={`/shop/${nestPath}${node.handle}`}>
         <a className="group font-normal">
-          <div className="bg-slate-400 
-                        h-full w-full 
+          <div className="bg-slate-400/90
+                        h-full w-full
                         absolute z-10 translate-y-[86%] 
                         group-hover:translate-y-0
-                        group-hover:bg-slate-400/60
-                        group-focus:bg-slate-400/60
+                        group-hover:bg-sky-400/60
+                        group-focus:bg-sky-400/60
                         group-hover: backdrop-blur
                         group-focus:translate-y-0
                         group-focus:items-center
@@ -33,21 +33,24 @@ const ProductCard = ({ product, type, key }) => {
             <p className="text-lg
                             tracking-wider font-medium uppercase
                             rounded-md flex justify-between w-full px-3
-                            group-hover:bg-emerald-700
+                            group-hover:bg-fuchsia-500
+                            group-hover:border-2
+                            group-focus:border-2
                             group-hover:w-auto
                             group-focus:w-auto
                             group-hover:items-center
                             group-focus:items-center
                             group-hover:p-5
                             group-hover:flex-col
+                            group-focus:flex-col
                             group-hover:text-white
+                            group-focus:text-white
                             group-hover:shadow
-                            group-hover:hover:bg-purple-500
+                            group-hover:hover:bg-fuchsia-700
+                            group-focus:bg-fuchsia-700
                             group-hover:hover:transition-all
                             group-hover:hover:shadow-md
-                            group-focus:bg-emerald-700
-                            group-focus:p-3 
-                            group-focus:text-white
+                            group-focus:p-3
                             group-focus:shadow"
             >
               <span>{node.title}</span>

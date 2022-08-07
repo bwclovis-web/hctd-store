@@ -41,7 +41,7 @@ const HomePage = ({ products, collections }) => {
           to the store under {firstProduct.category}!
         </p>
       </section>
-      <section style={{ backgroundColor: 'rgb(82, 204, 186)' }}>
+      <section className="bg-teal-200">
         <div className="container py-dynamic-container-y">
           <DisplayGrid data={products} cols={4} title="New to the shop" />
         </div>

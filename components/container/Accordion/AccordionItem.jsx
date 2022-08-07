@@ -17,7 +17,7 @@ const AccordionItem = ({ id, question, answer }) => {
         id={`q-${id}`}
         onClick={() => setIsActive(!isActive)}
       >
-        <span> {isActive ? '-' : '+'} </span>
+        <span className="bg-sky-300 rounded-full w-8 h-8 text-center"> {isActive ? '-' : '+'} </span>
         <span>{question}</span>
       </button>
       <div className={AccordionClasses} id={id} role="region" aria-hidden={!isActive} aria-labelledby={`q-${id}`}>

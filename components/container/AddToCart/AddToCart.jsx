@@ -17,14 +17,14 @@ const AddToCart = ({ variant, availableForSale }) => {
 
   return (
     <div>
-      <div className="flex gap-2 mb-4">
+      <div className="flex gap-2 my-4">
         {
           variant.map((item, i) => variant.length > 1 && <RadioButtons data={item.node} key={i} changeAction={setVariationId} />)
         }
       </div>
-      <p className="font-display pt-4 pb-2 flex items-baseline">
-        <span className="text-4xl pr-2 ">Price: </span>
-        <span className="text-5xl text-violet-600">{cartDisplayPrice}</span>
+      <p className="font-display pt-4 pb-2 flex items-start">
+        <span className="text-3xl pr-2">Price: </span>
+        <span className="text-5xl text-indigo-900">{cartDisplayPrice}</span>
       </p>
       <div className="my-4">
         <AddToCartButton

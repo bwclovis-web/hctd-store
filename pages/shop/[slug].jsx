@@ -37,7 +37,7 @@ const SingleProductPage = ({ product }) => {
       <NextSeo
         title={`Shop | ${title}`}
       />
-      <article className="content-container mt-10 flex flex-col gap-6 lg:flex-row justify-around border-fuchsia-100 border-2 py-20 rounded-md lg:w-5/6">
+      <article className="content-container mt-10 flex flex-col gap-6 lg:flex-row justify-around border-indigo-100 border-2 py-20 rounded-md lg:w-5/6">
         <section className="lg:w-1/2 lg:mr-8">
           <div>
             <Image
@@ -47,7 +47,7 @@ const SingleProductPage = ({ product }) => {
               width={500}
               height={600}
             />
-            <p className="text-base text-center py-2">Displaying {image.alt}</p>
+            <p className="text-base text-center py-2 text-slate-600 capitalize italic">Displaying {image.alt}</p>
             {thumbnailArray.length && <ProductThumbnails thumbnails={thumbnailArray} action={setImage} />}
           </div>
         </section>
@@ -60,10 +60,10 @@ const SingleProductPage = ({ product }) => {
             collection={collection.handle}
           />
           {tags.length ? <TagList tags={tags} /> : null}
-          <div className="border-t border-blue-400 mt-12 pt-3"><Accordion data={data} /></div>
+          <div className="border-t border-indigo-400 mt-8 pt-3"><Accordion data={data} /></div>
         </section>
       </article>
-      <section className="bg-violet-400/30 pb-10 pt-5 mt-12">
+      <section className="bg-indigo-400/30 pb-10 pt-5 mt-12">
         <div className="container">
           <h2 className="text-h3-dynamic font-display mb-2">
             <Link href={`/shop/category/${collection.handle}`}>
