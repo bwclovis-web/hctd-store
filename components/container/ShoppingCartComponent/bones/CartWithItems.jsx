@@ -1,10 +1,10 @@
-import Link from "next/link";
-import { useContext } from "react";
-import { formatPrice } from "../../../../lib/formatPrice";
-import AppContext from "../../../../provider/AppProvider";
-import  CartContext  from "../../../../provider/ShopProvider";
-import Button from "../../../atoms/Button/Button";
-import ShoppingCartItem from "./ShoppingCardItem";
+import Link from "next/link"
+import { useContext } from "react"
+import { formatPrice } from "../../../../lib/formatPrice"
+import AppContext from "../../../../provider/AppProvider"
+import  CartContext  from "../../../../provider/ShopProvider"
+import Button from "../../../atoms/Button/Button"
+import ShoppingCartItem from "./ShoppingCardItem"
 
 const CartWithItems = ({checkout}) => {
     const {loading } = useContext(CartContext)
@@ -16,9 +16,7 @@ const CartWithItems = ({checkout}) => {
     return (
         <div className="px-5">
             <ul className="flex justify-start flex-col py-6">
-                {checkout.lineItems.map(item => {
-                    return <ShoppingCartItem data={item} key={item.id} />
-                })}
+                {checkout.lineItems.map(item => <ShoppingCartItem data={item} key={item.id} />)}
             </ul>
             <div className="checkout-details">
                 <p>
@@ -48,4 +46,4 @@ const CartWithItems = ({checkout}) => {
     )
 }
 
-export default CartWithItems;
+export default CartWithItems

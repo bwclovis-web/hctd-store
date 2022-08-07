@@ -1,7 +1,7 @@
-import { NextSeo } from 'next-seo';
+import { NextSeo } from 'next-seo'
 import { getAllCollectionsQuery, getProductByCollection } from "../../../lib/shopifyGraphql"
-import Link from 'next/link';
-import DisplayGrid from '../../../components/molecules/DisplayGrid/DisplayGrid';
+import Link from 'next/link'
+import DisplayGrid from '../../../components/molecules/DisplayGrid/DisplayGrid'
 
 const CategoryProducts = ({ collection }) => (
     <>
@@ -33,7 +33,7 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
     const allCollections = await getAllCollectionsQuery()
-    const paths = allCollections.map((item) => ({
+    const paths = allCollections.map(item => ({
         params: {
             slug: item.node.handle
         }

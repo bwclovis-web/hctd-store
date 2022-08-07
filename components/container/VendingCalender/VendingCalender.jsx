@@ -1,8 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-const VendingCalendarComponent = () => {
-    return (
+const VendingCalendarComponent = () => (
         <div className="flex relative w-full justify-center items-center h-80">
             <Image
                 alt={''}
@@ -24,6 +23,5 @@ const VendingCalendarComponent = () => {
             </div>
         </div>
     )
-}
 
 export default VendingCalendarComponent

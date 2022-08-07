@@ -1,8 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-const DyeShopBanner = () => {
-    return (
+const DyeShopBanner = () => (
         <div className="flex relative w-full justify-center items-center">
             <Image
                 alt={''}
@@ -25,6 +24,5 @@ const DyeShopBanner = () => {
             </div>
         </div>
     )
-}
 
 export default DyeShopBanner

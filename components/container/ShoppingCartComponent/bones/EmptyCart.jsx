@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { useContext } from "react";
-import CartContext from "../../../../provider/AppProvider";
+import Link from "next/link"
+import { useContext } from "react"
+import CartContext from "../../../../provider/AppProvider"
 
 const EmptyCart = () => {
     const { toggleCart } = useContext(CartContext)
@@ -16,4 +16,4 @@ const EmptyCart = () => {
     )
 }
 
-export default EmptyCart; 
+export default EmptyCart 

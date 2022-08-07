@@ -1,19 +1,14 @@
 
 import { NextSeo } from 'next-seo'
-// import StyledSixty from "~/Containers/Sixty/SixtyStyled"
-// import ProfileCard from "~/ProfileCard/ProfileCard"
 import HeroComponent from '../components/molecules/Hero/Hero'
 
-const AboutPage = () => {
-  return (
+const AboutPage = () => (
     <div>
       <NextSeo
         title="About Us"
         description='a brief history on happy cat tie dye and it founders.'
       />
       <HeroComponent src={`/images/dark.jpg`} title="About Us" heading="who we are" />
-      {/* <StyledSixty className="container container-condensed" inverted={true}> */}
-      {/* <ProfileCard image={imageQuery.profile.childImageSharp.gatsbyImageData}/> */}
       <section>
         <h2> OH HAI</h2>
         <div className="about">
@@ -30,7 +25,6 @@ const AboutPage = () => {
       </section>
     </div >
   )
-}
 
 
 export default AboutPage

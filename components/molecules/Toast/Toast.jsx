@@ -17,4 +17,4 @@ const Toast = ({ item, openToast }) => {
     )
 }
 
-export default Toast; 
+export default Toast 

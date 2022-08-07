@@ -1,8 +1,8 @@
-import classNames from "classnames";
-import { useState } from "react";
+import classNames from "classnames"
+import { useState } from "react"
 
 const AccordionItem = ({ id, question, answer }) => {
-    const [isActive, setIsActive] = useState(false);
+    const [ isActive, setIsActive ] = useState(false)
     const AccordionClasses = classNames({
         'opacity-0 translate-y-100 transition-all py-0 max-h-0 px-3': true,
         'opacity-100 translate-y-0 max-h-full py-auto': isActive

@@ -1,24 +1,24 @@
 import { useState, useContext, useEffect } from "react"
 import Image from "next/image"
 import Link from 'next/link'
-import careData from '../../Data/care.json';
+import careData from '../../Data/care.json'
 import dyeData from '../../Data/dyeCare.json'
 
-import { NextSeo } from 'next-seo';
-import Accordion from '../../components/container/Accordion/Accordion';
-import AddToCart from '../../components/container/AddToCart/AddToCart';
-import ProductThumbnails from '../../components/container/ThumbnailSwap/ThumbnailSwap';
-import Toast from '../../components/molecules/Toast/Toast';
+import { NextSeo } from 'next-seo'
+import Accordion from '../../components/container/Accordion/Accordion'
+import AddToCart from '../../components/container/AddToCart/AddToCart'
+import ProductThumbnails from '../../components/container/ThumbnailSwap/ThumbnailSwap'
+import Toast from '../../components/molecules/Toast/Toast'
 
 import { getSingleProductPageProps, getAllProductsQuery, getAllCurrentTags } from '../../lib/shopifyGraphql'
 import AppCtx from '../../provider/AppProvider'
-import TagList from "../../components/molecules/TagList/TagList";
-import DisplayGrid from "../../components/molecules/DisplayGrid/DisplayGrid";
+import TagList from "../../components/molecules/TagList/TagList"
+import DisplayGrid from "../../components/molecules/DisplayGrid/DisplayGrid"
 
 const SingleProductPage = ({ product }) => {
     const { toast } = useContext(AppCtx)
     const { featuredImage, tags, title, descriptionHtml, availableForSale, variants, collections, images } = product
-    const [image, setImage] = useState({url:featuredImage.url, alt:featuredImage.altText })
+    const [ image, setImage ] = useState({url:featuredImage.url, alt:featuredImage.altText })
     const variant = variants.edges
     const collection = collections.edges[0].node
     const thumbnailArray = images.edges
@@ -28,7 +28,7 @@ const SingleProductPage = ({ product }) => {
         setImage({
             url:featuredImage.url, alt:featuredImage.altText
         })
-    },[featuredImage])
+    }, [featuredImage])
 
     return (
         <div>
@@ -88,7 +88,7 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
     const allProducts = await getAllProductsQuery()
-    const paths = allProducts.map((item) => ({
+    const paths = allProducts.map(item => ({
         params: {
             slug: item.node.handle
         }

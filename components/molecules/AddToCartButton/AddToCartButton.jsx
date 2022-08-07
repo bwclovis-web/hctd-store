@@ -1,15 +1,15 @@
-import { useContext, useEffect, useState } from "react";
-import { textUtil } from "./Utility";
-import Button from "../../atoms/Button/Button";
-import CartContext from "../../../provider/ShopProvider";
-import AppContext from "../../../provider/AppProvider";
+import { useContext, useEffect, useState } from "react"
+import { textUtil } from "./Utility"
+import Button from "../../atoms/Button/Button"
+import CartContext from "../../../provider/ShopProvider"
+import AppContext from "../../../provider/AppProvider"
 
 const AddToCartButton = ({ varId, available }) => {
   const { addVariantToCart, loading, checkout } = useContext(CartContext)
   const { toggleToast } = useContext(AppContext)
-  const [buttonText, setButtonText] = useState("ADD TO CART")
-  const [itemStatus, setItemStatus] = useState("avail")
-  const [disableButton, setDisableButton] = useState(false)
+  const [ buttonText, setButtonText ] = useState("ADD TO CART")
+  const [ itemStatus, setItemStatus ] = useState("avail")
+  const [ disableButton, setDisableButton ] = useState(false)
 
   const addToCart = () => {
     addVariantToCart(varId, '1')

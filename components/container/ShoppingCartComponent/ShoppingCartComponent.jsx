@@ -1,10 +1,10 @@
-import { useEffect, useRef, useContext } from "react";
-import CartContext from "../../../provider/ShopProvider";
+import { useEffect, useRef, useContext } from "react"
+import CartContext from "../../../provider/ShopProvider"
 import AppContext from "../../../provider/AppProvider"
-import EmptyCart from "./bones/EmptyCart";
-import Button from "../../atoms/Button/Button";
-import classNames from "classnames";
-import CartWithItems from "./bones/CartWithItems";
+import EmptyCart from "./bones/EmptyCart"
+import Button from "../../atoms/Button/Button"
+import classNames from "classnames"
+import CartWithItems from "./bones/CartWithItems"
 
 const ShoppingCartComponent = () => {
     const {checkout} = useContext(CartContext)
@@ -22,7 +22,7 @@ const ShoppingCartComponent = () => {
         return () => {
             document.removeEventListener('click', handleClickOutside)
         }
-    }, [cartOpen, checkout, toggleCart])
+    }, [ cartOpen, checkout, toggleCart ])
 
     const CartClasses = classNames({
         "fixed top-0 right-0 h-full w-full z-50 md:w-1/2 xl:w-1/4 bg-red-300 transition": true,

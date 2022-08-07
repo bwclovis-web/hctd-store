@@ -1,5 +1,5 @@
-import {useContext} from "react";
-import CartContext from "../../../../provider/ShopProvider";
+import {useContext} from "react"
+import CartContext from "../../../../provider/ShopProvider"
 import {FaTrash} from 'react-icons/fa'
 
 const DeleteFromCartButton = ({id}) => {
@@ -15,4 +15,4 @@ const {removeLineItem, checkout} = useContext(CartContext)
     )
 }
 
-export default DeleteFromCartButton;
+export default DeleteFromCartButton

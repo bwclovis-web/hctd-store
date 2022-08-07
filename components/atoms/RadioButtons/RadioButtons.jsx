@@ -1,7 +1,7 @@
-import { useEffect, memo} from "react";
+import { useEffect, memo} from "react"
 
 const RadioSelect = ({ data, changeAction }) => {
-    const handleVariationChange = (evt) => {
+    const handleVariationChange = evt => {
         changeAction(evt.target.value)
     }
     useEffect(() => {
@@ -16,7 +16,7 @@ const RadioSelect = ({ data, changeAction }) => {
                 type="radio"
                 name="variations"
                 value={data.id}
-                onChange={(evt) => handleVariationChange(evt)}
+                onChange={evt => handleVariationChange(evt)}
             />
             <label htmlFor={data.id}>
                 <span>{data.selectedOptions[0].value}</span>
@@ -25,4 +25,4 @@ const RadioSelect = ({ data, changeAction }) => {
     )
 }
 
-export default memo(RadioSelect);
+export default memo(RadioSelect)

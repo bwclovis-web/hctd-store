@@ -1,3 +1,27 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "array-bracket-newline": ["error", "never"],
+    "array-bracket-spacing": ["error", "always", 
+      { 
+        "singleValue": false,
+        "objectsInArrays": false
+      }
+    ],
+    "arrow-parens": ["error", "as-needed"],
+    "arrow-body-style": ["error", "as-needed"],
+    "arrow-spacing": "error",
+    "block-spacing": "error",
+    "comma-spacing":  ["error", { "before": false, "after": true }],
+    "curly": "error",
+    "eol-last": ["error", "always"],
+    "eqeqeq": "error",
+    "implicit-arrow-linebreak": ["error", "beside"],
+    "no-confusing-arrow": "error",
+    "no-console":"error",
+    "no-undef-init":"error",
+    "no-var": "error",
+    "one-var": ["error", "never"],
+    "semi": ["error", "never"]
+  }
 }

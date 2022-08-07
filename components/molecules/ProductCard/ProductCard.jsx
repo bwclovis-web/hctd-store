@@ -1,17 +1,17 @@
-import Image from "next/image";
-import Link from "next/link";
-import { formatPrice } from "../../../lib/formatPrice";
-import { getImageUrl } from "./util";
+import Image from "next/image"
+import Link from "next/link"
+import { formatPrice } from "../../../lib/formatPrice"
+import { getImageUrl } from "./util"
 
 
 const ProductCard = ({ product, type, key }) => {
-    const imageUrl = getImageUrl(product.node);
-    const { node } = product;
+    const imageUrl = getImageUrl(product.node)
+    const { node } = product
     const nestPath = type === 'cat' ? `category/` : ''
-    const renderPriceRange = (prices) => {
-        const maxPrice = prices.maxVariantPrice.amount;
-        const minPrice = prices.minVariantPrice.amount;
-        return minPrice === maxPrice ? <span>{formatPrice(minPrice, "USD")}</span> : <span>{formatPrice(minPrice,"USD")} - {formatPrice(maxPrice,"USD")}</span>
+    const renderPriceRange = prices => {
+        const maxPrice = prices.maxVariantPrice.amount
+        const minPrice = prices.minVariantPrice.amount
+        return minPrice === maxPrice ? <span>{formatPrice(minPrice, "USD")}</span> : <span>{formatPrice(minPrice, "USD")} - {formatPrice(maxPrice, "USD")}</span>
     }
     return (
         <li className={`h-full relative overflow-hidden rounded-md`} key={key}>

@@ -1,15 +1,9 @@
-import { NextSeo } from 'next-seo';
-import Accordion from '../components/container/Accordion/Accordion';
-// import Accordion from "~/Accordion/Accordion"
-import HeroComponent from '../components/molecules/Hero/Hero';
+import { NextSeo } from 'next-seo'
+import Accordion from '../components/container/Accordion/Accordion'
+import HeroComponent from '../components/molecules/Hero/Hero'
 import data from '../Data/faq.json'
-// import StyledSixty from "~/Containers/Sixty/SixtyStyled"
-// import ContactUsForm from "~/Forms/ContactForm/ContactForm"
 
-
-const ContactPage = () => {
-
-  return (
+const ContactPage = () => (
     <>
       <NextSeo
         title="Have a question"
@@ -23,8 +17,6 @@ const ContactPage = () => {
               <h2>Frequently Asked Questions</h2>
               <Accordion data={data} />
             </div>
-
-
           </section>
           <section>
             TEST
@@ -34,7 +26,6 @@ const ContactPage = () => {
       </div>
     </>
   )
-}
 
 
 

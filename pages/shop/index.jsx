@@ -1,9 +1,8 @@
-import { NextSeo } from 'next-seo';
-import { getShopPageProps } from '../../lib/shopifyGraphql';
-import DisplayGrid from '../../components/molecules/DisplayGrid/DisplayGrid';
+import { NextSeo } from 'next-seo'
+import { getShopPageProps } from '../../lib/shopifyGraphql'
+import DisplayGrid from '../../components/molecules/DisplayGrid/DisplayGrid'
 
-const ShopPage = ({ dyes, tops, bottoms, outerwear, accessories }) => {
-  return (
+const ShopPage = ({ dyes, tops, bottoms, outerwear, accessories }) => (
     <>
       <NextSeo
         title="Current Shop Items"
@@ -18,7 +17,6 @@ const ShopPage = ({ dyes, tops, bottoms, outerwear, accessories }) => {
       </section>
     </>
   )
-}
 
 export async function getStaticProps() {
   const pageProps = await getShopPageProps()

@@ -6,10 +6,10 @@ import AppContext from "../../../provider/AppProvider"
 import Button from "../../atoms/Button/Button"
 
 const ShoppingCartButton = () => {
-    const { checkout } = useContext(CartContext);
-    const { toggleCart } = useContext(AppContext);
-    const [itemsInCart, setItemsInCart] = useState(0);
-    const [buttonText, setButtonText] = useState('open cart');
+    const { checkout } = useContext(CartContext)
+    const { toggleCart } = useContext(AppContext)
+    const [ itemsInCart, setItemsInCart ] = useState(0)
+    const [ buttonText, setButtonText ] = useState('open cart')
     
 
     useEffect(() => {

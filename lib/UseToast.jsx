@@ -1,20 +1,21 @@
-import { useState, useEffect } from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect } from 'react'
 
 const UseToast = () => {
-    const [toast, setShowToast] = useState(false);
+    const [ toast, setShowToast ] = useState(false)
     const toggleToast = () => {
         setShowToast(!toast)
-    };
+    }
 
     useEffect(() => {
         if(toast) {
             setTimeout(() => {
                 toggleToast()
-            }, 4500);
+            }, 4500)
         }
-    },[toast])
+    }, [toast])
 
-    return [toast, toggleToast]
+    return [ toast, toggleToast ]
 }
 
-export default UseToast;
+export default UseToast

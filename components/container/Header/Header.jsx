@@ -8,7 +8,6 @@ const Header = () => {
     const headerRef = useRef()
     const router = useRouter()
     const resetFocus = () => {
-        console.log('called', headerRef.current)
         headerRef.current.focus()
     }
     useEffect(() => {
@@ -16,7 +15,7 @@ const Header = () => {
         return () => {
             router.events.off('routeChangeComplete', resetFocus)
         }
-    },[router])
+    }, [router])
     return(
     <header className="container py-0 outline-none" ref={headerRef} tabIndex={-1}>
         <>
@@ -24,6 +23,6 @@ const Header = () => {
             <MainNavigation />
         </>
     </header>
-)}
+) }
 
 export default Header

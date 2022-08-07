@@ -1,38 +1,38 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 
-const useFormHook = (init) => {
-    const [inputs, setInputs] = useState(init);
-    const initValues = Object.values(init).join('');
+const useFormHook = init => {
+    const [ inputs, setInputs ] = useState(init)
+    const initValues = Object.values(init).join('')
 
     useEffect(() => {
-        setInputs(init);
+        setInputs(init)
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [initValues]);
+    }, [initValues])
 
-    const handleChange = (evt) => {
-        let { value, name, type } = evt.target;
+    const handleChange = evt => {
+        let { value, name, type } = evt.target
         if (type === 'number') {
-            value = parseInt(value);
+            value = parseInt(value)
         }
         if (type === 'file') {
-            [value] = evt.target.files;
+            [value] = evt.target.files
         }
         setInputs({
             ...inputs,
             [name]: value,
-        });
-    };
+        })
+    }
 
     const resetForm = () => {
-        setInputs(init);
-    };
+        setInputs(init)
+    }
 
 
     return {
         inputs,
         handleChange,
         resetForm
-    };
-};
+    }
+}
 
-export default useFormHook;
+export default useFormHook

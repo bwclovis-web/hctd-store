@@ -3,7 +3,7 @@
 import { forwardRef } from "react"
 import classnames from 'classnames'
 
-const Button = forwardRef(({ children, size, config, onClick, type, disabled , id, label}, ref) => {
+const Button = forwardRef(({ children, size, config, onClick, type, disabled, id, label}, ref) => {
     const ButtonClasses = classnames({
         'font-semibold uppercase transition border-solid border-2 border-inherit p-2 rounded-lg drop-shadow': true,
         'text-m tracking-wide': size === 'small',
@@ -20,4 +20,4 @@ const Button = forwardRef(({ children, size, config, onClick, type, disabled , i
     )
 })
 
-export default Button;
+export default Button

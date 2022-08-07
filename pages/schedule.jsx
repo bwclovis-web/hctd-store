@@ -2,8 +2,7 @@
 import { NextSeo } from 'next-seo'
 import HeroComponent from '../components/molecules/Hero/Hero'
 
-const SchedulePage = () => {
-  return (
+const SchedulePage = () => (
     <div>
       <NextSeo
         title="Schedule"
@@ -26,7 +25,6 @@ const SchedulePage = () => {
       </section>
     </div >
   )
-}
 
 
 export default SchedulePage

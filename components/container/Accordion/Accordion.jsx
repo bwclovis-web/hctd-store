@@ -1,19 +1,15 @@
-import AccordionItem from "./AccordionItem";
+import AccordionItem from "./AccordionItem"
 
-const Accordion = ({data}) => {
-    return (
+const Accordion = ({data}) => (
         <ul>
-            {data.map((item) => {
-                return (
+            {data.map(item => (
                     <AccordionItem 
                         key={item.id} 
                         id={item.id} 
                         question={item.question} 
                         answer={item.answer}
                     />
-                )
-            })}
+                ))}
         </ul>
     )
-}
 export default Accordion

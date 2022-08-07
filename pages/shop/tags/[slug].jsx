@@ -3,8 +3,7 @@ import { NextSeo } from "next-seo"
 import { useEffect } from "react"
 import DisplayGrid from "../../../components/molecules/DisplayGrid/DisplayGrid"
 
-const RelatedTagPage= ({ products, title }) => {
-    return (
+const RelatedTagPage= ({ products, title }) => (
         <>
             <NextSeo
                 title={`Shop | Tags | ${title}`}
@@ -15,7 +14,6 @@ const RelatedTagPage= ({ products, title }) => {
             </article>
         </>
     )
-}
 
 export const getStaticProps = async ({ params }) => {
     const allItemsByTag = await getAllItemsByTag(params.slug)
@@ -30,7 +28,7 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
     const allCollections = await getAllCurrentTags()
-    const paths = allCollections.map((item) => ({
+    const paths = allCollections.map(item => ({
         params: {
             slug: item
         }

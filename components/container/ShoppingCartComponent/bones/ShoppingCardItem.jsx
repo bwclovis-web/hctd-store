@@ -1,8 +1,6 @@
-import DeleteFromCartButton from "./DeleteFromCartButton";
+import DeleteFromCartButton from "./DeleteFromCartButton"
 import Image from 'next/image'
-const ShoppingCartItem = ({ data }) => {
-
-  return (
+const ShoppingCartItem = ({ data }) => (
     <li className="flex content-start w-full mb-4">
       <div className="bg-white/20 flex w-full justify-between py-2 px-3 rounded">
         <div className="flex">
@@ -16,6 +14,5 @@ const ShoppingCartItem = ({ data }) => {
       </div>
     </li>
   )
-}
 
-export default ShoppingCartItem;
+export default ShoppingCartItem
