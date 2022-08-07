@@ -4,16 +4,16 @@ import { useEffect } from "react"
 import DisplayGrid from "../../../components/molecules/DisplayGrid/DisplayGrid"
 
 const RelatedTagPage= ({ products, title }) => (
-        <>
-            <NextSeo
-                title={`Shop | Tags | ${title}`}
-            />
-            <article className="container container-condensed">
-                <h1 className="text-h2-dynamic font-display capitalize">All things {title}</h1>
-                <DisplayGrid data={products} />
-            </article>
-        </>
-    )
+    <>
+        <NextSeo
+            title={`Shop | Tags | ${title}`}
+        />
+        <article className="container container-condensed">
+            <h1 className="text-h2-dynamic font-display capitalize">All things {title}</h1>
+            <DisplayGrid data={products} />
+        </article>
+    </>
+)
 
 export const getStaticProps = async ({ params }) => {
     const allItemsByTag = await getAllItemsByTag(params.slug)

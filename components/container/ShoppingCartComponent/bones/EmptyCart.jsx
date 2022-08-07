@@ -1,19 +1,20 @@
 import Link from "next/link"
 import { useContext } from "react"
-import CartContext from "../../../../provider/AppProvider"
+
+import ShopContext from "provider/ShopProvider"
 
 const EmptyCart = () => {
-    const { toggleCart } = useContext(CartContext)
-    return (
-        <section className="flex justify-center h-2/4 flex-col text-lg items-center">
-            <p className="font-semibold text-2xl mb-10">Your cart is empty</p>
-            <div>
-                <Link href="/shop">
-                    <a onClick={toggleCart} className="ghost-link _small">Go to shop page</a>
-                </Link>
-            </div>
-        </section>
-    )
+  const { toggleCart } = useContext(ShopContext)
+  return (
+    <section className="flex justify-center h-2/4 flex-col text-lg items-center">
+      <p className="font-semibold text-2xl mb-10">Your cart is empty</p>
+      <div>
+        <Link href="/shop">
+          <a onClick={toggleCart} className="ghost-link _small">Go to shop page</a>
+        </Link>
+      </div>
+    </section>
+  )
 }
 
 export default EmptyCart 

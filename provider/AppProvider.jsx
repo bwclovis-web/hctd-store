@@ -12,8 +12,8 @@ const ctxDefaults = {
 const AppContext = createContext(ctxDefaults)
 
 export const AppProvider = ({ children }) => {
-  const [cartOpen, toggleCart] = UseCart()
-  const [toast, toggleToast] = UseToast()
+  const [ cartOpen, toggleCart ] = UseCart()
+  const [ toast, toggleToast ] = UseToast()
 
   return (
     <AppContext.Provider value={{
@@ -28,4 +28,4 @@ export const AppProvider = ({ children }) => {
   )
 }
 
-export default AppContext;
+export default AppContext

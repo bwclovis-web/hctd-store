@@ -1,4 +1,4 @@
-export const singleProductPageQuery = (handle) => `{
+export const singleProductPageQuery = handle => `{
     product(handle:"${handle}" ){
       availableForSale
       id
@@ -55,7 +55,7 @@ export const singleProductPageQuery = (handle) => `{
         }
       }
     }
-}`;
+}`
 
 export const allProductsQuery = `{
   products(first: 250) {
@@ -72,9 +72,9 @@ export const allProductsQuery = `{
       }
     }
   }
-}`;
+}`
 
-export const productByCollection = (handle) => `{
+export const productByCollection = handle => `{
   collection(handle:"${handle}"){
     title
     products(first: 20) {
@@ -91,7 +91,7 @@ export const productByCollection = (handle) => `{
       }
     }
   }
-}`;
+}`
 
 export const allCollectionsQuery = `{
   collections(first:20){
@@ -102,7 +102,7 @@ export const allCollectionsQuery = `{
       }
     }
   }
-}`;
+}`
 
 export const getFullAllCollections = `{
   collections(first: 10) {
@@ -117,7 +117,7 @@ export const getFullAllCollections = `{
       }
     }
   }
-}`;
+}`
 
 export const homePageQuery = `{
     products(first: 4, reverse: true) {
@@ -151,7 +151,7 @@ export const homePageQuery = `{
           }
         }
     }
-}`;
+}`
 
 export const shopPageQuery = `{
   dyeProducts: products(sortKey:UPDATED_AT, query:"product_type:dyes", first:4) {
@@ -266,4 +266,4 @@ export const shopPageQuery = `{
         }
       }
   }
-}`;
+}`

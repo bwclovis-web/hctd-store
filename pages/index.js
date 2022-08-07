@@ -2,12 +2,12 @@ import { useState } from 'react'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
 
-import VendingCalendarComponent from '../components/container/VendingCalender/VendingCalender'
-import DyeShopBanner from '../components/container/DyeShopBanner/DyeShopBanner'
-import HeroComponent from '../components/molecules/Hero/Hero'
-import DisplayGrid from '../components/molecules/DisplayGrid/DisplayGrid'
+import { getHomePageProps } from 'lib/shopifyGraphql'
 
-import { getHomePageProps } from '../lib/shopifyGraphql'
+import VendingCalendarComponent from 'components/container/VendingCalender/VendingCalender'
+import DyeShopBanner from 'components/container/DyeShopBanner/DyeShopBanner'
+import HeroComponent from 'components/molecules/Hero/Hero'
+import DisplayGrid from 'components/molecules/DisplayGrid/DisplayGrid'
 
 const HomePage = ({ products, collections }) => {
   const [firstProduct] = useState({

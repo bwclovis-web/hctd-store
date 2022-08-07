@@ -1,28 +1,28 @@
-
-import MainNavigation from "../../molecules/Navigation/MainNavigation"
-import UtilNav from "../../molecules/UtilityNav/UtilityNav"
 import { useEffect, useRef } from 'react'
 import { useRouter } from 'next/router'
 
+import MainNavigation from 'components/molecules/Navigation/MainNavigation'
+import UtilNav from 'components/molecules/UtilityNav/UtilityNav'
+
 const Header = () => {
-    const headerRef = useRef()
-    const router = useRouter()
-    const resetFocus = () => {
-        headerRef.current.focus()
+  const headerRef = useRef()
+  const router = useRouter()
+  const resetFocus = () => {
+    headerRef.current.focus()
+  }
+  useEffect(() => {
+    router.events.on('routeChangeComplete', resetFocus)
+    return () => {
+      router.events.off('routeChangeComplete', resetFocus)
     }
-    useEffect(() => {
-        router.events.on('routeChangeComplete', resetFocus)
-        return () => {
-            router.events.off('routeChangeComplete', resetFocus)
-        }
-    }, [router])
-    return(
+  }, [router])
+  return(
     <header className="container py-0 outline-none" ref={headerRef} tabIndex={-1}>
-        <>
-            <UtilNav />
-            <MainNavigation />
-        </>
+      <>
+        <UtilNav />
+        <MainNavigation />
+      </>
     </header>
-) }
+  ) }
 
 export default Header

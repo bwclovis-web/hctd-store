@@ -1,9 +1,11 @@
 import '../styles/globals.css'
-import { DefaultSeo } from 'next-seo'
-import { CartProvider } from '../provider/ShopProvider'
-import { AppProvider } from '../provider/AppProvider'
-import Header from '../components/container/Header/Header'
 import SEO from '../next-seo.config'
+import { DefaultSeo } from 'next-seo'
+
+import { CartProvider } from 'provider/ShopProvider'
+import { AppProvider } from 'provider/AppProvider'
+
+import Header from 'components/container/Header/Header'
 
 function MyApp({ Component, pageProps }) {
   return (

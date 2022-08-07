@@ -22,13 +22,13 @@ const isBrowser = typeof window !== `undefined`
 const localStorageKey = `shopify_checkout_id`
 
 export const CartProvider = ({ children }) => {
-  const [checkout, setCheckout] = useState(ctxDefaults.checkout)
-  const [loading, setLoading] = useState(false)
-  const [didJustAddToCart, setDidJustAddToCart] = useState(false)
-  const [cartDisplayPrice, setCartDisplayPrice] = useState('')
-  const {toggleCart} = useContext(AppContext)
+  const [ checkout, setCheckout ] = useState(ctxDefaults.checkout)
+  const [ loading, setLoading ] = useState(false)
+  const [ didJustAddToCart, setDidJustAddToCart ] = useState(false)
+  const [ cartDisplayPrice, setCartDisplayPrice ] = useState('')
+  const { toggleCart } = useContext(AppContext)
 
-  const setCheckoutItem = (checkout) => {
+  const setCheckoutItem = checkout => {
     if (isBrowser) {
       localStorage.setItem(localStorageKey, String(checkout.id))
     }
@@ -37,9 +37,9 @@ export const CartProvider = ({ children }) => {
 
   useEffect(() => {
     const initializeCheckout = async () => {
-      const existingCheckoutID = isBrowser
-        ? localStorage.getItem(localStorageKey)
-        : null
+      const existingCheckoutID = isBrowser ?
+        localStorage.getItem(localStorageKey) :
+        null
 
       if (existingCheckoutID && existingCheckoutID !== `null`) {
         try {
@@ -65,12 +65,10 @@ export const CartProvider = ({ children }) => {
   const addVariantToCart = async (variantId, quantity) => {
     setLoading(true)
     const checkoutID = checkout.id
-    const lineItemsToUpdate = [
-      {
-        variantId,
-        quantity: parseInt(quantity, 10),
-      },
-    ]
+    const lineItemsToUpdate = [{
+      variantId,
+      quantity: parseInt(quantity, 10),
+    }]
 
     window.scrollTo({
       top: 0,
@@ -80,7 +78,7 @@ export const CartProvider = ({ children }) => {
 
     return await shopClient.checkout
       .addLineItems(checkoutID, lineItemsToUpdate)
-      .then((res) => {
+      .then(res => {
         setCheckout(res)
         setLoading(false)
         setDidJustAddToCart(true)
@@ -94,7 +92,7 @@ export const CartProvider = ({ children }) => {
 
     return await shopClient.checkout
       .removeLineItems(checkoutID, [lineItemID])
-      .then((res) => {
+      .then(res => {
         setCheckout(res)
         setLoading(false)
       })
@@ -103,13 +101,11 @@ export const CartProvider = ({ children }) => {
   const updateLineItem = async (checkoutID, lineItemID, quantity) => {
     setLoading(true)
 
-    const lineItemsToUpdate = [
-      { id: lineItemID, quantity: parseInt(quantity, 10) },
-    ]
+    const lineItemsToUpdate = [{ id: lineItemID, quantity: parseInt(quantity, 10) }, ]
 
     return await shopClient.checkout
       .updateLineItems(checkoutID, lineItemsToUpdate)
-      .then((res) => {
+      .then(res => {
         setCheckout(res)
         setLoading(false)
       })
@@ -133,4 +129,4 @@ export const CartProvider = ({ children }) => {
   )
 }
 
-export default ShopContext;
+export default ShopContext

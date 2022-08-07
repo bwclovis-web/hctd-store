@@ -1,23 +1,23 @@
 import Image from "next/image"
 import Link from "next/link"
-import { formatPrice } from "../../../lib/formatPrice"
+import { formatPrice } from "lib/formatPrice"
 import { getImageUrl } from "./util"
 
 
 const ProductCard = ({ product, type, key }) => {
-    const imageUrl = getImageUrl(product.node)
-    const { node } = product
-    const nestPath = type === 'cat' ? `category/` : ''
-    const renderPriceRange = prices => {
-        const maxPrice = prices.maxVariantPrice.amount
-        const minPrice = prices.minVariantPrice.amount
-        return minPrice === maxPrice ? <span>{formatPrice(minPrice, "USD")}</span> : <span>{formatPrice(minPrice, "USD")} - {formatPrice(maxPrice, "USD")}</span>
-    }
-    return (
-        <li className={`h-full relative overflow-hidden rounded-md`} key={key}>
-            <Link href={`/shop/${nestPath}[slug]`} as={`/shop/${nestPath}${node.handle}`} className="">
-                <a className="group font-normal">
-                    <div className="bg-slate-400 
+  const imageUrl = getImageUrl(product.node)
+  const { node } = product
+  const nestPath = type === 'cat' ? `category/` : ''
+  const renderPriceRange = prices => {
+    const maxPrice = prices.maxVariantPrice.amount
+    const minPrice = prices.minVariantPrice.amount
+    return minPrice === maxPrice ? <span>{formatPrice(minPrice, "USD")}</span> : <span>{formatPrice(minPrice, "USD")} - {formatPrice(maxPrice, "USD")}</span>
+  }
+  return (
+    <li className={`h-full relative overflow-hidden rounded-md`} key={key}>
+      <Link href={`/shop/${nestPath}[slug]`} as={`/shop/${nestPath}${node.handle}`} className="">
+        <a className="group font-normal">
+          <div className="bg-slate-400 
                         h-full w-full 
                         absolute z-10 translate-y-[86%] 
                         group-hover:translate-y-0
@@ -29,8 +29,8 @@ const ProductCard = ({ product, type, key }) => {
                         group-hover:items-center
                         flex justify-center
                         transition-all"
-                    >
-                        <p className="text-lg
+          >
+            <p className="text-lg
                             tracking-wider font-medium uppercase
                             rounded-md flex justify-between w-full px-3
                             group-hover:bg-emerald-700
@@ -49,24 +49,24 @@ const ProductCard = ({ product, type, key }) => {
                             group-focus:p-3 
                             group-focus:text-white
                             group-focus:shadow"
-                        >
-                            <span>{node.title}</span>
-                            {node.priceRange && renderPriceRange(node.priceRange)}
-                        </p>
-                    </div>
+            >
+              <span>{node.title}</span>
+              {node.priceRange && renderPriceRange(node.priceRange)}
+            </p>
+          </div>
 
-                    <Image
-                        src={imageUrl}
-                        alt=''
-                        layout="responsive"
-                        height={600}
-                        width={960}
-                        objectFit="cover"
-                    />
-                </a>
-            </Link>
-        </li>
-    )
+          <Image
+            src={imageUrl}
+            alt=""
+            layout="responsive"
+            height={600}
+            width={960}
+            objectFit="cover"
+          />
+        </a>
+      </Link>
+    </li>
+  )
 }
 
 export default ProductCard

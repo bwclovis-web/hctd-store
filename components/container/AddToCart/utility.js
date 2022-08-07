@@ -1,4 +1,4 @@
-import { formatPrice } from '../../../lib/formatPrice'
+import { formatPrice } from 'lib/formatPrice'
 
 export const getPriceByVariantId = (variants, id) => {
   const price = variants?.find(item => item.node.id === id)
