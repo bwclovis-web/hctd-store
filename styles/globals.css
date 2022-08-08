@@ -6,6 +6,14 @@
     .cart-open {
         @apply overflow-hidden
     }
+
+    p {
+        @apply text-lg;
+
+        & ~ p {
+            @apply mt-8
+        }
+    }
 }
 
 @layer components {

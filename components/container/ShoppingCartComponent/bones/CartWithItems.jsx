@@ -9,7 +9,6 @@ import ShoppingCartItem from "./ShoppingCardItem"
 
 import { formatPrice } from "lib/formatPrice"
 
-
 const CartWithItems = ({ checkout }) => {
   const { loading } = useContext(ShopContext)
   const { toggleCart } = useContext(AppContext)
