@@ -1,6 +1,5 @@
 import { getAllCurrentTags, getAllItemsByTag } from "../../../lib/shopifyGraphql"
 import { NextSeo } from "next-seo"
-import { useEffect } from "react"
 import DisplayGrid from "../../../components/molecules/DisplayGrid/DisplayGrid"
 
 const RelatedTagPage= ({ products, title }) => (

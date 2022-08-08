@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-    .cart-open {
-        @apply overflow-hidden
-    }
-
     p {
         @apply text-lg;
 
@@ -19,7 +15,11 @@
 @layer components {
     .checkout-details {
         p {
-            @apply flex py-2 justify-between
+            @apply flex py-2 justify-between;
+
+            & + p {
+                @apply mt-2
+            }
         }
     }
     .radio-buttons {
