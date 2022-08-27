@@ -11,6 +11,7 @@ const useFormHook = init => {
 
   const handleChange = evt => {
     let { value, name, type } = evt.target
+
     if (type === 'number') {
       value = parseInt(value)
     }

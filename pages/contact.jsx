@@ -4,6 +4,7 @@ import data from 'Data/faq.json'
 
 import Accordion from 'components/container/Accordion/Accordion'
 import HeroComponent from 'components/molecules/Hero/Hero'
+import ContactUsForm from 'components/container/Forms/ContactUs/ContactUs'
 
 const ContactPage = () => (
   <>
@@ -14,15 +15,16 @@ const ContactPage = () => (
     <div>
       <HeroComponent src={'/images/peacock.jpg'} size="70" title="Questions?" heading="Contact Us" />
       <div className="flex py-dynamic-container-y content-container">
-        <section className="w-2/3">
+        <section className="w-3/5">
           <div>
-            <h2>Frequently Asked Questions</h2>
+            <h2 className="font-display text-h3-dynamic">Frequently Asked Questions</h2>
             <Accordion data={data} />
           </div>
         </section>
-        <section>
-            TEST
-          {/* <ContactUsForm /> */}
+        <section className="w-2/5 bg-violet-500/50 p-10 rounded-md shadow-lg border-violet-500 border-2">
+          <h2 className="font-display text-h3-dynamic">Contact Us</h2>
+          <p className="mb-7">If this is regarding an order, please include the order number in the message.</p>
+          <ContactUsForm />
         </section>
       </div>
     </div>
