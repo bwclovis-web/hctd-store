@@ -14,7 +14,7 @@ const ContactPage = () => (
     />
     <div>
       <HeroComponent src={'/images/peacock.jpg'} size="70" title="Questions?" heading="Contact Us" />
-      <div className="flex py-dynamic-container-y content-container">
+      <div className="flex py-dynamic-container-y content-container gap-8">
         <section className="w-3/5">
           <div>
             <h2 className="font-display text-h3-dynamic">Frequently Asked Questions</h2>

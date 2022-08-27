@@ -1,7 +1,7 @@
 import AccordionItem from "./AccordionItem"
 
 const Accordion = ({ data }) => (
-  <ul>
+  <ul className="w-full">
     {data.map(item => (
       <AccordionItem 
         key={item.id} 
