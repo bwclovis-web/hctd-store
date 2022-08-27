@@ -10,11 +10,11 @@ const ShopPage = ({ dyes, tops, bottoms, outerwear, accessories }) => (
       description="Custom tye die clothing and dyes for sale."
     />
     <section className="container flex flex-col lg:gap-7">
-      <DisplayGrid data={dyes} cat="dyes" cols={4} title="new dyes"/>
-      <DisplayGrid data={tops} cat="tops" cols={4} title="new tops"/>
-      <DisplayGrid data={bottoms} cat="bottoms" cols={4} title="new bottoms"/>
-      <DisplayGrid data={outerwear} cat="outerwear" cols={4} title="new outerwear"/>
-      <DisplayGrid data={accessories} cat="accessories"  cols={4} title="new accessories"/>
+      <DisplayGrid data={dyes} cat="dyes" cols={4} title="new dyes" filter={''}/>
+      <DisplayGrid data={tops} cat="tops" cols={4} title="new tops" filter={''}/>
+      <DisplayGrid data={bottoms} cat="bottoms" cols={4} title="new bottoms" filter={''}/>
+      <DisplayGrid data={outerwear} cat="outerwear" cols={4} title="new outerwear" filter={''}/>
+      <DisplayGrid data={accessories} cat="accessories"  cols={4} title="new accessories" filter={''}/>
     </section>
   </>
 )

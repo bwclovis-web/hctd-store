@@ -9,7 +9,7 @@ const RelatedTagPage= ({ products, title }) => (
     />
     <article className="container container-condensed">
       <h1 className="text-h2-dynamic font-display capitalize">All things {title}</h1>
-      <DisplayGrid data={products} />
+      <DisplayGrid data={products} filter={''}/>
     </article>
   </>
 )

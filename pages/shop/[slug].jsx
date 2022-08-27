@@ -70,7 +70,7 @@ const SingleProductPage = ({ product }) => {
               <a className="underline">{`Other items in ${collection.title}`}</a>
             </Link>
           </h2>
-          <DisplayGrid data={collection.products.edges} cols={4}/>
+          <DisplayGrid data={collection.products.edges} cols={4} filter={''}/>
         </div>
       </section>
       <Toast item={product} openToast={toast} />

@@ -2,9 +2,10 @@ import Image from "next/image"
 import Link from "next/link"
 import { formatPrice } from "lib/formatPrice"
 import { getImageUrl } from "./util"
+import classNames from "classnames"
 
 
-const ProductCard = ({ product, type, index }) => {
+const ProductCard = ({ product, type, index, filter }) => {
   const imageUrl = getImageUrl(product.node)
   const { node } = product
   const nestPath = type === 'cat' ? `category/` : ''
@@ -13,8 +14,13 @@ const ProductCard = ({ product, type, index }) => {
     const minPrice = prices.minVariantPrice.amount
     return minPrice === maxPrice ? <span>{formatPrice(minPrice, "USD")}</span> : <span>{formatPrice(minPrice, "USD")} - {formatPrice(maxPrice, "USD")}</span>
   }
+
+  const cardClasses = classNames({
+    "h-full relative overflow-hidden rounded-md border border-fuchsia-600 shadow-md": true,
+    "scale-0 transition-transform hidden": !filter
+  })
   return (
-    <li className={`h-full relative overflow-hidden rounded-md border border-fuchsia-600 shadow-md`} key={index}>
+    <li className={cardClasses} key={index}>
       <Link href={`/shop/${nestPath}[slug]`} as={`/shop/${nestPath}${node.handle}`}>
         <a className="group font-normal">
           <div className="bg-slate-400/90
