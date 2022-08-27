@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react"
 import useFormHook from "lib/useForm"
 import { useForm } from '@formspree/react'
@@ -15,7 +16,6 @@ const ContactUsForm = () => {
   const [ formErrors, setFormErrors ] = useState([])
 
   useEffect(() => {
-    console.log('state', state)
     if (state.succeeded) {
       resetForm()
     } else {
