@@ -25,7 +25,7 @@ const CategoryProducts = ({ collection }) => {
         <div className="flex justify-between items-center">
           <h1 className="text-h2-dynamic font-display capitalize">{collection.title}</h1>
           {collection.title.toLowerCase() === 'dyes' && allTags &&
-            <Dropdown data={allTags} onChange={handleFilterChange}/>
+            <Dropdown data={allTags} onChange={handleFilterChange} heading="Filter By Color"/>
           }
         </div>
         {collection.products.edges.length ?
