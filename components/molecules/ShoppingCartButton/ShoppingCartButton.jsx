@@ -6,6 +6,7 @@ import ShopContext from "provider/ShopProvider"
 
 import Button from "components/atoms/Button/Button"
 import ShoppingCartComponent from "components/container/ShoppingCartComponent/ShoppingCartComponent"
+import classNames from "classnames"
 
 const ShoppingCartButton = () => {
   const { checkout } = useContext(ShopContext)
@@ -27,10 +28,18 @@ const ShoppingCartButton = () => {
     setCartTrigger("hctd-cart")
   }
 
+  const cartIconClasses = classNames({
+    "bg-orange-400 block rounded-full h-6 w-6 opacity-0 transition-all border-[1px] border-white ": true,
+    "opacity-100 -translate-x-3 -translate-y-1": checkout.lineItems.length
+  })
+
   return (
     <>
-      <Button id="hctd-cart" onClick={handleOpenCart} config="svg" label={buttonText}>
-        {itemsInCart === 0 ? <RiShoppingCartLine size={30} /> : <RiShoppingCartFill size={30} />}
+      <Button id="hctd-cart" onClick={handleOpenCart} config="cart" label={buttonText}>
+        <div className="flex justify-start items-start">
+          {itemsInCart === 0 ? <RiShoppingCartLine size={30} /> : <RiShoppingCartFill size={30} />}
+          <span className={cartIconClasses} aria-hidden>{itemsInCart}</span>
+        </div>
       </Button>
       <ShoppingCartComponent />
     </>

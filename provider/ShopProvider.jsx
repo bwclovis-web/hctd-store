@@ -82,7 +82,7 @@ export const CartProvider = ({ children }) => {
         setCheckout(res)
         setLoading(false)
         setDidJustAddToCart(true)
-        toggleCart()
+        // toggleCart()
         setCartTrigger('add-to-cart')
         setTimeout(() => setDidJustAddToCart(false), 3000)
       })
@@ -102,7 +102,7 @@ export const CartProvider = ({ children }) => {
   const updateLineItem = async (checkoutID, lineItemID, quantity) => {
     setLoading(true)
 
-    const lineItemsToUpdate = [{ id: lineItemID, quantity: parseInt(quantity, 10) },]
+    const lineItemsToUpdate = [{ id: lineItemID, quantity: parseInt(quantity, 10) }, ]
 
     return await shopClient.checkout
       .updateLineItems(checkoutID, lineItemsToUpdate)
