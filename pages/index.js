@@ -23,11 +23,13 @@ const HomePage = ({ products, collections }) => {
         description="Custom made tie dye clothing, accessories, and dyes."
       />
       <HeroComponent src="/images/rainbow.jpg" title="home" />
+
       <section>
         <div className="container py-dynamic-container-y">
           <DisplayGrid data={collections} cols={5} type="cat" filter={''}/>
         </div>
       </section>
+
       <DyeShopBanner />
 
       <section className="container py-4 text-2xl tracking-wider text-center">
@@ -41,11 +43,13 @@ const HomePage = ({ products, collections }) => {
           to the store under {firstProduct.category}!
         </p>
       </section>
+
       <section className="bg-teal-200">
         <div className="container py-dynamic-container-y">
           <DisplayGrid data={products} cols={4} title="New to the shop" filter={''}/>
         </div>
       </section>
+
       <VendingCalendarComponent />
     </>
   )
