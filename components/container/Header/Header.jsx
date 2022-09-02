@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 
 import MainNavigation from 'components/molecules/Navigation/MainNavigation'
 import UtilNav from 'components/molecules/UtilityNav/UtilityNav'
+import Modal from '../Modal/Modal'
 
 const Header = () => {
   const headerRef = useRef()
@@ -21,6 +22,11 @@ const Header = () => {
       <>
         <UtilNav />
         <MainNavigation />
+        <Modal>
+          <div>
+            OH HAI
+          </div>
+        </Modal>
       </>
     </header>
   ) }

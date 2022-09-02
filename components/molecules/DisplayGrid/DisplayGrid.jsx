@@ -5,8 +5,8 @@ import ProductCard from "../ProductCard/ProductCard"
 const DisplayGrid = ({ data, cols, type, title, cat, filter }) => {
   const GridClasses = classNames({
     'grid grid-cols-1 md:grid-cols-2 gap-4': true,
-    'lg:grid-cols-4': cols === 4,
-    'lg:grid-cols-5': cols === 5
+    'xl:grid-cols-4': cols === 4,
+    'xl:grid-cols-5': cols === 5
   })
 
   const containerClasses = classNames({
@@ -33,9 +33,9 @@ const DisplayGrid = ({ data, cols, type, title, cat, filter }) => {
       </ul>
       {
         (data.length >= 4 && cat) &&
-                <Link href={`/shop/category/${cat}`}>
-                  <a className="absolute bottom-2 right-3 text-blue-700 font-semibold uppercase underline">shop more {cat}</a>
-                </Link>
+        <Link href={`/shop/category/${cat}`}>
+          <a className="absolute bottom-2 right-3 text-blue-700 font-semibold uppercase underline">shop more {cat}</a>
+        </Link>
       }
     </div>
   )
