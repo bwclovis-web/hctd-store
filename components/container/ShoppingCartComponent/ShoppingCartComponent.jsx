@@ -47,7 +47,7 @@ const ShoppingCartComponent = () => {
           {
             emptyCart ? 
               <EmptyCart toggleCart={toggleCart} /> : 
-              <CartWithItems checkout={checkout} />
+              <CartWithItems />
           }
         </section>
       </div>
