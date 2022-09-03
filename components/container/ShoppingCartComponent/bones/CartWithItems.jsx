@@ -12,10 +12,12 @@ import { formatPrice } from "lib/formatPrice"
 const CartWithItems = ({ checkout }) => {
   const { loading } = useContext(ShopContext)
   const { toggleCart } = useContext(AppContext)
+
   const handleCheckout = () => {
     toggleCart()
     window.open(checkout.webUrl)
   }
+
   return (
     <div className="px-5">
       <ul className="flex justify-start flex-col py-6">

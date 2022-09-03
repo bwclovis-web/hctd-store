@@ -45,6 +45,11 @@
 }
 
 @layer utilities {
+    .cart-image {
+        span {
+            @apply rounded-full
+        }
+    }
     .ghost-link {
         @apply text-white border-4 text-xl rounded-lg font-semibold p-3 uppercase tracking-wide bg-black/30 hover:underline;
 
