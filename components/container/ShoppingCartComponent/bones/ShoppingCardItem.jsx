@@ -29,15 +29,15 @@ const ShoppingCartItem = ({ data }) => {
             <Image alt="" src={data.variant.image.src} width={60} height={60}/>
           </div>
           <div className="flex items-center ml-10">
-            <Button onClick={() => updateItemQuantity('add')} config="svg">
-              <span className="text-amber-800/70 block">
-                <FaPlusSquare size={40}/>
-              </span>
-            </Button>
-            <span className="text-2xl px-2 font-semibold">{itemQuantity}</span>
             <Button onClick={() => updateItemQuantity('delete')} config="svg">
               <span className="text-amber-800/70 ">
                 <FaMinusSquare size={40}/>
+              </span>
+            </Button>
+            <span className="text-2xl px-2 font-semibold">{itemQuantity}</span>
+            <Button onClick={() => updateItemQuantity('add')} config="svg">
+              <span className="text-amber-800/70 block">
+                <FaPlusSquare size={40}/>
               </span>
             </Button>
           </div>

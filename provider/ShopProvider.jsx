@@ -101,7 +101,6 @@ export const CartProvider = ({ children }) => {
 
   const updateLineItem = async (checkoutID, lineItemID, quantity) => {
     setLoading(true)
-
     const lineItemsToUpdate = [{ id: lineItemID, quantity: parseInt(quantity, 10) }]
 
     return await shopClient.checkout
