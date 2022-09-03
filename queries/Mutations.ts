@@ -21,3 +21,17 @@ export const createCartInstanceMutation = `
         }
     }
 `
+
+export const testMutation = `
+mutation customerCreate($input: CustomerInput) {
+    customerCreate(input: $input) {
+      customer {
+        # Customer fields
+      }
+      userErrors {
+        field
+        message
+      }
+    }
+  }
+`

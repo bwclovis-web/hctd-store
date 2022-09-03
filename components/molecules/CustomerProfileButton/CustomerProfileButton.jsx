@@ -1,4 +1,5 @@
 import Button from 'components/atoms/Button/Button'
+import FormContainer from 'components/container/Forms/SignUp/FormContainer'
 import Modal from 'components/container/Modal/Modal'
 import AppContext from 'provider/AppProvider'
 import { useContext } from 'react'
@@ -13,7 +14,7 @@ const CustomerProfileButton = () => {
       </Button>
       {modalOpen && 
         <Modal open={modalOpen}>
-          OH HAI
+          <FormContainer />
         </Modal>
       }
     </>

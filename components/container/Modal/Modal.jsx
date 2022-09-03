@@ -7,6 +7,7 @@ const Modal = ({ children, open }) => {
   const [ mounted, setMounted ] = useState(false)
   const [ animate, setAnimate ] = useState(false)
   const { toggleModal } = useContext(AppContext)
+  const outerRef = useRef(null)
 
   useEffect(() => {
     setMounted(true)
@@ -19,17 +20,19 @@ const Modal = ({ children, open }) => {
 
 
   const ModalClasses = classNames({
-    "fixed w-full h-full bg-violet-700/90 translate-y-0 z-20 top-0 flex transition-all justify-center items-center opacity-0": true,
+    "absolute w-full h-full bg-violet-700/90 translate-y-0 z-20 top-0 transition-all opacity-0": true,
     "opacity-100 transition-all": animate
   })
-
+  
   const ModalContentClasses = classNames({
-    'relative -translate-y-80 opacity-0 z-30 transition-all delay-300': true,
-    'opacity-100 -translate-y-0 transition-all delay-100': animate
+    'relative -translate-y-80 opacity-0 z-30 transition-all delay-300 pointer-none flex': true,
+    'opacity-100 translate-y-1 transition-all delay-100': animate
   })
 
+
   const template = (
-    <div className={ModalClasses} onClick={toggleModal}>
+    <div className="absolute h-full w-full z-10 top-0 flex justify-center items-center">
+      <div className={ModalClasses} onClick={toggleModal} />
       <div className={ModalContentClasses}>{children}</div>
     </div>
   )
@@ -41,3 +44,5 @@ const Modal = ({ children, open }) => {
 }
 
 export default Modal
+
+
