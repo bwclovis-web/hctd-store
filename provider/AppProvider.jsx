@@ -1,12 +1,15 @@
+import UseModal from 'hooks/UseModal'
 import { createContext } from 'react'
-import UseCart from '../lib/useApp'
-import UseToast from '../lib/UseToast'
+import UseCart from 'hooks/useCart'
+import UseToast from 'hooks/UseToast'
 
 const ctxDefaults = {
   toggleCart: () => { },
   toggleToast: () => { },
+  toggleModal: () => {},
   setCartTrigger: () => {},
   cartOpen: false,
+  modalOpen: false,
   toast: false,
   cartTrigger: ''
 }
@@ -16,6 +19,7 @@ const AppContext = createContext(ctxDefaults)
 export const AppProvider = ({ children }) => {
   const [ cartOpen, toggleCart, cartTrigger, setCartTrigger ] = UseCart()
   const [ toast, toggleToast ] = UseToast()
+  const [ toggleModal, modalOpen ] = UseModal()
 
   return (
     <AppContext.Provider value={{
@@ -25,7 +29,9 @@ export const AppProvider = ({ children }) => {
       toast,
       toggleToast,
       cartTrigger,
-      setCartTrigger
+      setCartTrigger,
+      toggleModal,
+      modalOpen
     }}>
       {children}
     </AppContext.Provider>

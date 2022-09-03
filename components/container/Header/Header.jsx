@@ -22,11 +22,6 @@ const Header = () => {
       <>
         <UtilNav />
         <MainNavigation />
-        <Modal>
-          <div>
-            OH HAI
-          </div>
-        </Modal>
       </>
     </header>
   ) }

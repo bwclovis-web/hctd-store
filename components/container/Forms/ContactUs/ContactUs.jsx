@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react"
-import useFormHook from "lib/useForm"
+import useFormHook from "hooks/useForm"
 import { useForm } from '@formspree/react'
 import Button from "components/atoms/Button/Button"
 import Input from "components/atoms/Inputs/Input"

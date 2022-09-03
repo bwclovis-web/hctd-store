@@ -2,7 +2,7 @@ import { useState, useCallback, useEffect } from 'react'
 
 const UseModal = () => {
   const [ modalOpen, setShowModal ] = useState(false)
-  const toggler = useCallback(() => setShowModal(!modalOpen), [modalOpen])
+  const toggleModal = useCallback(() => setShowModal(!modalOpen), [modalOpen])
 
   useEffect(() => {
     const root = document.documentElement
@@ -11,7 +11,7 @@ const UseModal = () => {
       root.classList.remove('open')
   }, [modalOpen])
 
-  return [ modalOpen, toggler ]
+  return [ toggleModal, modalOpen ]
 }
 
 export default UseModal
