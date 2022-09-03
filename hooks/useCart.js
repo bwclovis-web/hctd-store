@@ -8,11 +8,14 @@ const UseCart = () => {
   }
 
   useEffect(() => {
+    const root = document.documentElement
     if (cartOpen) {
       const trigger = document.getElementById('cart-close')
+      root.classList.add('open')
       trigger?.focus()
     } else {
       const element = cartTrigger && document.getElementById(cartTrigger)
+      root.classList.remove('open')
       if(element) {
         element.focus()
         setCartTrigger('')

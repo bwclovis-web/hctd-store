@@ -10,6 +10,10 @@
             @apply mt-8
         }
     }
+
+    .open {
+        @apply overflow-hidden
+    }
 }
 
 @layer components {
