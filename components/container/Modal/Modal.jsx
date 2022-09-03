@@ -22,6 +22,7 @@ const Modal = ({ children, open }) => {
     "fixed w-full h-full bg-violet-700/90 translate-y-0 z-20 top-0 flex transition-all justify-center items-center opacity-0": true,
     "opacity-100 transition-all": animate
   })
+
   const ModalContentClasses = classNames({
     'relative -translate-y-80 opacity-0 z-30 transition-all delay-300': true,
     'opacity-100 -translate-y-0 transition-all delay-100': animate
@@ -33,15 +34,10 @@ const Modal = ({ children, open }) => {
     </div>
   )
 
-  
-
   return mounted ?
     createPortal(template, 
       document.querySelector("#modal-portal")) :
     null
 }
-  
 
 export default Modal
-
-
