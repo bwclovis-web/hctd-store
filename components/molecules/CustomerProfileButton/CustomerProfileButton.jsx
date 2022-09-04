@@ -9,10 +9,10 @@ const CustomerProfileButton = () => {
   const { toggleModal, modalOpen } = useContext(AppContext)
   return (
     <>
-      <a href={`https://${process.env.NEXT_PUBLIC_SHOPIFY_STORE_URL}/account/login`}>TEST</a>
-      <Button id="profile" label="not signed in" config="icon" onClick={toggleModal}>
+      <a href={`https://${process.env.NEXT_PUBLIC_SHOPIFY_STORE_URL}/account`}>
+        <span className="sr-only">My account</span>
         <BsPersonCircle size={30}/>
-      </Button>
+      </a>
       {modalOpen && 
         <Modal open={modalOpen}>
           <FormContainer />

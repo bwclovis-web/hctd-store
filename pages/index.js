@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
-
 import { getHomePageProps } from 'lib/shopifyGraphql'
 
 import VendingCalendarComponent from 'components/container/VendingCalender/VendingCalender'
