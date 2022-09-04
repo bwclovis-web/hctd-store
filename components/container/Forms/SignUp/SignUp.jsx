@@ -11,7 +11,6 @@ const SignUpForm = () => {
 
   const handleSubmit = evt => {
     evt.preventDefault()
-    console.log(inputs)
   }
 
 
