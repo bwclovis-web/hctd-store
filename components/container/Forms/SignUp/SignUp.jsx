@@ -9,10 +9,15 @@ const SignUpForm = () => {
     password: ''
   })
 
+  const handleSubmit = evt => {
+    evt.preventDefault()
+    console.log(inputs)
+  }
+
 
   return (
     <div className="bg-white/25 py-4 px-6 rounded">
-      <form id="form">
+      <form id="form" onSubmit={handleSubmit}>
         <fieldset>
           <Input type="text" 
             label="name" 
@@ -41,7 +46,7 @@ const SignUpForm = () => {
             onChange={handleChange}
           />
         </fieldset>
-        <Button>OH HAI</Button>
+        <Button type="submit">OH HAI</Button>
       </form>
     </div>
   )
