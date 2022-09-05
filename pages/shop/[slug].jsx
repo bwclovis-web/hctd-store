@@ -14,6 +14,8 @@ import DisplayGrid from "components/molecules/DisplayGrid/DisplayGrid"
 import Button from "components/atoms/Button/Button"
 import Modal from "components/container/Modal/Modal"
 import DisclaimerContent from "components/molecules/ProductModalContent/DisclaimerContent"
+import data from 'Data/care.json'
+import Accordion from "components/container/Accordion/Accordion"
 
 const SingleProductPage = ({ product }) => {
   const { toast, toggleModal, modalOpen } = useContext(AppCtx)
@@ -22,7 +24,6 @@ const SingleProductPage = ({ product }) => {
   const variant = variants.edges
   const collection = collections.edges[0].node
   const thumbnailArray = images.edges
-  const data = collection.handle !=='dyes' && careData
 
   useEffect(() => {
     setImage({
@@ -62,15 +63,19 @@ const SingleProductPage = ({ product }) => {
           />
           {tags.length ? <TagList tags={tags} /> : null}
           <div className="border-t border-indigo-400 mt-8 pt-3">
-            <p>If you want to learn more on how to use these dyes, please visit our 
-              <Link href="/instructions">
-                <a className="p-1 underline text-indigo-700 hover:bg-indigo-700 hover:text-white rounded transition-colors">tips and tricks page.</a>
-              </Link>
-            </p>
-            <Button onClick={() => toggleModal()} config="link">
-            * Click here to read product disclaimer
-            </Button>
-            
+            {collection.handle ==='dyes' ? 
+              <>
+                <p>If you want to learn more on how to use these dyes, please visit our 
+                  <Link href="/instructions">
+                    <a className="p-1 underline text-indigo-700 hover:bg-indigo-700 hover:text-white rounded transition-colors">tips and tricks page.</a>
+                  </Link>
+                </p>
+                <Button onClick={() => toggleModal()} config="link">
+              * Click here to read product disclaimer
+                </Button>
+              </> :
+              <Accordion data={data}/>
+            }
           </div>
         </section>
       </article>
