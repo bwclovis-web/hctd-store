@@ -1,0 +1,22 @@
+[
+    {   "id": "1",
+        "question" : "Soda Ash",
+        "answer": "<p class='mb-4'>No matter which method you use you will also need Soda Ash. The most common ways to use soda ash are:</p><ul><li> 1. Mix a solution at a ratio of 1 cup soda ash to 1 gallon of water and soak your items for a minimum of 20 minutes (longer is totally fine but I wouldn't leave anything with metal in there for longer than necessary.)</li><li class='pt-4'> 2. Sprinkle soda ash liberally over your garment or on top of the ice.</li></ul> <p>Some people also choose to do both. Always wear PPE while handling soda ash.</p>"
+    },
+    {   "id": "2",
+        "question" : "Ice Dye",
+        "answer": "<p>After folding in your desired way and applying soda ash (unless you opt to add it over the ice) set your item either inside (muck dye) or on a rack over top of (rack dye) a container that is big enough for your needs and won't leak.</p><p> Either apply dye directly onto the item and then put ice over top (DUI, or Dye Under Ice) or put ice directly on the item and sprinkle dye over the ice (DOI, or Dye Over Ice.) Allow your ice to fully melt and then check the underside to make sure it's saturated to your liking (unless you're muck dyeing).</p><p> If you don't see white, or you like the amount of white you see you're good to go. Otherwise add more ice. You can also flip your item and add more ice and dye to the other side, ideally with a bit of extra soda ash.</p><p> When you're happy with how it looks you can either leave it to batch somewhere warm (ideally a minimum of 70°-75°) or slowly pour hot water at around 150°over your item to set the colors. If you use hot water make sure you saturate the whole item and leave it for an hour to cool down. If you don't leave it for 24-48 hours somewhere that it won't dry out.</p>"
+    },
+    {   "id": "3",
+        "question" : "Hot Water Irrigation",
+        "answer": "<p>Start with a completely dry, already tied item placed on a rack. In a separate container mix your dyes with soda ash at a minimum 1:1 ratio. You can mix more soda ash but for very light and very dark colors 1:1 is the best place to start.</p><p> Add 150°-160° water into something that will produce a fine spray (garden sprayers are the most popular choice) and slowly mist your item until it's either fully saturated or, if you want to flip and apply more dye or different dye colors, halfway saturated. Leave until cool enough to handle, 1 hour should be good.</p>"
+    },
+    {   "id": "4",
+        "question" : "Liquid Dye",
+        "answer": "<p>For this you also need squeeze bottles, and you'll want to soak your item in soda ash and wring it out (or if you have a spin only cycle on your washer you can use that instead) until it's just barely damp.</p><p> Mix the dye powder with lukewarm water until all the powder is dissolved. These dyes were formulated with splits, and ice dye in particular, in mind so there is no one true shade you're aiming for here.</p><p> For a lighter shade start with 1 teaspoon to 8oz of water, for a medium shade use 2-3 teaspoons, and for a dark shade use 4 teaspoons. Feel free to play around with the ratios until you find the shade you like best! Once your dyes are all mixed up and in their squeeze bottles, apply them to your item in your desired pattern.</p><p> Make sure to check inside the folds for saturation. Chopsticks are particularly useful for this but you can use whatever you have handy, even your (gloved) fingers. Once you're done, cover your item so it won't dry out and leave it to batch for 24-48 somewhere the temperature is at least 70°.</p>"
+    },
+    {   "id": "5",
+        "question" : "Rinse Out",
+        "answer": "<p>Once your item is done batching it's time to rinse! Start with cold water, rinse until clear. Gradually warm your water up to hot and rinse until clear or clear-ish. Untie and rinse again.</p><p> Put your item(s) in a bin, add a bit of your dish soap or textile detergent and fill with hot water. I like to agitate it a bit here but if you do make sure the gloves you're wearing are kitchen gloves because disposable gloves aren't great at temperature protection.</p><p> Leave it to sit for an hour or so and repeat until the water is mostly clear. Wash with hot water and textile detergent, tumble dry low.</p>"
+    }
+]

@@ -7,6 +7,7 @@ const Button = forwardRef(({ children, size, config, onClick, type, disabled, id
     'font-semibold uppercase transition border-solid border-2 border-inherit rounded-lg drop-shadow group': true,
     'text-m tracking-wide px-2 py-1': size === 'small',
     'text-xl px-6 py-4 tracking-wider': size === 'large',
+    'border-0 text-indigo-700 underline hover:bg-indigo-700 hover:text-white p-2': config === 'link',
     'bg-emerald-600 hover:bg-emerald-700 text-white border-emerald-700': config === 'success',
     'border-0 shadow-none': config === 'svg',
     'border-0 shadow-none p-4 -mr-9': config === 'cart',

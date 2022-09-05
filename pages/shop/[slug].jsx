@@ -6,25 +6,23 @@ import { NextSeo } from 'next-seo'
 import { getSingleProductPageProps, getAllProductsQuery } from 'lib/shopifyGraphql'
 
 import AppCtx from 'provider/AppProvider'
-
-import careData from 'Data/care.json'
-import dyeData from 'Data/dyeCare.json'
-
-import Accordion from 'components/container/Accordion/Accordion'
 import AddToCart from 'components/container/AddToCart/AddToCart'
 import ProductThumbnails from 'components/container/ThumbnailSwap/ThumbnailSwap'
 import Toast from 'components/molecules/Toast/Toast'
 import TagList from "components/molecules/TagList/TagList"
 import DisplayGrid from "components/molecules/DisplayGrid/DisplayGrid"
+import Button from "components/atoms/Button/Button"
+import Modal from "components/container/Modal/Modal"
+import DisclaimerContent from "components/molecules/ProductModalContent/DisclaimerContent"
 
 const SingleProductPage = ({ product }) => {
-  const { toast } = useContext(AppCtx)
+  const { toast, toggleModal, modalOpen } = useContext(AppCtx)
   const { featuredImage, tags, title, descriptionHtml, availableForSale, variants, collections, images } = product
   const [ image, setImage ] = useState({ url: featuredImage.url, alt: featuredImage.altText })
   const variant = variants.edges
   const collection = collections.edges[0].node
   const thumbnailArray = images.edges
-  const data = collection.handle === 'dyes' ? dyeData : careData
+  const data = collection.handle !=='dyes' && careData
 
   useEffect(() => {
     setImage({
@@ -37,6 +35,9 @@ const SingleProductPage = ({ product }) => {
       <NextSeo
         title={`Shop | ${title}`}
       />
+      {modalOpen && <Modal>
+        <DisclaimerContent />
+      </Modal>}
       <article className="content-container mt-10 flex flex-col gap-6 lg:flex-row justify-around border-indigo-100 border-2 py-20 rounded-md lg:w-5/6">
         <section className="lg:w-1/2 lg:mr-8">
           <div>
@@ -60,7 +61,17 @@ const SingleProductPage = ({ product }) => {
             collection={collection.handle}
           />
           {tags.length ? <TagList tags={tags} /> : null}
-          <div className="border-t border-indigo-400 mt-8 pt-3"><Accordion data={data} /></div>
+          <div className="border-t border-indigo-400 mt-8 pt-3">
+            <p>If you want to learn more on how to use these dyes, please visit our 
+              <Link href="/instructions">
+                <a className="p-1 underline text-indigo-700 hover:bg-indigo-700 hover:text-white rounded transition-colors">tips and tricks page.</a>
+              </Link>
+            </p>
+            <Button onClick={() => toggleModal()} config="link">
+            * Click here to read product disclaimer
+            </Button>
+            
+          </div>
         </section>
       </article>
       <section className="bg-indigo-400/30 pb-10 pt-5 mt-12">
