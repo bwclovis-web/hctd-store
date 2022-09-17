@@ -8,7 +8,6 @@ import { AppProvider } from 'provider/AppProvider'
 import Header from 'components/container/Header/Header'
 
 function MyApp({ Component, pageProps, ...appProps }) {
-  console.log(appProps.router.pathname)
   if(appProps.router.pathname === '/coming-soon') {
     return(
       <>
