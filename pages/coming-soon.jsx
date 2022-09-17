@@ -1,7 +1,11 @@
 import Countdown from "components/molecules/Countdown/Countdown"
+import { useEffect } from "react"
 
 const MaintenancePage = () => {
   const endDate = new Date('2022-10-01T03:24:00').getTime()
+  useEffect(() => {
+    window.localStorage.setItem('hctd-visited', true)
+  })
 
   return (
     <section className="lg:flex w-full justify-center items-center h-full bg-gradient-to-tr from-indigo-500 via-yellow-500 to-pink-500 ">
