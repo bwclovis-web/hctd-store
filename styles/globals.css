@@ -10,7 +10,7 @@
         @apply text-lg;
 
         & ~ p {
-            @apply mt-8
+            @apply mt-4
         }
     }
 

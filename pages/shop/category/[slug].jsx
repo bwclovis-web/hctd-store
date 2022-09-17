@@ -23,7 +23,7 @@ const CategoryProducts = ({ collection }) => {
       />
       <article className="container container-condensed">
         <div className="flex justify-between items-center">
-          <h1 className="text-h2-dynamic font-display capitalize">{collection.title}</h1>
+          <h1 className="text-h2-dynamic font-display capitalize my-6">{collection.title}</h1>
           {collection.title.toLowerCase() === 'dyes' && allTags &&
             <Dropdown data={allTags} onChange={handleFilterChange} heading="Filter By Color"/>
           }

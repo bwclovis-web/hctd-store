@@ -16,28 +16,29 @@ const ProductCard = ({ product, type, index, filter }) => {
   }
 
   const cardClasses = classNames({
-    "h-full relative overflow-hidden rounded-md border border-fuchsia-600 shadow-md": true,
+    "h-full relative overflow-hidden rounded-md border border-slate-600 shadow-md": true,
     "scale-0 transition-transform hidden": !filter
   })
   return (
     <li className={cardClasses} key={index}>
       <Link href={`/shop/${nestPath}[slug]`} as={`/shop/${nestPath}${node.handle}`}>
-        <a className="group font-normal">
-          <div className="bg-slate-400/90
-                        h-full w-full
+        <a className="group h-full">
+          <div className="bg-emerald-400/80
+                        h-full w-full border-t-4 border-green-700
                         absolute z-10 translate-y-[86%] 
                         group-hover:translate-y-0
-                        group-hover:bg-sky-400/60
-                        group-focus:bg-sky-400/60
-                        group-hover: backdrop-blur
+                        group-hover:bg-red-300/90
+                        group-focus:bg-red-300/90
+                        group-hover:border-none
+                        group-focus:border-none
                         group-focus:translate-y-0
                         group-focus:items-center
                         group-hover:items-center
                         flex justify-center
                         transition-all"
           >
-            <p className="text-lg
-                            tracking-wider font-medium uppercase
+            <span className="text-lg
+                            tracking-widest font-semibold uppercase
                             rounded-md flex justify-between w-full px-3
                             group-hover:bg-fuchsia-500
                             group-hover:border-2
@@ -61,7 +62,7 @@ const ProductCard = ({ product, type, index, filter }) => {
             >
               <span>{node.title}</span>
               {node.priceRange && renderPriceRange(node.priceRange)}
-            </p>
+            </span>
           </div>
 
           <Image

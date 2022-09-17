@@ -37,7 +37,7 @@ const ShoppingCartComponent = () => {
     <>
       <div aria-hidden={!cartOpen}>
         {cartOpen && <div className="bg-black/70 fixed top-0 h-full w-full z-40 left-0 backdrop-blur-sm transition-all" ref={cartRef} />}
-        <section className={CartClasses}>
+        <section className={CartClasses} id="cart">
           <div className="flex items-center justify-between px-8 py-2 bg-white/20">
             <p className="text-lg uppercase">Items in cart</p>
             <span className="bg-blue-400 rounded-full w-8 h-8 flex justify-center items-center">

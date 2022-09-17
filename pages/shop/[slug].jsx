@@ -53,19 +53,21 @@ const SingleProductPage = ({ product }) => {
             {thumbnailArray.length && <ProductThumbnails thumbnails={thumbnailArray} action={setImage} />}
           </div>
         </section>
-        <section className="lg:w-3/5">
-          <h1 className="text-h2-dynamic font-display leading-tight mb-2">{title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} className="text-lg" />
-          <AddToCart
-            variant={variant}
-            availableForSale={availableForSale}
-            collection={collection.handle}
-          />
-          {tags.length ? <TagList tags={tags} /> : null}
-          <div className="border-t border-indigo-400 mt-8 pt-3">
+        <section className="lg:w-3/5 flex flex-col justify-between">
+          <div>
+            <h1 className="text-h2-dynamic font-display leading-tight mb-2">{title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} className="text-lg" />
+            <AddToCart
+              variant={variant}
+              availableForSale={availableForSale}
+              collection={collection.handle}
+            />
+            {tags.length ? <TagList tags={tags} /> : null}
+          </div>
+          <div className="border-t border-indigo-400 mt-8 pt-3 flex flex-col justify-around min-h-max">
             {collection.handle ==='dyes' ? 
               <>
-                <p>If you want to learn more on how to use these dyes, please visit our 
+                <p className="mb-10">If you want to learn more on how to use these dyes, please visit our 
                   <Link href="/instructions">
                     <a className="p-1 underline text-indigo-700 hover:bg-indigo-700 hover:text-white rounded transition-colors">tips and tricks page.</a>
                   </Link>

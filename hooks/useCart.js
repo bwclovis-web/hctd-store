@@ -1,3 +1,4 @@
+import { setFocusTrap } from 'lib/trapFocus'
 import { useState, useEffect } from 'react'
 
 const UseCart = () => {
@@ -8,14 +9,24 @@ const UseCart = () => {
   }
 
   useEffect(() => {
+    const cart = document.getElementById('cart')
+    setTimeout(() => {
+      setFocusTrap(cart, 'hctd-cart')
+    }, 1000)
+  }, [])
+
+  useEffect(() => {
     const root = document.documentElement
+    const cart = document.getElementById('cart')
     if (cartOpen) {
       const trigger = document.getElementById('cart-close')
       root.classList.add('open')
+      setFocusTrap(cart)
       trigger?.focus()
     } else {
       const element = cartTrigger && document.getElementById(cartTrigger)
       root.classList.remove('open')
+      setFocusTrap(cart, 'hctd-cart')
       if(element) {
         element.focus()
         setCartTrigger('')
