@@ -11,11 +11,11 @@ const ProductThumbnails = ({ thumbnails, action }) => {
   }
 
   return (
-    <div className="flex bg-red-50 w-full h-full justify-start gap-2">
+    <div className="flex bg-red-50 w-full h-full justify-start gap-2 px-2">
       {thumbnails.map(img => (
         <button
           ref={buttonRef}
-          className="h-40 w-1/5 overflow-hidden"
+          className="h-32 md:h-24 xl:h-40 w-1/5 overflow-hidden"
           key={img.node.id}
           data-url={img.node.url}
           data-caption={img.node.altText}

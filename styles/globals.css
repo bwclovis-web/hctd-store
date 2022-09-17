@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+    h2 {
+        @apply leading-none mb-4
+    }
     p, li {
         @apply text-lg;
 

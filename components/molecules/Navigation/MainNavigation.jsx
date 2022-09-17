@@ -7,19 +7,18 @@ const MainNavigation = () => (
       <Link href="/">
         <a className="text-h3-dynamic font-display">Happy Cat Tie Dye</a>
       </Link>
-      <div className="flex content-center items-center mt-1 md:mt-0">
-        <ul className="flex justify-around">
-          {
-            navData.map(item => (
-              <li key={item.id} className="pr-3 lg:pr-4 last:pr-0">
-                <Link href={item.src}>
-                  <a className="uppercase py-2">{item.title}</a>
-                </Link>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
+
+      <ul className="flex justify-between my-1 md:mt-0">
+        {
+          navData.map(item => (
+            <li key={item.id} className="pr-4 last:pr-0">
+              <Link href={item.src}>
+                <a className="uppercase py-2 text-sm sm:text-base">{item.title}</a>
+              </Link>
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </nav>
 )
