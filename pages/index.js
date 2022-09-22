@@ -21,7 +21,7 @@ const HomePage = ({ products, collections }) => {
         title="Home Page"
         description="Custom made tie dye clothing, accessories, and dyes."
       />
-      <HeroComponent src="/images/rainbow.jpg" title="home" />
+      <HeroComponent src="/images/rainbow.jpg" title="Welcome Home" heading="Clothing & Supplies" />
 
       <section>
         <div className="container py-dynamic-container-y">

@@ -19,6 +19,7 @@ module.exports = {
       fontSize: {
         'h3-dynamic': 'clamp(3.5rem, 6vw, 4.5rem)',
         'h2-dynamic': 'clamp(4rem, 6vw, 5.4rem)',
+        'h1-dynamic': 'clamp(4.4rem, 6vw, 6.4rem)',
       },
     },
   },

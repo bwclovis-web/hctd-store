@@ -13,7 +13,7 @@ const ContactPage = () => (
       description="Tye die clothing and dye questions answered."
     />
     <div>
-      <HeroComponent src={'/images/contact.jpg'} size="70" title="Questions?" heading="Contact Us" />
+      <HeroComponent src={'/images/contact.jpg'} size="70" title="Contact Happy Cat Tie Dye" heading="Have a question? Check the FAQ's" />
 
       <div className="flex py-dynamic-container-y content-container gap-8 flex-col lg:flex-row">
         <section className="lg:w-1/2 xl:w-3/5 border-r-2 pr-6 mr-6">

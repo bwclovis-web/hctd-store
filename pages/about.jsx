@@ -8,7 +8,7 @@ const AboutPage = () => (
       title="About Us"
       description="a brief history on happy cat tie dye and it founders."
     />
-    <HeroComponent src={`/images/dark.jpg`} title="About Us" heading="who we are" />
+    <HeroComponent src={`/images/dark.jpg`} title="About Happy Cat Tie Dye" heading="Meet the founder" />
     <section className="py-dynamic-container-y content-container">
       <h2 className="font-display text-h2-dynamic"> OH HAI</h2>
       <div className="about">

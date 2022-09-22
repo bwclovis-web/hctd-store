@@ -1,7 +1,7 @@
 import Image from "next/image"
 
 const HeroComponent = ({ src, title, heading }) => (
-  <div className="flex relative w-full justify-center items-center h-[70vh]">
+  <div className="flex relative w-full justify-end items-center h-[70vh]">
     <Image
       alt={''}
       src={src}
@@ -10,9 +10,9 @@ const HeroComponent = ({ src, title, heading }) => (
       placeholder="blur"
       blurDataURL={`/_next/image?url=${src}&w=16&q=1`}
     />
-    <div className="absolute bg-blue-600/50 p-20 w-2/3 flex justify-center flex-col items-center">
-      <h1 className="">{title}</h1>
-      <p className="call-out">{heading}</p>
+    <div className="relative bg-violet-800/70 text-slate-100 backdrop-blur-sm p-6 lg:p-8 xl:p-20 w-full lg:w-1/2 xl:w-1/3 flex justify-center flex-col items-start">
+      <p className="text-2xl lg:text-3xl font-black border-b-4 pb-3 mb-6">{heading}</p>
+      <h1 className="text-h1-dynamic font-display leading-none tracking-wide">{title}</h1>
     </div>
   </div>
 )
