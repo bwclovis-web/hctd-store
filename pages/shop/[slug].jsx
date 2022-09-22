@@ -85,7 +85,7 @@ const SingleProductPage = ({ product }) => {
       </article>
       <section className="bg-indigo-400/30 pb-10 pt-5 mt-12">
         <div className="container">
-          <h2 className="text-h3-dynamic font-display mb-2">
+          <h2 className="text-h3-dynamic font-display mb-4">
             <Link href={`/shop/category/${collection.handle}`}>
               <a className="underline">{`Other items in ${collection.title}`}</a>
             </Link>

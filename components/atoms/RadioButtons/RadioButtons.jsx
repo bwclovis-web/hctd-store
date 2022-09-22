@@ -19,7 +19,7 @@ const RadioSelect = ({ data, changeAction }) => {
         onChange={evt => handleVariationChange(evt)}
       />
       <label htmlFor={data.id}>
-        <span>{data.selectedOptions[0].value}</span>
+        <span className="leading-none p-0 m-0">{data.selectedOptions[0].value}</span>
       </label>
     </div>
   )

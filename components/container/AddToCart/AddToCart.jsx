@@ -11,8 +11,11 @@ const AddToCart = ({ variant, availableForSale }) => {
   const { setCartDisplayPrice, cartDisplayPrice } = useContext(ShopContext)
 
   useEffect(() => {
+    setVariationId(variant[0].node.id)
+  }, [variant[0].node.id])
+
+  useEffect(() => {
     variationId && setCartDisplayPrice(getPriceByVariantId(variant, variationId))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [variationId])
 
   return (
