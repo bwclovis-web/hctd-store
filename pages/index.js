@@ -31,11 +31,11 @@ const HomePage = ({ products, collections }) => {
 
       <DyeShopBanner />
 
-      <section className="container py-4 text-2xl tracking-wider text-center">
-        <p>
+      <section className="container py-6 italic text-2xl tracking-wider text-center">
+        <p className="text-xl font-semibold">
           Hey we just added
           <Link href={`shop/${firstProduct.slug}`}>
-            <a className="px-1 bg-blue-600 rounded text-slate-100 mx-1 font-black">
+            <a className="p-1 bg-blue-600 not-italic rounded text-slate-100 mx-1 font-black">
               {firstProduct.title}
             </a>
           </Link>

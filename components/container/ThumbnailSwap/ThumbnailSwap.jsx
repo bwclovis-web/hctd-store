@@ -21,6 +21,7 @@ const ProductThumbnails = ({ thumbnails, action }) => {
           data-caption={img.node.altText}
           onClick={evt => handleThumbnailClick(evt)}
         >
+          <span className="sr-only">Switch to view {img.node.altText}</span>
           <Image
             alt=""
             width={800}

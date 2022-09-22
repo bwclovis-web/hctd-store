@@ -10,8 +10,7 @@ const DisplayGrid = ({ data, cols, type, title, cat, filter, body }) => {
   })
 
   const containerClasses = classNames({
-    "relative": true,
-    "pb-12": data.length >= 4 && cat
+    "relative mb-14 xl:mb-28 last-of-type:mb-0": true
   })
 
   if(!data.length) {

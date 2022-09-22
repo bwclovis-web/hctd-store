@@ -46,8 +46,10 @@ const SingleProductPage = ({ product }) => {
               src={image.url}
               alt={image.alt}
               layout="responsive"
-              width={500}
-              height={600}
+              width={400}
+              height={400}
+              placeholder="blur"
+              blurDataURL={`/_next/image?url=${image.url}&w=16&q=1`}
             />
             <p className="text-base text-center py-2 text-slate-600 capitalize italic">Displaying {image.alt}</p>
             {thumbnailArray.length && <ProductThumbnails thumbnails={thumbnailArray} action={setImage} />}

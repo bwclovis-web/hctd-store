@@ -19,13 +19,20 @@ const ProductCard = ({ product, type, index, filter }) => {
     "h-full relative overflow-hidden rounded-md border border-slate-600 shadow-md": true,
     "scale-0 transition-transform hidden": !filter
   })
+
+  const spanClasses = classNames({
+    'inline-block mx-auto': !node.priceRange
+  })
   return (
     <li className={cardClasses} key={index}>
       <Link href={`/shop/${nestPath}[slug]`} as={`/shop/${nestPath}${node.handle}`}>
         <a className="group h-full">
-          <div className="bg-emerald-400/80
-                        h-full w-full border-t-4 border-green-700
-                        absolute z-10 translate-y-[86%] 
+          <div className="bg-orange-200/80
+                        h-full w-full border-t-4 border-orange-700
+                        absolute z-10 translate-y-[84%]
+                        lg:translate-y-[88%]
+                        xl:translate-y-[76%]
+                        2xl:translate-y-[86%]
                         group-hover:translate-y-0
                         group-hover:bg-red-300/90
                         group-focus:bg-red-300/90
@@ -50,7 +57,7 @@ const ProductCard = ({ product, type, index, filter }) => {
                             group-hover:p-5
                             group-hover:flex-col
                             group-focus:flex-col
-                            group-hover:text-white
+                            group-hover:text-slate-200
                             group-focus:text-white
                             group-hover:shadow
                             group-hover:hover:bg-fuchsia-700
@@ -60,7 +67,7 @@ const ProductCard = ({ product, type, index, filter }) => {
                             group-focus:p-3
                             group-focus:shadow"
             >
-              <span>{node.title}</span>
+              <span className={spanClasses}>{node.title}</span>
               {node.priceRange && renderPriceRange(node.priceRange)}
             </span>
           </div>
@@ -72,6 +79,8 @@ const ProductCard = ({ product, type, index, filter }) => {
             height={600}
             width={960}
             objectFit="cover"
+            placeholder="blur"
+            blurDataURL={`/_next/image?url=${imageUrl}&w=16&q=1`}
           />
         </a>
       </Link>

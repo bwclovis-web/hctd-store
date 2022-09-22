@@ -11,11 +11,13 @@ const UtilNav = () => (
       <ul className="border-l-2 ml-5 border-indigo-100 pl-5 flex gap-3">
         <li>
           <a href="https://www.facebook.com/groups/1259074817923302">
+            <span className="sr-only">Happy cat tie dye facebook group</span>
             <GrFacebook size={25}/>
           </a>
         </li>
         <li>
           <a href="https://www.facebook.com/groups/1259074817923302">
+            <span className="sr-only">Happy cat tie dye instagram</span>
             <GrInstagram size={25}/>
           </a>
         </li>

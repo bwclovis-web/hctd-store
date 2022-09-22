@@ -23,14 +23,16 @@ const ShoppingCartItem = ({ data }) => {
   return(
     <li className="flex content-start w-full mb-4">
       <div className="bg-white/20 flex w-full justify-between items-center py-2 px-3 rounded">
-        <div className="flex flex-col">
-          <span className="text-xl tracking-wider">{data.title}</span>
-          <div className="flex flex-col mr-4">
-            {dyeTitle && <span className="text-base">{attrs.title.value}</span>}
-            <span className="text-md mt-2">${attrs.price.value}</span>
+        <div className="flex justify-between items-center w-1/2">
+          <div className="flex flex-col">
+            <span className="text-xl tracking-wider">{data.title}</span>
+            <div className="flex flex-col mr-4">
+              {dyeTitle && <span className="text-base">{attrs.title.value}</span>}
+              <span className="text-md mt-2">${attrs.price.value}</span>
+            </div>
           </div>
+          {dyeTitle && <QuantityControls action={updateItemQuantity} quantity={itemQuantity} />}
         </div>
-        {dyeTitle && <QuantityControls action={updateItemQuantity} quantity={itemQuantity} />}
         <div className="flex items-center justify-between gap-5">
           <div className="cart-image">
             <Image alt="" src={image.src} width={60} height={60}/>

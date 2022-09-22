@@ -19,29 +19,31 @@ const CartWithItems = () => {
   }
 
   return (
-    <div className="px-5">
-      <ul className="flex justify-start flex-col py-6">
-        {checkout.lineItems.map(item => <ShoppingCartItem data={item} key={item.id} />)}
-      </ul>
-      <div className="checkout-details">
-        <p>
-          <span>Subtotal: </span>
-          <span>{formatPrice(checkout.subtotalPrice, "USD")}</span>
-        </p>
-        <p>
-          <span>Taxes: </span>
-          <span>{formatPrice(checkout.totalTax, "USD")}</span>
-        </p>
-        <p>
-          <span>Shipping(est): </span>
-          <span>{formatPrice(checkout?.shippingLine?.price, "USD")}</span>
-        </p>
-        <p>
-          <span>Total at checkout: </span>
-          <span>{formatPrice(checkout.totalPrice, "USD")}</span>
-        </p>
+    <div className="h-full">
+      <div className="flex flex-col pb-20 overflow-y-auto h-full px-4 ">
+        <ul className="flex justify-start flex-col py-6">
+          {checkout.lineItems.map(item => <ShoppingCartItem data={item} key={item.id} />)}
+        </ul>
+        <div className="checkout-details h-max pb-20">
+          <p>
+            <span>Subtotal: </span>
+            <span>{formatPrice(checkout.subtotalPrice, "USD")}</span>
+          </p>
+          <p>
+            <span>Taxes: </span>
+            <span>{formatPrice(checkout.totalTax, "USD")}</span>
+          </p>
+          <p>
+            <span>Shipping(est): </span>
+            <span>{formatPrice(checkout?.shippingLine?.price, "USD")}</span>
+          </p>
+          <p>
+            <span>Total at checkout: </span>
+            <span>{formatPrice(checkout.totalPrice, "USD")}</span>
+          </p>
+        </div>
       </div>
-      <div className="flex justify-between items-center fixed bg-red-400 min-w-full left-0 bottom-0 px-8 py-4">
+      <div className="flex justify-between items-center fixed bg-red-400 min-w-full left-0 bottom-0 px-3 py-4">
         <Button config="secondary" onClick={handleCheckout} size="small" disabled={loading}>GO TO CHECKOUT</Button>
         <Link href={'/shop'} >
           <a onClick={() => toggleCart()} className="underline underline-offset-4">Continue Shopping</a>
