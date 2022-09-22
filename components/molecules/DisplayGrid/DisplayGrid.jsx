@@ -2,7 +2,7 @@ import Link from "next/link"
 import classNames from "classnames"
 import ProductCard from "../ProductCard/ProductCard"
 
-const DisplayGrid = ({ data, cols, type, title, cat, filter }) => {
+const DisplayGrid = ({ data, cols, type, title, cat, filter, body }) => {
   const GridClasses = classNames({
     'grid grid-cols-1 md:grid-cols-2 gap-4': true,
     'xl:grid-cols-4': cols === 4,

@@ -18,7 +18,7 @@ const AccordionItem = ({ id, question, answer }) => {
   return (
     <li key={id}>
       <button
-        className="relative flex items-center text-left text-3xl py-3 tracking-wide gap-4 group w-full font-black"
+        className="relative flex items-center text-left text-2xl py-3 tracking-wide gap-4 group w-full font-bold"
         aria-expanded={isActive}
         aria-controls={id}
         id={`q-${id}`}
