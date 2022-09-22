@@ -17,9 +17,9 @@ module.exports = {
         'dynamic-container-x': 'clamp(1rem, 3vw, 2rem)',
       },
       fontSize: {
-        'h3-dynamic': 'clamp(3.5rem, 6vw, 4.5rem)',
+        'h3-dynamic': 'clamp(3rem, 6vw, 4rem)',
         'h2-dynamic': 'clamp(4rem, 6vw, 5.4rem)',
-        'h1-dynamic': 'clamp(4.4rem, 6vw, 6.4rem)',
+        'h1-dynamic': 'clamp(4.4rem, 6vw, 7.4rem)',
       },
     },
   },

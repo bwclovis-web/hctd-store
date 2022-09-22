@@ -6,6 +6,7 @@ import { CartProvider } from 'provider/ShopProvider'
 import { AppProvider } from 'provider/AppProvider'
 
 import Header from 'components/container/Header/Header'
+import Footer from 'components/container/Footer/Footer'
 
 function MyApp({ Component, pageProps, ...appProps }) {
   if(appProps.router.pathname === '/coming-soon') {
@@ -24,9 +25,10 @@ function MyApp({ Component, pageProps, ...appProps }) {
       <AppProvider>
         <CartProvider>
           <Header />
-          <main id="main">
+          <main id="main" className="min-h-full">
             <Component {...pageProps} />
           </main>
+          <Footer />
         </CartProvider>
       </AppProvider>
     </>

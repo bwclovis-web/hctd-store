@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 @layer base {
-    html,
+    /* html,
     body,
     #__next,
     #main {
-        @apply h-full
-    }
+        @apply min-h-[calc(100vh-280px)] h-full
+    } */
     h2 {
         @apply leading-none mb-4
     }
