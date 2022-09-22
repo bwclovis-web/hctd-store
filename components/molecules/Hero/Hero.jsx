@@ -7,6 +7,8 @@ const HeroComponent = ({ src, title, heading }) => (
       src={src}
       layout="fill"
       objectFit="cover"
+      placeholder="blur"
+      blurDataURL={`/_next/image?url=${src}&w=16&q=1`}
     />
     <div className="absolute bg-blue-600/50 p-20 w-2/3 flex justify-center flex-col items-center">
       <h1 className="">{title}</h1>
