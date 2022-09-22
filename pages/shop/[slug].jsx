@@ -83,7 +83,7 @@ const SingleProductPage = ({ product }) => {
           </div>
         </section>
       </article>
-      <section className="bg-indigo-400/30 pb-10 pt-5 mt-12">
+      {/* <section className="bg-indigo-400/30 pb-10 pt-5 mt-12">
         <div className="container">
           <h2 className="text-h3-dynamic font-display mb-4">
             <Link href={`/shop/category/${collection.handle}`}>
@@ -92,7 +92,7 @@ const SingleProductPage = ({ product }) => {
           </h2>
           <DisplayGrid data={collection.products.edges} cols={4} filter={''}/>
         </div>
-      </section>
+      </section> */}
       <Toast item={product} openToast={toast} />
     </div>
   )

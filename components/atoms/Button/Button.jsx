@@ -8,7 +8,7 @@ const Button = forwardRef(({ children, size, config, onClick, type, disabled, id
     'text-m tracking-wide px-2 py-1': size === 'small',
     'text-xl px-6 py-4 tracking-wider': size === 'large',
     'border-0 text-indigo-700 underline hover:bg-indigo-700 hover:text-white p-2': config === 'link',
-    'bg-emerald-600 hover:bg-emerald-700 text-white border-emerald-700': config === 'success',
+    'bg-emerald-400 hover:bg-emerald-600 text-green-900 hover:text-emerald-200 border-emerald-700': config === 'success',
     'border-0 shadow-none': config === 'svg',
     'border-0 shadow-none p-4 -mr-9': config === 'cart',
     'bg-indigo-500 border-indigo-700 hover:bg-indigo-700 hover:border-indigo-500 text-white shadow-xl active:translate-y-4 active:shadow-none': config === 'default',

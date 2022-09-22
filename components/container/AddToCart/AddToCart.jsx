@@ -23,7 +23,7 @@ const AddToCart = ({ variant, availableForSale }) => {
       <div className="flex flex-col justify-between items-start lg:items-center lg:flex-row">
         <p className="font-display pb-3.5 flex items-start">
           <span className="text-3xl pr-2">Price: </span>
-          <span className="text-6xl text-indigo-900" aria-live="polite">
+          <span className="text-6xl text-indigo-800" aria-live="polite">
             {cartDisplayPrice}
           </span>
         </p>

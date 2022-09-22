@@ -24,7 +24,7 @@ const AddToCartButton = ({ varId, available }) => {
       itemStatus={itemStatus}
       disabled={loading || disableButton || !varId}
       size="large"
-      config="default"
+      config="success"
       id="add-to-cart"
     >
       {buttonText}

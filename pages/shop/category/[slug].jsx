@@ -7,6 +7,7 @@ import DisplayGrid from 'components/molecules/DisplayGrid/DisplayGrid'
 import { getAllTags } from 'components/molecules/DisplayGrid/utility'
 import { useState } from 'react'
 import Dropdown from 'components/atoms/Dropdown/Dropdown'
+import HeroComponent from 'components/molecules/Hero/Hero'
 
 const CategoryProducts = ({ collection }) => {
   const [ filter, setFilter ] = useState('')
@@ -21,9 +22,9 @@ const CategoryProducts = ({ collection }) => {
       <NextSeo
         title={`Shop | Category | ${collection.title}}`}
       />
-      <article className="container container-condensed">
+      <HeroComponent src="/images/swirl.jpg" title={collection.title} heading="Shopping by category:"/>
+      <article className="container p-dynamic-container-y">
         <div className="flex justify-between items-center">
-          <h1 className="text-h2-dynamic font-display capitalize my-6">{collection.title}</h1>
           {collection.title.toLowerCase() === 'dyes' && allTags &&
             <Dropdown data={allTags} onChange={handleFilterChange} heading="Filter By Color"/>
           }
