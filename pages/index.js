@@ -20,6 +20,9 @@ const HomePage = ({ products, collections }) => {
       <NextSeo
         title="Home Page"
         description="Custom made tie dye clothing, accessories, and dyes."
+        additionalMetaTags={[{
+          keywords: "happy cat, happy cat tie dye,the happy cat tie dye, fabric, dye, textile, paint, tie, dyeing, t-shirt, Dress, tie-dye, tie dye, fabric dye, dye for fabric, fiber art, wearable art, natural dye, embellish"
+        }]}
       />
       <HeroComponent src="/images/rainbow.jpg" title="Welcome Home" heading="Clothing & Supplies" />
 

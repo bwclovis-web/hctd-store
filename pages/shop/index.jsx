@@ -10,7 +10,7 @@ const ShopPage = ({ dyes, tops, bottoms, outerwear, accessories }) => (
       title="Current Shop Items"
       description="Custom tye die clothing and dyes for sale."
     />
-    <HeroComponent src="/images/rainbow.jpg" title="The Store" heading="Clothing and Dyes"/>
+    <HeroComponent src="/images/swirl.jpg" title="The Store" heading="Clothing and Dyes"/>
     <section>
       <div className="container py-dynamic-container-y">
         <DisplayGrid data={dyes} cat="dyes" cols={4} title="new dyes" filter={''}/>

@@ -16,7 +16,7 @@ const ContactPage = () => (
       <HeroComponent src={'/images/contact.jpg'} size="70" title="Contact Happy Cat Tie Dye" heading="Have a question? Check the FAQ's" />
 
       <div className="flex py-dynamic-container-y content-container gap-8 flex-col lg:flex-row">
-        <section className="lg:w-1/2 xl:w-3/5 border-r-2 pr-6 mr-6">
+        <section className="lg:w-1/2 xl:w-3/5 lg:border-r-2 pr-6 mr-6">
           <div>
             <h2 className="font-display text-h3-dynamic mb-10">Frequently Asked Questions</h2>
             <Accordion data={data} />

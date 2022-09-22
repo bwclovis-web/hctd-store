@@ -2,7 +2,7 @@ import Link from "next/link"
 import classNames from "classnames"
 import ProductCard from "../ProductCard/ProductCard"
 
-const DisplayGrid = ({ data, cols, type, title, cat, filter, body }) => {
+const DisplayGrid = ({ data, cols, type, title, cat, filter }) => {
   const GridClasses = classNames({
     'grid grid-cols-1 md:grid-cols-2 gap-4': true,
     'xl:grid-cols-4': cols === 4,
@@ -10,13 +10,13 @@ const DisplayGrid = ({ data, cols, type, title, cat, filter, body }) => {
   })
 
   const containerClasses = classNames({
-    "relative mb-14 xl:mb-28 last-of-type:mb-0": true
+    "relative mb-12 last-of-type:mb-0": true,
+    "pb-12": data.length >= 4 && cat
   })
 
   if(!data.length) {
     return
   }
-
 
   return (
     <div className={containerClasses}>
