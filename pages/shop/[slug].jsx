@@ -58,7 +58,7 @@ const SingleProductPage = ({ product }) => {
         <section className="lg:w-3/5 flex flex-col justify-between">
           <div>
             <h1 className="text-h2-dynamic font-display leading-tight mb-2">{title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} className="text-lg" />
+            <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} className="text-base" />
             <AddToCart
               variant={variant}
               availableForSale={availableForSale}

@@ -7,9 +7,9 @@ const RelatedTagPage= ({ products, title }) => (
     <NextSeo
       title={`Shop | Tags | ${title}`}
     />
-    <article className="container container-condensed">
+    <article className="container container-condensed min-h-screen">
       <h1 className="text-h2-dynamic font-display capitalize">All things {title}</h1>
-      <DisplayGrid data={products} filter={''}/>
+      <DisplayGrid data={products} filter={''} cols={4}/>
     </article>
   </>
 )
