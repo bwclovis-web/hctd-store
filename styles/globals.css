@@ -7,7 +7,7 @@
     body,
     #__next,
     #main {
-        @apply min-h-[calc(100vh-280px)] h-full
+        @apply min-h-screen
     }
     h2 {
         @apply leading-none mb-4
