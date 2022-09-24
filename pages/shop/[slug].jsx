@@ -25,8 +25,6 @@ const SingleProductPage = ({ product }) => {
   const collection = collections.edges[0].node
   const thumbnailArray = images.edges
 
-  console.log(`%c  variant`, 'background: #0047ab; color: #fff; padding: 2px:', variant )
-
   useEffect(() => {
     setImage({
       url: featuredImage.url, alt: featuredImage.altText
