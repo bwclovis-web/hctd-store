@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 const TagList = ({ tags }) => (
-  <div className="mt-6">
+  <div className="mt-10">
     <span>This product has been tagged:</span>
     <ul className="mt-2 flex gap-3">
       {tags.map(tag => (

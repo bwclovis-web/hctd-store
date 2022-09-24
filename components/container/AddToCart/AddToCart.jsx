@@ -19,7 +19,7 @@ const AddToCart = ({ variant, availableForSale }) => {
   }, [variationId])
 
   return (
-    <div className="mt-8 mb-6 pt-8 border-t-2 border-indigo-400">
+    <div className="mt-8 mb-6 pt-10 border-t-2 border-indigo-400">
       <div className="flex flex-col justify-between items-start lg:items-center lg:flex-row">
         <p className="font-display pb-3.5 flex items-start">
           <span className="text-3xl pr-2">Price: </span>
@@ -33,7 +33,7 @@ const AddToCart = ({ variant, availableForSale }) => {
           }
         </div>
       </div>
-      <div className="my-4">
+      <div className="mt-1">
         <AddToCartButton
           varId={variationId}
           available={availableForSale}

@@ -1,14 +1,14 @@
 import { getAllCurrentTags, getAllItemsByTag } from "../../../lib/shopifyGraphql"
 import { NextSeo } from "next-seo"
 import DisplayGrid from "../../../components/molecules/DisplayGrid/DisplayGrid"
-
+import HeroComponent from 'components/molecules/Hero/Hero'
 const RelatedTagPage= ({ products, title }) => (
   <>
     <NextSeo
       title={`Shop | Tags | ${title}`}
     />
-    <article className="container container-condensed min-h-screen">
-      <h1 className="text-h2-dynamic font-display capitalize">All things {title}</h1>
+    <HeroComponent src="/images/tags.jpg" title={title} heading="Shopping All Things"/>
+    <article className="container container-condensed p-dynamic-container-y min-h-screen">
       <DisplayGrid data={products} filter={''} cols={4}/>
     </article>
   </>

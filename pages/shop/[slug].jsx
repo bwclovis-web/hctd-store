@@ -57,8 +57,8 @@ const SingleProductPage = ({ product }) => {
         </section>
         <section className="lg:w-3/5 flex flex-col justify-between">
           <div>
-            <h1 className="text-h2-dynamic font-display leading-tight mb-2">{title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} className="text-base" />
+            <h1 className="text-h2-dynamic font-display leading-tight">{title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} className="text-base mt-4" />
             <AddToCart
               variant={variant}
               availableForSale={availableForSale}
@@ -66,7 +66,7 @@ const SingleProductPage = ({ product }) => {
             />
             {tags.length ? <TagList tags={tags} /> : null}
           </div>
-          <div className="border-t border-indigo-400 mt-8 pt-3 flex flex-col justify-around min-h-max">
+          <div className="border-t border-indigo-400 mt-8 pt-4 flex flex-col justify-around min-h-max">
             {collection.handle ==='dyes' ? 
               <>
                 <p>If you want to learn more on how to use these dyes, please visit our 
@@ -76,7 +76,7 @@ const SingleProductPage = ({ product }) => {
                 </p>
                 {title.toLowerCase() !== 'jars' && 
                   <p>
-                    We ship dyes in mylar, if you want jars, please visit the <Link href="/shop/jars"><a className="text-link">jars page</a></Link> and add the appropriate sized jar(s) to your order.
+                    We ship dyes in heat sealed mylar bags. If you want jars, please visit the <Link href="/shop/jars"><a className="text-link">jars page</a></Link> and add the appropriate sized jar(s) to your order.
                   </p>
                 }
                 <span className="mt-10 text-center">

@@ -71,7 +71,7 @@
         }
     }
     .ghost-link {
-        @apply text-white border-4 text-xl rounded font-semibold p-3 uppercase tracking-wide bg-black/30 hover:underline;
+        @apply text-white border-4 text-xl rounded font-semibold p-3 uppercase tracking-wide bg-black/30 hover:underline hover:bg-white/20 transition-colors;
 
         $._small {
             @apply text-base
