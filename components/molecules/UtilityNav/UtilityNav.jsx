@@ -16,7 +16,7 @@ const UtilNav = () => (
           </a>
         </li>
         <li>
-          <a href="https://www.facebook.com/groups/1259074817923302">
+          <a href="https://www.instagram.com/happy_cat_tie_dye/">
             <span className="sr-only">Happy cat tie dye instagram</span>
             <GrInstagram size={25}/>
           </a>

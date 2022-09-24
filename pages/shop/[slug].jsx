@@ -52,7 +52,7 @@ const SingleProductPage = ({ product }) => {
               blurDataURL={`/_next/image?url=${image.url}&w=16&q=1`}
             />
             <p className="text-base text-center py-2 text-slate-600 capitalize italic">Displaying {image.alt}</p>
-            {thumbnailArray.length && <ProductThumbnails thumbnails={thumbnailArray} action={setImage} />}
+            {thumbnailArray.length > 1 && <ProductThumbnails thumbnails={thumbnailArray} action={setImage} />}
           </div>
         </section>
         <section className="lg:w-3/5 flex flex-col justify-between">
@@ -69,11 +69,16 @@ const SingleProductPage = ({ product }) => {
           <div className="border-t border-indigo-400 mt-8 pt-3 flex flex-col justify-around min-h-max">
             {collection.handle ==='dyes' ? 
               <>
-                <p className="mb-10">If you want to learn more on how to use these dyes, please visit our 
+                <p>If you want to learn more on how to use these dyes, please visit our 
                   <Link href="/instructions">
                     <a className="p-1 underline text-indigo-700 hover:bg-indigo-700 hover:text-white rounded transition-colors">tips and tricks page.</a>
                   </Link>
                 </p>
+                {title.toLowerCase() !== 'jars' && 
+                  <p className="mb-10">
+                    We ship dyes in mylar, if you want jars, please visit the jars page and add the appropriate sized jar(s) to your order.
+                  </p>
+                }
                 <Button onClick={() => toggleModal()} config="link">
               * Click here to read product disclaimer
                 </Button>
