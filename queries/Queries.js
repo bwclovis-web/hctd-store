@@ -22,6 +22,7 @@ export const singleProductPageQuery = handle => `{
         edges {
           node {
             id
+            availableForSale
             selectedOptions {
               name
               value

@@ -49,6 +49,11 @@
                     @apply bg-emerald-700 border-green-600 text-white
                 }
             }
+            &[aria-disabled = true] {
+                + label span {
+                    @apply bg-slate-200 text-slate-400 border-slate-300 cursor-default
+                }
+            }
         }
     }
 }

@@ -14,61 +14,34 @@ const ProductCard = ({ product, type, index, filter }) => {
     const minPrice = prices.minVariantPrice.amount
     return minPrice === maxPrice ? <span>{formatPrice(minPrice, "USD")}</span> : <span>{formatPrice(minPrice, "USD")} - {formatPrice(maxPrice, "USD")}</span>
   }
-
   const cardClasses = classNames({
     "h-full relative overflow-hidden rounded border border-slate-600 shadow-md": true,
     "scale-0 transition-transform hidden": !filter
   })
-
   const spanClasses = classNames({
     'inline-block mx-auto': !node.priceRange
   })
+  const innerCardClasses = classNames({
+    "h-full w-full absolute z-10 flex justify-center transition-all": true,
+    "bg-orange-200/80  border-t-4 border-orange-700 translate-y-[84%] lg:translate-y-[88%] xl:translate-y-[76%] 2xl:translate-y-[86%] group-hover:translate-y-0 group-hover:bg-red-300/90 group-focus:bg-red-300/90 group-hover:border-none group-focus:border-none group-focus:translate-y-0 group-focus:items-center group-hover:items-center ": node.availableForSale,
+    "bg-slate-800/90 translate-y-0 border-t-0 items-center": !node.availableForSale
+  })
+  const cardSpanClasses = classNames({
+    "text-lg tracking-widest font-semibold uppercase": true,
+    "rounded flex justify-between w-full px-3 group-hover:bg-fuchsia-500 group-hover:border-2 group-focus:border-2 group-hover:w-auto group-focus:w-auto group-hover:items-center group-focus:items-center group-hover:p-5 group-hover:flex-col group-focus:flex-col group-hover:text-slate-200 group-focus:text-white group-hover:shadow group-hover:hover:bg-fuchsia-700 group-focus:bg-fuchsia-700 group-hover:hover:transition-all group-hover:hover:shadow-md group-focus:p-3 group-focus:shadow": node.availableForSale,
+    "bg-slate-500 px-4 py-2 rounded text-slate-200 border-2 border-black": !node.availableForSale
+  })
+  const checkItem = (evt, isAvailable) => {
+    !isAvailable && evt.preventDefault()
+  }
   return (
     <li className={cardClasses} key={index}>
       <Link href={`/shop/${nestPath}[slug]`} as={`/shop/${nestPath}${node.handle}`}>
-        <a className="group h-full">
-          <div className="bg-orange-200/80
-                        h-full w-full border-t-4 border-orange-700
-                        absolute z-10 translate-y-[84%]
-                        lg:translate-y-[88%]
-                        xl:translate-y-[76%]
-                        2xl:translate-y-[86%]
-                        group-hover:translate-y-0
-                        group-hover:bg-red-300/90
-                        group-focus:bg-red-300/90
-                        group-hover:border-none
-                        group-focus:border-none
-                        group-focus:translate-y-0
-                        group-focus:items-center
-                        group-hover:items-center
-                        flex justify-center
-                        transition-all"
-          >
-            <span className="text-lg
-                            tracking-widest font-semibold uppercase
-                            rounded flex justify-between w-full px-3
-                            group-hover:bg-fuchsia-500
-                            group-hover:border-2
-                            group-focus:border-2
-                            group-hover:w-auto
-                            group-focus:w-auto
-                            group-hover:items-center
-                            group-focus:items-center
-                            group-hover:p-5
-                            group-hover:flex-col
-                            group-focus:flex-col
-                            group-hover:text-slate-200
-                            group-focus:text-white
-                            group-hover:shadow
-                            group-hover:hover:bg-fuchsia-700
-                            group-focus:bg-fuchsia-700
-                            group-hover:hover:transition-all
-                            group-hover:hover:shadow-md
-                            group-focus:p-3
-                            group-focus:shadow"
-            >
-              <span className={spanClasses}>{node.title}</span>
-              {node.priceRange && renderPriceRange(node.priceRange)}
+        <a className="group h-full" onClick={evt => checkItem(evt, node.availableForSale)}>
+          <div className={innerCardClasses} >
+            <span className={cardSpanClasses}>
+              <span className={spanClasses}>{node.availableForSale ? node.title : 'out of stock'}</span>
+              {(node.priceRange && node.availableForSale) && renderPriceRange(node.priceRange)}
             </span>
           </div>
 
