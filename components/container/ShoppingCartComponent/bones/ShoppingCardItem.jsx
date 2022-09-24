@@ -28,12 +28,11 @@ const ShoppingCartItem = ({ data }) => {
             <span className="text-xl tracking-wider">{data.title}</span>
             <div className="flex flex-col mr-4">
               {dyeTitle && <span className="text-base">{attrs.title.value}</span>}
-              <span className="text-md mt-2">${attrs.price.value}</span>
+              <span className="text-md mt-2 flex items-center">${attrs.price.value} {dyeTitle && <QuantityControls action={updateItemQuantity} quantity={itemQuantity} />}</span>
             </div>
           </div>
-          {dyeTitle && <QuantityControls action={updateItemQuantity} quantity={itemQuantity} />}
         </div>
-        <div className="flex items-center justify-between gap-5">
+        <div className="flex items-center justify-between gap-2">
           <div className="cart-image">
             <Image alt="" src={image.src} width={60} height={60}/>
           </div>

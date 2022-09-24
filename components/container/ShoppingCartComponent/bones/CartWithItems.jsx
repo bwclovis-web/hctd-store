@@ -19,12 +19,12 @@ const CartWithItems = () => {
   }
 
   return (
-    <div className="h-full">
+    <div className="h-full text-red-900">
       <div className="flex flex-col pb-20 overflow-y-auto h-full px-4 ">
         <ul className="flex justify-start flex-col py-6">
           {checkout.lineItems.map(item => <ShoppingCartItem data={item} key={item.id} />)}
         </ul>
-        <div className="checkout-details h-max pb-20">
+        <div className="checkout-details h-max pb-20 px-4">
           <p>
             <span>Subtotal: </span>
             <span>{formatPrice(checkout.subtotalPrice, "USD")}</span>
@@ -33,10 +33,10 @@ const CartWithItems = () => {
             <span>Taxes: </span>
             <span>{formatPrice(checkout.totalTax, "USD")}</span>
           </p>
-          <p>
+          {checkout?.shippingLine && <p>
             <span>Shipping(est): </span>
             <span>{formatPrice(checkout?.shippingLine?.price, "USD")}</span>
-          </p>
+          </p>}
           <p>
             <span>Total at checkout: </span>
             <span>{formatPrice(checkout.totalPrice, "USD")}</span>
