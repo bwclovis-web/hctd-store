@@ -33,7 +33,7 @@ const DisplayGrid = ({ data, cols, type, title, cat, filter }) => {
       {
         (data.length >= 4 && cat) &&
         <Link href={`/shop/category/${cat}`}>
-          <a className="absolute bottom-2 right-3 text-blue-700 font-semibold uppercase underline">shop more {cat}</a>
+          <a className="absolute bottom-0 right-3 text-link text-xl">shop more {cat}</a>
         </Link>
       }
     </div>

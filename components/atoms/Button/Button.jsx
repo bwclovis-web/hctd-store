@@ -4,7 +4,7 @@ import classnames from 'classnames'
 
 const Button = forwardRef(({ children, size, config, onClick, type, disabled, id, label }, ref) => {
   const ButtonClasses = classnames({
-    'font-semibold uppercase transition border-solid border-2 border-inherit rounded-lg drop-shadow group': true,
+    'font-semibold uppercase transition border-solid border-2 border-inherit rounded drop-shadow group': true,
     'text-m tracking-wide px-2 py-1': size === 'small',
     'text-xl px-6 py-4 tracking-wider': size === 'large',
     'border-0 text-indigo-700 underline hover:bg-indigo-700 hover:text-white p-2': config === 'link',

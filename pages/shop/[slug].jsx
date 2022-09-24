@@ -71,17 +71,19 @@ const SingleProductPage = ({ product }) => {
               <>
                 <p>If you want to learn more on how to use these dyes, please visit our 
                   <Link href="/instructions">
-                    <a className="p-1 underline text-indigo-700 hover:bg-indigo-700 hover:text-white rounded transition-colors">tips and tricks page.</a>
+                    <a className="text-link">tips and tricks page.</a>
                   </Link>
                 </p>
                 {title.toLowerCase() !== 'jars' && 
-                  <p className="mb-10">
-                    We ship dyes in mylar, if you want jars, please visit the jars page and add the appropriate sized jar(s) to your order.
+                  <p>
+                    We ship dyes in mylar, if you want jars, please visit the <Link href="/shop/jars"><a className="text-link">jars page</a></Link> and add the appropriate sized jar(s) to your order.
                   </p>
                 }
-                <Button onClick={() => toggleModal()} config="link">
-              * Click here to read product disclaimer
-                </Button>
+                <span className="mt-10 text-center">
+                  <Button onClick={() => toggleModal()} config="link">
+                    * Click here to read product disclaimer
+                  </Button>
+                </span>
               </> :
               <Accordion data={data}/>
             }

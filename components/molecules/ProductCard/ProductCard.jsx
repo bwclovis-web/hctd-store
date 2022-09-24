@@ -16,7 +16,7 @@ const ProductCard = ({ product, type, index, filter }) => {
   }
 
   const cardClasses = classNames({
-    "h-full relative overflow-hidden rounded-md border border-slate-600 shadow-md": true,
+    "h-full relative overflow-hidden rounded border border-slate-600 shadow-md": true,
     "scale-0 transition-transform hidden": !filter
   })
 
@@ -46,7 +46,7 @@ const ProductCard = ({ product, type, index, filter }) => {
           >
             <span className="text-lg
                             tracking-widest font-semibold uppercase
-                            rounded-md flex justify-between w-full px-3
+                            rounded flex justify-between w-full px-3
                             group-hover:bg-fuchsia-500
                             group-hover:border-2
                             group-focus:border-2
