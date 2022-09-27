@@ -9,7 +9,7 @@ const QuantityControls = ({ action, quantity }) => (
       </span>
     </Button>
     
-    <span className="text-xl font-semibold text-inherit">X{quantity}</span>
+    <span className="text-xl font-semibold text-inherit">x{quantity}</span>
     <Button onClick={() => action('delete')} config="svg">
       <span className="text-amber-800/70 ">
         <FaMinusSquare size={30}/>

@@ -2,13 +2,15 @@ import { useState } from 'react'
 import { NextSeo } from 'next-seo'
 import Link from 'next/link'
 import { getHomePageProps } from 'lib/shopifyGraphql'
+import seoData  from 'data/seo.json'
 
 import VendingCalendarComponent from 'components/container/VendingCalender/VendingCalender'
 import DyeShopBanner from 'components/container/DyeShopBanner/DyeShopBanner'
 import HeroComponent from 'components/molecules/Hero/Hero'
 import DisplayGrid from 'components/molecules/DisplayGrid/DisplayGrid'
+import SiteSeo from 'components/molecules/SiteSeo/SiteSeo'
 
-const HomePage = ({ products, collections }) => {
+const HomePage = ({ products, collections, seo }) => {
   const [firstProduct] = useState({
     title: products[0].node.title,
     category: products[0].node.collections.edges[0].node.handle,
@@ -17,15 +19,8 @@ const HomePage = ({ products, collections }) => {
 
   return (
     <>
-      <NextSeo
-        title="Home Page"
-        description="Custom made tie dye clothing, accessories, and dyes."
-        additionalMetaTags={[{
-          keywords: "happy cat, happy cat tie dye,the happy cat tie dye, fabric, dye, textile, paint, tie, dyeing, t-shirt, Dress, tie-dye, tie dye, fabric dye, dye for fabric, fiber art, wearable art, natural dye, embellish"
-        }]}
-      />
+      <SiteSeo data={seo} />
       <HeroComponent src="/images/rainbow.jpg" title="Welcome Home" heading="Clothing & Supplies" />
-
       <section>
         <div className="container py-dynamic-container-y">
           <DisplayGrid data={collections} cols={5} type="cat" filter={''}/>
@@ -63,6 +58,7 @@ export async function getStaticProps() {
     props: {
       products: pageProps.products.edges,
       collections: pageProps.collections.edges,
+      seo: seoData.home
     },
     revalidate: 120,
   }

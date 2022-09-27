@@ -9,7 +9,7 @@ const Timer = ({ days, hours, min, sec }) => (
       <span className="font-display text-6xl pb-3">{hours}</span>
     </div>
     <div className="flex flex-col w-full lg:w-1/4">
-      <span className="text-2xl uppercase py-3 font-bold tracking-wider w-full mb-3 bg-rose-800 text-slate-100">minuets</span>
+      <span className="text-2xl uppercase py-3 font-bold tracking-wider w-full mb-3 bg-rose-800 text-slate-100">Minutes</span>
       <span className="font-display text-6xl pb-3">{min}</span>
     </div>
     <div className="flex flex-col w-full lg:w-1/4">

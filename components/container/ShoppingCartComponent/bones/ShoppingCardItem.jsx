@@ -39,7 +39,6 @@ const ShoppingCartItem = ({ data }) => {
           <DeleteFromCartButton id={data.id} />
         </div>
       </div>
-        
     </li>
   )
 }
