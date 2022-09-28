@@ -32,7 +32,7 @@ const CategoryProducts = ({ collection }) => {
         {collection.products.edges.length ?
           <DisplayGrid data={collection.products.edges} cols={4} filter={filter} /> :
           <div className="pt-10">
-            <h2 className="text-4xl pb-4">Ooops, looks like were out of stock!</h2>
+            <h2 className="text-4xl pb-4">Ooops, looks like we're out of stock!</h2>
             <p className="text-lg">Please check back later, or if you are looking for something special or custom, <Link href="/contact"><a className="default-anchor">feel free to send us a message</a></Link>.</p>
           </div>
         }

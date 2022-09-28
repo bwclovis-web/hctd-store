@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import { NextSeo } from 'next-seo'
 import Link from 'next/link'
 import { getHomePageProps } from 'lib/shopifyGraphql'
-import seoData  from 'data/seo.json'
+import data from 'Data/seo.json'
 
 import VendingCalendarComponent from 'components/container/VendingCalender/VendingCalender'
 import DyeShopBanner from 'components/container/DyeShopBanner/DyeShopBanner'
@@ -19,7 +18,7 @@ const HomePage = ({ products, collections, seo }) => {
 
   return (
     <>
-      <SiteSeo data={seo} />
+      <SiteSeo data={data} />
       <HeroComponent src="/images/rainbow.jpg" title="Welcome Home" heading="Clothing & Supplies" />
       <section>
         <div className="container py-dynamic-container-y">

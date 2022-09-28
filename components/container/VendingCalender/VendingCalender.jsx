@@ -14,7 +14,7 @@ const VendingCalendarComponent = () => (
       <div className="container flex flex-col lg:flex-row justify-center lg:justify-around items-center w-full h-full">
         <div className="flex flex-col items-center justify-start max-w-1/3 text-slate-100 mb-6 lg:mb-0">
           <h2 className="text-h2-dynamic font-display drop-shadow-xl shadow-black">Come See Us!</h2>
-          <p className="text-2xl font-semibold tracking-wide">Happy Cat Tye dye will be vending</p>
+          <p className="text-2xl font-semibold tracking-wide">Happy Cat Tie Dye will be vending</p>
         </div>
         <Link href="/schedule">
           <a className="ghost-link">See Schedule</a>
