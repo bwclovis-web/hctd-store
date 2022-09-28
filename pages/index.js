@@ -18,7 +18,7 @@ const HomePage = ({ products, collections, seo }) => {
 
   return (
     <>
-      <SiteSeo data={data} />
+      <SiteSeo data={seo} />
       <HeroComponent src="/images/rainbow.jpg" title="Welcome Home" heading="Clothing & Supplies" />
       <section>
         <div className="container py-dynamic-container-y">
@@ -57,7 +57,7 @@ export async function getStaticProps() {
     props: {
       products: pageProps.products.edges,
       collections: pageProps.collections.edges,
-      seo: seoData.home
+      seo: data.home
     },
     revalidate: 120,
   }
