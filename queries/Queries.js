@@ -95,7 +95,7 @@ export const productByCollection = handle => `{
 }`
 
 export const allCollectionsQuery = `{
-  collections(first:20){
+  collections(first:40){
     edges {
       node {
         handle
