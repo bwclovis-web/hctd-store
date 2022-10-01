@@ -39,7 +39,7 @@ const SingleProductPage = ({ product }) => {
       {modalOpen && <Modal>
         <DisclaimerContent />
       </Modal>}
-      <article className="content-container mt-10 flex flex-col gap-6 lg:flex-row justify-around border-indigo-100 border-2 py-20 rounded-md lg:w-5/6">
+      <article className="content-container mt-10 flex flex-col gap-6 lg:flex-row justify-around border-indigo-100 border-2 py-20 rounded-md lg:w-5/6 mb-5">
         <section className="lg:w-1/2 lg:mr-8">
           <div>
             <Image
