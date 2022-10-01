@@ -33,20 +33,20 @@ const CartWithItems = () => {
             <span>Taxes: </span>
             <span>{formatPrice(checkout.totalTax, "USD")}</span>
           </p>
-          {checkout?.shippingLine && <p>
+          <p>
             <span>Shipping(est): </span>
-            <span>{formatPrice(checkout?.shippingLine?.price, "USD")}</span>
-          </p>}
+            <span>{checkout?.shippingLine ? formatPrice(checkout?.shippingLine?.price, "USD" ) : "calculated at checkout"}</span>
+          </p>
           <p>
             <span>Total at checkout: </span>
             <span>{formatPrice(checkout.totalPrice, "USD")}</span>
           </p>
         </div>
       </div>
-      <div className="flex justify-between items-center fixed bg-red-400 min-w-full left-0 bottom-0 px-3 py-4">
-        <Button config="secondary" onClick={handleCheckout} size="small" disabled={loading}>GO TO CHECKOUT</Button>
+      <div className="flex justify-between items-center fixed bg-purple-200/40 min-w-full left-0 bottom-0 px-3 py-4">
+        <Button config="ghost" onClick={handleCheckout} size="small" disabled={loading}>GO TO CHECKOUT</Button>
         <Link href={'/shop'} >
-          <a onClick={() => toggleCart()} className="underline underline-offset-4">Continue Shopping</a>
+          <a onClick={() => toggleCart()} className="underline p-2 transition-colors underline-offset-4 hover:bg-purple-500 hover:text-purple-100">Continue Shopping</a>
         </Link>
       </div>
     </div>

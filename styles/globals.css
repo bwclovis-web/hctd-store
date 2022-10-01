@@ -73,8 +73,12 @@
     .ghost-link {
         @apply text-white border-4 text-xl rounded font-semibold p-3 uppercase tracking-wide bg-black/30 hover:underline hover:bg-white/20 transition-colors;
 
-        $._small {
+        &._small {
             @apply text-base
+        }
+
+        &._light {
+            @apply text-inherit border-slate-700 bg-black/20 hover:bg-black/50 hover:text-slate-200
         }
     }
     .container {

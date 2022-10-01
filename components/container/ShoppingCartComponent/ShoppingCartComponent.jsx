@@ -28,7 +28,7 @@ const ShoppingCartComponent = () => {
   }, [ cartOpen, checkout, toggleCart ])
 
   const CartClasses = classNames({
-    "fixed top-0 right-0 h-full w-full z-50 md:w-1/2 xl:w-1/4 bg-red-300 transition": true,
+    "fixed top-0 right-0 h-full w-full z-50 md:w-4/5 lg:w-2/5 2xl:w-1/4 bg-purple-100 transition": true,
     "translate-x-full": !cartOpen,
     "translate-x-0": cartOpen
   })
@@ -38,7 +38,7 @@ const ShoppingCartComponent = () => {
       <div aria-hidden={!cartOpen}>
         {cartOpen && <div className="bg-black/70 fixed top-0 h-full w-full z-40 left-0 backdrop-blur-sm transition-all" ref={cartRef} />}
         <section className={CartClasses} id="cart">
-          <div className="flex items-center justify-between px-3 py-2 bg-white/20">
+          <div className="flex items-center justify-between px-3 py-2 bg-purple-200/40">
             <p className="text-lg uppercase">Items in cart</p>
             <span className="bg-blue-400 rounded-full w-8 h-8 flex justify-center items-center">
               <Button id="cart-close" onClick={() => toggleCart()} config="svg" aria-label="close cart">x</Button>
