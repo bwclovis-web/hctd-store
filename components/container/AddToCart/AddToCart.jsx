@@ -5,6 +5,7 @@ import { getPriceByVariantId } from './utility'
 import ShopContext from 'provider/ShopProvider'
 import RadioButtons from 'components/atoms/RadioButtons/RadioButtons'
 import AddToCartButton from 'components/molecules/AddToCartButton/AddToCartButton'
+import SizeSelection from './Bones/SizeSelector'
 
 const AddToCart = ({ variant, availableForSale }) => {
   const [ variationId, setVariationId ] = useState(variant[0].node.id)
@@ -20,7 +21,7 @@ const AddToCart = ({ variant, availableForSale }) => {
 
   return (
     <div className="mt-8 mb-6 pt-10 border-t-2 border-indigo-400">
-      <div className="flex flex-col justify-between items-start lg:items-center lg:flex-row">
+      <div className="flex flex-col justify-between items-start lg:flex-row">
         <p className="font-display pb-3.5 flex items-start">
           <span className="text-3xl pr-2">Price: </span>
           <span className="text-6xl text-indigo-800" aria-live="polite">
@@ -28,9 +29,7 @@ const AddToCart = ({ variant, availableForSale }) => {
           </span>
         </p>
         <div className="flex gap-2 mb-4 lg:mb-10">
-          {
-            variant.map((item, i) => variant.length > 1 && <RadioButtons data={item.node} key={i} changeAction={setVariationId} />)
-          }
+          {variant.length > 1 && <SizeSelection data={variant} action={setVariationId} />}
         </div>
       </div>
       <div className="mt-1">

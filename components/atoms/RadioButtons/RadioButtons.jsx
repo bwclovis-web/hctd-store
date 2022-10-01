@@ -1,6 +1,6 @@
 import { useEffect, memo } from "react"
 
-const RadioSelect = ({ data, changeAction }) => {
+const RadioButtons = ({ data, changeAction }) => {
   const handleVariationChange = (evt, available) => {
     !available ? evt.preventDefault() : changeAction(evt.target.value)
   }
@@ -11,7 +11,7 @@ const RadioSelect = ({ data, changeAction }) => {
   }, [])
 
   return (
-    <div className="radio-buttons">
+    <div className="radio-buttons flex mr-2">
       <input
         id={data.id}
         type="radio"
@@ -28,4 +28,4 @@ const RadioSelect = ({ data, changeAction }) => {
   )
 }
 
-export default memo(RadioSelect)
+export default memo(RadioButtons)

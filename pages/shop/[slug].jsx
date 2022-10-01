@@ -74,11 +74,6 @@ const SingleProductPage = ({ product }) => {
                     <a className="text-link">tips and tricks page.</a>
                   </Link>
                 </p>
-                {title.toLowerCase() !== 'jars' && 
-                  <p>
-                    We ship dyes in heat sealed mylar bags. If you want jars, please visit the <Link href="/shop/jars"><a className="text-link">jars page</a></Link> and add the appropriate sized jar(s) to your order.
-                  </p>
-                }
                 <span className="mt-10 text-center">
                   <Button onClick={() => toggleModal()} config="link">
                     * Click here to read product disclaimer
