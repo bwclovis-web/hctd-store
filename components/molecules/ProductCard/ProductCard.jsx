@@ -20,7 +20,7 @@ const ProductCard = ({ product, type, index, filter }) => {
     'inline-block mx-auto': !node.priceRange
   })
   const linkClasses = classNames({
-    "px-1 mt-4 py-2 border-2 shadow capitalize text-center w-full lg:w-2/3 mx-auto": true,
+    "px-1 mt-4 py-2 border-2 shadow capitalize text-center w-full lg:w-2/3 mx-auto peer": true,
     "border-fuchsia-800 bg-fuchsia-200 text-fuchsia-800 hover:bg-fuchsia-800 hover:text-fuchsia-200 hover:border-fuchsia-300 hover:transition-all hover:shadow-md ": node.availableForSale,
     "bg-slate-600 text-slate-100 border-2 border-black pointer-events-none": !node.availableForSale
   })
@@ -40,7 +40,7 @@ const ProductCard = ({ product, type, index, filter }) => {
           </div>
         </a>
       </Link>
-      <div className="h-full relative">
+      <div className="h-full relative border-4 border-purple-600 peer-hover:border-emerald-700 peer-hover:shadow-xl transition-all">
         <Image
           src={imageUrl}
           alt=""

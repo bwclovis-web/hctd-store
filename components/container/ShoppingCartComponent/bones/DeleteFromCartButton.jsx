@@ -10,7 +10,7 @@ const DeleteFromCartButton = ({ id }) => {
   }
 
   return (
-    <button onClick={handleDeleteItem} disabled={loading} className="text-white transition shadow bg-rose-600/70 flex items-center w-12 h-12 justify-center rounded-full hover:bg-rose-600 active:translate-y-2">
+    <button onClick={handleDeleteItem} disabled={loading} className="text-white transition shadow bg-rose-600/70 border-2 border-rose-600 flex items-center w-12 h-12 justify-center rounded-full hover:bg-rose-600 active:translate-y-2">
       <FaTrash size={24}/>
     </button>
   )

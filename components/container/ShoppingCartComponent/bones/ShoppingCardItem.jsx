@@ -22,7 +22,7 @@ const ShoppingCartItem = ({ data }) => {
 
   return(
     <li className="flex content-start w-full mb-4">
-      <div className="bg-purple-200/40 flex w-full justify-between items-center py-2 px-3 rounded">
+      <div className="bg-purple-200/40 flex w-full justify-between items-center py-2 px-3 rounded border-2 border-purple-300">
         <div className="flex justify-between items-center w-1/2">
           <div className="flex flex-col">
             <span className="text-xl tracking-wider">{data.title}</span>
