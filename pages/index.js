@@ -46,7 +46,7 @@ const HomePage = ({ products, collections, seo }) => {
         </div>
       </section>
 
-      <VendingCalendarComponent />
+      {/* <VendingCalendarComponent /> */}
     </>
   )
 }
