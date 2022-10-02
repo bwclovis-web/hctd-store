@@ -1,6 +1,5 @@
 import { useContext } from "react"
 import classNames from "classnames"
-
 import ShopContext from "provider/ShopProvider"
 
 const Toast = ({ item, openToast }) => {

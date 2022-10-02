@@ -9,7 +9,6 @@ const Input = ({ type, id, onChange, required, value, name, label, autoComplete,
   if(type === 'textArea') {
     return (
       <div>
-        
         <textarea 
           id={id}
           rows={rows}
