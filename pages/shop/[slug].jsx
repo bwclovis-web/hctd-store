@@ -40,7 +40,7 @@ const SingleProductPage = ({ product }) => {
         <DisclaimerContent />
       </Modal>}
       <article className="content-container mt-10 flex flex-col gap-6 lg:flex-row justify-around border-indigo-100 border-2 py-20 rounded-md lg:w-5/6 mb-5">
-        <section className="lg:w-1/2 lg:mr-8">
+        <section className="lg:w-1/2 md:mr-8">
           <div>
             <Image
               src={image.url}
@@ -55,7 +55,7 @@ const SingleProductPage = ({ product }) => {
             {thumbnailArray.length > 1 && <ProductThumbnails thumbnails={thumbnailArray} action={setImage} />}
           </div>
         </section>
-        <section className="lg:w-3/5 flex flex-col justify-between">
+        <section className="md:w-4/5 flex flex-col justify-between">
           <div>
             <h1 className="text-h2-dynamic font-display leading-tight">{title}</h1>
             <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} className="text-base mt-4" />

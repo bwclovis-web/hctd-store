@@ -14,7 +14,7 @@ module.exports = {
       },
       padding: {
         'dynamic-container-y': 'clamp(2.6rem, 6vw, 8rem)',
-        'dynamic-container-x': 'clamp(1rem, 3vw, 2rem)',
+        'dynamic-container-x': 'clamp(.75rem, 3vw, 1rem)',
       },
       fontSize: {
         'h3-dynamic': 'clamp(3rem, 6vw, 4rem)',
