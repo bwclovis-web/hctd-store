@@ -18,7 +18,7 @@ export const singleProductPageQuery = handle => `{
         url
         altText
       }
-      variants(first:6) {
+      variants(first:10) {
         edges {
           node {
             id
