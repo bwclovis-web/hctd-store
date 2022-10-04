@@ -15,6 +15,11 @@ const ProductCard = ({ product, type, index, filter }) => {
     return minPrice === maxPrice ? <span className="text-lg mt-1">{formatPrice(minPrice, "USD")}</span> : <span className="text-lg mt-1">{formatPrice(minPrice, "USD")} - {formatPrice(maxPrice, "USD")}</span>
   }
 
+  const cardClasses = classNames({
+    'flex flex-col-reverse justify-center': true,
+    "scale-0 transition-transform hidden": !filter
+  })
+
   const spanClasses = classNames({
     'tracking-widest text-xl': true,
     'inline-block mx-auto': !node.priceRange
@@ -29,7 +34,7 @@ const ProductCard = ({ product, type, index, filter }) => {
     !isAvailable && evt.preventDefault()
   }
   return (
-    <li key={index} className="flex flex-col-reverse justify-center">
+    <li key={index} className={cardClasses}>
       <Link href={`/shop/${nestPath}[slug]`} as={`/shop/${nestPath}${node.handle}`}>
         <a onClick={evt => checkItem(evt, node.availableForSale)} className={linkClasses}>
           <div>
