@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@formspree/react": "^2.3.3",
@@ -46,6 +47,7 @@
     "postcss": "^8.4.14",
     "prettier": "2.5.1",
     "tailwindcss": "^3.1.6",
-    "typescript": "4.5.2"
+    "typescript": "4.5.2",
+    "husky": "^8.0.0"
   }
 }

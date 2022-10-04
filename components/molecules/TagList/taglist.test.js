@@ -5,6 +5,6 @@ import TagList from "./TagList"
 describe("<TagList>", () => {
   const mockData = [ 'one', 'two' ]
   it('should create tag list', () => {
-    render(<TagList data={mockData}/>)
+    render(<TagList tags={mockData}/>)
   })
 })
