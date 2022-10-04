@@ -14,7 +14,6 @@ const CategoryProducts = ({ collection }) => {
   const allTags = getAllTags(collection.products.edges)
 
   const handleFilterChange = evt => {
-    console.log(`%c evt.target.value`, 'background: #0047ab; color: #fff; padding: 2px:', evt.target.value)
     setFilter(evt.target.value)
   }
 
