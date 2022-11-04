@@ -12,8 +12,15 @@ import { useEffect } from 'react'
 function MyApp({ Component, pageProps, ...appProps }) {
   useEffect(() => {
     const setBanner = window.localStorage.getItem('hctd_banner')
+    const bannerClosedTime = window.localStorage.getItem('banner_closed')
+    const bannerClosedOn = new Date(parseInt(bannerClosedTime)).getTime()
     const currentBanner = process.env.NEXT_PUBLIC_BANNER_TYPE
-    !setBanner && setBanner !== 'visited' && window.localStorage.setItem('hctd_banner', currentBanner)
+    const bannerTimestamp = new Date(process.env.NEXT_PUBLIC_BANNER_START).getTime()
+
+    if(bannerClosedOn < bannerTimestamp && setBanner === 'visited') {
+      window.localStorage.setItem('hctd_banner', currentBanner)
+    } 
+    !setBanner && currentBanner && window.localStorage.setItem('hctd_banner', currentBanner)
   }, [])
   if(appProps.router.pathname === '/coming-soon') {
     return(

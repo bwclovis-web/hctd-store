@@ -21,6 +21,7 @@ const SiteAlertComponent = () => {
 
   const handleCloseAlertBanner = () => {
     window.localStorage.setItem('hctd_banner', 'visited')
+    window.localStorage.setItem('banner_closed', Date.now())
     setBannerOpen(false)
   }
 

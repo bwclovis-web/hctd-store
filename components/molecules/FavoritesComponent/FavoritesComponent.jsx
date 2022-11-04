@@ -36,7 +36,7 @@ const FavoritesComponent = () => {
 
   return (
     <>
-      <button onClick={() => toggleModal("favorites")} className="px-2 py-3" disabled={!favorites?.length}>
+      <button onClick={() => toggleModal("favorites")} className="px-3 py-3" disabled={!favorites?.length}>
         {favorites?.length ? <MdFavorite size={35} fill={'red'}/> : <MdOutlineFavoriteBorder size={30}/>}
       </button>
       
