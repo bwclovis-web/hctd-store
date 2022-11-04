@@ -1,7 +1,9 @@
-import classNames from 'classnames'
-import AppContext from 'provider/AppProvider'
 import { useContext, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
+import classNames from 'classnames'
+import { AiOutlineCloseCircle } from 'react-icons/ai'
+
+import AppContext from 'provider/AppProvider'
 
 const Modal = ({ children }) => {
   const [ mounted, setMounted ] = useState(false)
@@ -21,10 +23,6 @@ const Modal = ({ children }) => {
   }, [])
 
   useEffect(() => {
-    if (mounted) {
-      const container = document.getElementById('modalContainer')
-      container.style.top = `${windowPosition}px`
-    }
     setTimeout(() => {
       setAnimate(true)
     }, 140)
@@ -36,8 +34,8 @@ const Modal = ({ children }) => {
   })
   
   const ModalContentClasses = classNames({
-    'relative lg:-translate-y-80 opacity-0 z-30 rounded transition-all delay-300 p-4 xl:p-10  duration-500 backdrop-blur-md lg:w-4/5 xl:w-2/5 pointer-none overflow-auto flex h-full md:h-auto': true,
-    'opacity-100 lg:-translate-y-0 transition-animate delay-200 bg-white/80 shadow-2xl duration-300': animate
+    'fixed lg:-translate-y-80 opacity-0 z-30 rounded transition-all delay-300 p-4 xl:p-8 duration-500 backdrop-blur-md w-full lg:w-4/5 xl:w-2/5 pointer-none flex': true,
+    'opacity-100 lg:-translate-y-0 transition-animate delay-200 bg-white/80 shadow-2xl duration-300 top-3 overflowY-auto h-3/4': animate
   })
 
 
@@ -46,7 +44,9 @@ const Modal = ({ children }) => {
       <div className={ModalClasses} onClick={toggleModal} />
       
       <div className={ModalContentClasses}>
-        <button className="absolute top-5 right-5" onClick={toggleModal}>CLOSE</button>
+        <button className="absolute top-5 right-5" onClick={toggleModal}>
+          <AiOutlineCloseCircle size={34} fill={'purple'}/>
+        </button>
         {children}
       </div>
     </div>

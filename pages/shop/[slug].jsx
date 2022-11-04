@@ -2,8 +2,10 @@ import { useState, useContext, useEffect } from "react"
 import Image from "next/image"
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
+import { RiHeartAddFill } from 'react-icons/ri'
 
 import { getSingleProductPageProps, getAllProductsQuery } from 'lib/shopifyGraphql'
+import { hctdFavorites } from 'queries/database.config'
 
 import AppCtx from 'provider/AppProvider'
 import AddToCart from 'components/container/AddToCart/AddToCart'
@@ -18,7 +20,7 @@ import data from 'Data/care.json'
 import Accordion from "components/container/Accordion/Accordion"
 
 const SingleProductPage = ({ product }) => {
-  const { toast, toggleModal, modalOpen } = useContext(AppCtx)
+  const { toast, toggleModal, modalOpen, modalId } = useContext(AppCtx)
   const { featuredImage, tags, title, descriptionHtml, availableForSale, variants, collections, images } = product
   const [ image, setImage ] = useState({ url: featuredImage.url, alt: featuredImage.altText })
   const variant = variants.edges
@@ -31,12 +33,28 @@ const SingleProductPage = ({ product }) => {
     })
   }, [featuredImage])
 
+  const addToFavorite = async product => {
+    const dbObject = {
+      id: product.id,
+      image: product.featuredImage.url,
+      title: product.title,
+      slug: window.location.pathname, 
+      timeStamp: new Date().toDateString()
+    }
+   
+    try {
+      await hctdFavorites.add(dbObject)
+    } catch (error) {
+      console.log(`%c error`, 'background: #0047ab; color: #fff; padding: 2px:', error)
+    }
+  }
+
   return (
     <div>
       <NextSeo
         title={`Shop | ${title}`}
       />
-      {modalOpen && <Modal>
+      {modalOpen && modalId === "disclaimer" && <Modal>
         <DisclaimerContent />
       </Modal>}
       <article className="content-container mt-10 flex flex-col gap-6 lg:flex-row justify-around border-indigo-100 border-2 py-20 rounded-md lg:w-5/6 mb-5">
@@ -57,7 +75,12 @@ const SingleProductPage = ({ product }) => {
         </section>
         <section className="md:w-4/5 flex flex-col justify-between">
           <div>
-            <h1 className="text-h2-dynamic font-display leading-tight">{title}</h1>
+            <div className="flex justify-between items-center">
+              <h1 className="text-h2-dynamic font-display leading-tight">{title}</h1>
+              <button onClick={() => addToFavorite(product)} className="active:translate-y-4 transition-transform">
+                <RiHeartAddFill size={50} fill={'red'}/>
+              </button>
+            </div>
             <div dangerouslySetInnerHTML={{ __html: descriptionHtml }} className="text-base mt-4" />
             <AddToCart
               variant={variant}
@@ -75,7 +98,7 @@ const SingleProductPage = ({ product }) => {
                   </Link>
                 </p>
                 <span className="mt-10 text-center">
-                  <Button onClick={() => toggleModal()} config="link">
+                  <Button onClick={() => toggleModal('disclaimer')} config="link">
                     * Click here to read product disclaimer
                   </Button>
                 </span>

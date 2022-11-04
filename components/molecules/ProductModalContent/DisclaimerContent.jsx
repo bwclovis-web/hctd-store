@@ -1,5 +1,5 @@
 const DisclaimerContent = () => (
-  <section>
+  <section className="overflow-scroll">
     <h1 className="font-display text-h2-dynamic mb-4 pt-4">Disclaimer</h1>
     <p className="text-xl">These dyes were formulated with ice dye in mind and use very precise recipes to ensure that the split is consistent. That being said, ice dye itself isn't consistent and your results may be a bit different than mine if you use more or less dye, apply your dye differently, etc. In addition dyes often look different on different fabrics and different fabric weaves.</p>
     <p className="text-xl"> If something on my end changes it will be noted on the dye description and announced in the Happy Cat Tie Dye Facebook Group. Additionally, I haven't tested the liquid colors at all (that may change in the future) so while all of my dyes absolutely work for liquid dyeing I have no idea what most of the shades will be. If you decide to try it out I'd love to see a picture!</p>

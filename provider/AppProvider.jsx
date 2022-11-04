@@ -11,6 +11,7 @@ const ctxDefaults = {
   cartOpen: false,
   modalOpen: false,
   toast: false,
+  modalId: '',
   cartTrigger: ''
 }
 
@@ -19,7 +20,7 @@ const AppContext = createContext(ctxDefaults)
 export const AppProvider = ({ children }) => {
   const [ cartOpen, toggleCart, cartTrigger, setCartTrigger ] = UseCart()
   const [ toast, toggleToast ] = UseToast()
-  const [ toggleModal, modalOpen ] = UseModal()
+  const [ toggleModal, modalOpen, modalId ] = UseModal()
 
   return (
     <AppContext.Provider value={{
@@ -31,7 +32,8 @@ export const AppProvider = ({ children }) => {
       cartTrigger,
       setCartTrigger,
       toggleModal,
-      modalOpen
+      modalOpen,
+      modalId
     }}>
       {children}
     </AppContext.Provider>
