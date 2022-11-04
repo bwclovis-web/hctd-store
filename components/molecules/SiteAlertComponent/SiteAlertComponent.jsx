@@ -33,7 +33,7 @@ const SiteAlertComponent = () => {
 
   return (
     <div className={BannerClasses}>
-      <div aria-live="polite" className="font-medium text-center " dangerouslySetInnerHTML={{ __html: bannerText }} />
+      <div aria-live="polite" className="font-medium text-center w-5/6 md:w-full" dangerouslySetInnerHTML={{ __html: bannerText }} />
       <button onClick={() => handleCloseAlertBanner()} className="absolute right-2 lg:right-0 top-0 px-5 bg-blue-400 h-full w-auto">
         <AiOutlineCloseCircle size={30} fill={'purple'}/>
       </button>
