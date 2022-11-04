@@ -78,7 +78,7 @@ const SingleProductPage = ({ product }) => {
           <div>
             <div className="flex justify-between items-center">
               <h1 className="text-h2-dynamic font-display leading-tight">{title}</h1>
-              <button onClick={() => addToFavorite(product)} className="active:translate-y-4 transition-transform">
+              <button onClick={() => addToFavorite(product)} className="active:translate-y-4 transition-transform" aria-label="add to favorites">
                 <RiHeartAddFill size={50} fill={'red'}/>
               </button>
             </div>

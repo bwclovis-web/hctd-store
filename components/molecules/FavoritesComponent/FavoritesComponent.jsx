@@ -36,8 +36,9 @@ const FavoritesComponent = () => {
 
   return (
     <>
-      <button onClick={() => toggleModal("favorites")} className="px-3 py-3" disabled={!favorites?.length}>
-        {favorites?.length ? <MdFavorite size={35} fill={'red'}/> : <MdOutlineFavoriteBorder size={30}/>}
+      <button onClick={() => toggleModal("favorites")} className="px-3 py-3 relative" disabled={!favorites?.length} aria-label={`you have ${favorites?.length} favorites saved`}>
+        {favorites?.length ? <MdFavorite size={40} fill={'red'}/> : <MdOutlineFavoriteBorder size={40}/>}
+        <span className="absolute top-[16px] font-bold right-[26px] text-white text-lg">{favorites?.length > 0 && favorites?.length}</span>
       </button>
       
       {modalOpen && modalId === "favorites" && <Modal>
