@@ -7,8 +7,14 @@ import { AppProvider } from 'provider/AppProvider'
 
 import Header from 'components/container/Header/Header'
 import Footer from 'components/container/Footer/Footer'
+import { useEffect } from 'react'
 
 function MyApp({ Component, pageProps, ...appProps }) {
+  useEffect(() => {
+    const setBanner = window.localStorage.getItem('hctd_banner')
+    const currentBanner = process.env.NEXT_PUBLIC_BANNER_TYPE
+    !setBanner && setBanner !== 'visited' && window.localStorage.setItem('hctd_banner', currentBanner)
+  }, [])
   if(appProps.router.pathname === '/coming-soon') {
     return(
       <>

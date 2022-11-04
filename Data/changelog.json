@@ -1,0 +1,9 @@
+[
+    {
+        "date": "11/04/2022",
+        "updates": [
+            {"heading": "Favorites", "body": "After looking at our abandon cart and some research we found that customers were using cart as a way to save items until later. This will be a new way to do this and in future we will provide the ability to add numbers and add all to cart with a single click."},
+            {"heading": "Alert Messaging", "body": "Alert messages were added so we can inform our customers of site updates when they come to the site. "}
+        ]
+    }
+]

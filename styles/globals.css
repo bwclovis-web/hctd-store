@@ -56,6 +56,12 @@
             }
         }
     }
+    .alert-banner,
+    .policy {
+        a {
+            @apply text-blue-700 underline
+        }
+    }
 }
 
 @layer utilities {
