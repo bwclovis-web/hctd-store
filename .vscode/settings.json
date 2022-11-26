@@ -13,7 +13,10 @@
     "source.fixAll": true
   },
   "cSpell.words": [
+    "groq",
+    "hctdstudio",
     "linebreak",
-    "parens"
+    "parens",
+    "portabletext"
   ]
 }
