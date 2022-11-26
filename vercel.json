@@ -1,0 +1,7 @@
+{
+    "version": 2,
+    "rewrites": [{
+        "source": "/hctdstudio/(.*)",
+        "destination": "/hctdstudio/index.html"
+    }]
+}
