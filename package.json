@@ -8,14 +8,18 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest --coverage",
+    "sanity": "cd hctdstudio && sanity start",
     "prepare": "husky install"
   },
   "dependencies": {
     "@formspree/react": "^2.3.3",
+    "@portabletext/react": "^2.0.0",
     "classnames": "^2.3.1",
     "dexie": "^3.2.2",
     "dexie-react-hooks": "^1.1.1",
     "next": "12.2.2",
+    "next-sanity": "^3.1.1",
+    "next-sanity-image": "^5.0.0",
     "next-seo": "^5.4.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
