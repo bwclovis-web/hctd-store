@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useRouter } from 'next/router'
-import { getClient } from "../../../lib/sanity"
+import { getClient } from "lib/sanity"
 import MainNavigation from 'components/molecules/Navigation/MainNavigation'
 import UtilNav from 'components/molecules/UtilityNav/UtilityNav'
 import { groq } from 'next-sanity'
