@@ -42,10 +42,6 @@
     {   "id": "11",
         "question" : "Do you ship outside the USA?",
         "answer": "<p>Yes! Make sure you familiarize yourself with your country's customs regulations and fees so there are no surprises later!</p>"
-    },
-    {   "id": "12",
-        "question" : "I'm a registered business with an EIN/resale license, do I still have to pay sales tax? ",
-        "answer": "<p>No! If you create an account there should be an option for you to enter the relevant number and once you do the sales tax should be zero. By entering a number you assume the responsibility of paying the relevant sales tax on your completed products or on your purchase if you choose not to resell the things you create.</p>"
     }
     
 ]
