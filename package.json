@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest --coverage",
-    "sanity": "cd hctdstudio && sanity start",
+    "sanity": "cd studio && sanity start",
     "prepare": "husky install"
   },
   "dependencies": {
