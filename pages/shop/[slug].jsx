@@ -94,8 +94,8 @@ const SingleProductPage = ({ product }) => {
             {collection.handle ==='dyes' ? 
               <>
                 <p>If you want to learn more on how to use these dyes, please visit our 
-                  <Link href="/instructions">
-                    <a className="text-link">tips and tricks page.</a>
+                  <Link href="/instructions" className="text-link">
+                    tips and tricks page.
                   </Link>
                 </p>
                 <span className="mt-10 text-center">
@@ -121,7 +121,7 @@ const SingleProductPage = ({ product }) => {
       </section> */}
       <Toast item={product} openToast={toast} />
     </div>
-  )
+  );
 }
 
 export const getStaticProps = async ({ params }) => {

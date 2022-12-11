@@ -6,8 +6,8 @@ const TagList = ({ tags }) => (
     <ul className="mt-2 flex gap-3">
       {tags.map(tag => (
         <li key={tag} className="flex justify-start content-center">
-          <Link href={`/shop/tags/${tag}`}>
-            <a className="tag-link">{tag}</a>
+          <Link href={`/shop/tags/${tag}`} className="tag-link">
+            {tag}
           </Link>
         </li>
       ))}

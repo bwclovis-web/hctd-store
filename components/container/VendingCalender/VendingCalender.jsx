@@ -16,8 +16,8 @@ const VendingCalendarComponent = () => (
           <h2 className="text-h2-dynamic font-display drop-shadow-xl shadow-black">Come See Us!</h2>
           <p className="text-2xl font-semibold tracking-wide">Happy Cat Tie Dye will be vending</p>
         </div>
-        <Link href="/schedule">
-          <a className="ghost-link">See Schedule</a>
+        <Link href="/schedule" className="ghost-link">
+          See Schedule
         </Link>
       </div>
     </div>
