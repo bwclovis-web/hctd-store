@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/legacy/image"
 import Link from "next/link"
 import { formatPrice } from "lib/formatPrice"
 import { getImageUrl } from "./util"
@@ -35,15 +35,19 @@ const ProductCard = ({ product, type, index, filter }) => {
   }
   return (
     <li key={index} className={cardClasses}>
-      <Link href={`/shop/${nestPath}[slug]`} as={`/shop/${nestPath}${node.handle}`}>
-        <a onClick={evt => checkItem(evt, node.availableForSale)} className={linkClasses}>
-          <div>
-            <span className="flex flex-col">
-              <span className={spanClasses}>{node.availableForSale ? node.title : 'out of stock'}</span>
-              {(node.priceRange && node.availableForSale) && renderPriceRange(node.priceRange)}
-            </span>
-          </div>
-        </a>
+      <Link
+        href={`/shop/${nestPath}[slug]`}
+        as={`/shop/${nestPath}${node.handle}`}
+        onClick={evt => checkItem(evt, node.availableForSale)}
+        className={linkClasses}>
+
+        <div>
+          <span className="flex flex-col">
+            <span className={spanClasses}>{node.availableForSale ? node.title : 'out of stock'}</span>
+            {(node.priceRange && node.availableForSale) && renderPriceRange(node.priceRange)}
+          </span>
+        </div>
+
       </Link>
       <div className="h-full relative border-4 border-purple-600 peer-hover:border-emerald-700 peer-hover:shadow-xl transition-all">
         <Image
@@ -57,7 +61,6 @@ const ProductCard = ({ product, type, index, filter }) => {
           blurDataURL={`/_next/image?url=${imageUrl}&w=16&q=1`}
         />
       </div>
-      
     </li>
   )
 }

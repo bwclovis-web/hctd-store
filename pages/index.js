@@ -16,39 +16,39 @@ const HomePage = ({ products, collections, seo }) => {
     slug: products[0].node.handle,
   })
 
-  return (
-    <>
-      <SiteSeo data={seo} />
-      <HeroComponent src="/images/rainbow.jpg" title="Welcome Home" heading="Clothing & Supplies" />
-      <section>
-        <div className="container py-dynamic-container-y">
-          <DisplayGrid data={collections} cols={5} type="cat" filter={''}/>
-        </div>
-      </section>
+  return <>
+    <SiteSeo data={seo} />
+    <HeroComponent src="/images/rainbow.jpg" title="Welcome Home" heading="Clothing & Supplies" />
+    <section>
+      <div className="container py-dynamic-container-y">
+        <DisplayGrid data={collections} cols={5} type="cat" filter={''}/>
+      </div>
+    </section>
 
-      <DyeShopBanner />
+    <DyeShopBanner />
 
-      <section className="container py-6 italic text-2xl tracking-wider text-center">
-        <p className="text-xl font-semibold">
-          Hey we just added
-          <Link href={`shop/${firstProduct.slug}`}>
-            <a className="p-1 bg-blue-600 not-italic rounded text-slate-100 mx-1 font-black">
-              {firstProduct.title}
-            </a>
-          </Link>
-          to the store under {firstProduct.category}!
-        </p>
-      </section>
+    <section className="container py-6 italic text-2xl tracking-wider text-center">
+      <p className="text-xl font-semibold">
+        Hey we just added
+        <Link
+          href={`shop/${firstProduct.slug}`}
+          className="p-1 bg-blue-600 not-italic rounded text-slate-100 mx-1 font-black">
 
-      <section className="bg-teal-200">
-        <div className="container py-dynamic-container-y">
-          <DisplayGrid data={products} cols={4} title="New to the shop" filter={''}/>
-        </div>
-      </section>
+          {firstProduct.title}
 
-      {/* <VendingCalendarComponent /> */}
-    </>
-  )
+        </Link>
+        to the store under {firstProduct.category}!
+      </p>
+    </section>
+
+    <section className="bg-teal-200">
+      <div className="container py-dynamic-container-y">
+        <DisplayGrid data={products} cols={4} title="New to the shop" filter={''}/>
+      </div>
+    </section>
+
+    {/* <VendingCalendarComponent /> */}
+  </>
 }
 
 export async function getStaticProps() {

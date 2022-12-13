@@ -17,7 +17,7 @@ const CategoryProducts = ({ collection }) => {
     setFilter(evt.target.value)
   }
 
-  return(
+  return (
     <>
       <NextSeo
         title={`Shop | Category | ${collection.title}}`}
@@ -26,19 +26,20 @@ const CategoryProducts = ({ collection }) => {
       <article className="container p-dynamic-container-y">
         <div className="flex justify-between items-center">
           {collection.title.toLowerCase() === 'dyes' && allTags &&
-            <Dropdown data={allTags} onChange={handleFilterChange} heading="Filter By Color"/>
+          <Dropdown data={allTags} onChange={handleFilterChange} heading="Filter By Color"/>
           }
         </div>
         {collection.products.edges.length ?
           <DisplayGrid data={collection.products.edges} cols={4} filter={filter} /> :
           <div className="pt-10">
             <h2 className="text-4xl pb-4">Ooops, looks like we're out of stock!</h2>
-            <p className="text-lg">Please check back later, or if you are looking for something special or custom, <Link href="/contact"><a className="default-anchor">feel free to send us a message</a></Link>.</p>
+            <p className="text-lg">Please check back later, or if you are looking for something special or custom, <Link href="/contact" className="default-anchor">feel free to send us a message</Link>.</p>
           </div>
         }
       </article>
     </>
-  ) }
+  )
+}
 
 export const getStaticProps = async ({ params }) => {
   const productsByCollection = await getProductByCollection(params.slug)

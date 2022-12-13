@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { useState, useContext, useEffect } from "react"
-import Image from "next/image"
+import Image from "next/legacy/image"
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 import { RiHeartAddFill } from 'react-icons/ri'
@@ -94,8 +94,8 @@ const SingleProductPage = ({ product }) => {
             {collection.handle ==='dyes' ? 
               <>
                 <p>If you want to learn more on how to use these dyes, please visit our 
-                  <Link href="/instructions">
-                    <a className="text-link">tips and tricks page.</a>
+                  <Link href="/instructions" className="text-link">
+                    tips and tricks page.
                   </Link>
                 </p>
                 <span className="mt-10 text-center">

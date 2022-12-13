@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/legacy/image"
 
 const HeroComponent = ({ src, title, heading }) => (
   <div className="flex relative w-full justify-end items-center h-[70vh]">

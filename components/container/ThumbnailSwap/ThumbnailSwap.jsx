@@ -1,5 +1,5 @@
 import { useRef } from "react"
-import Image from "next/image"
+import Image from "next/legacy/image"
 
 const ProductThumbnails = ({ thumbnails, action }) => {
   const buttonRef = useRef(null)

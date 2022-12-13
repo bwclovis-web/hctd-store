@@ -10,7 +10,7 @@ const Footer = () =>   <>
         {navData.map(item => (
           <li key={item.id} className="border-r-2 pr-2 last-of-type:border-r-0 underline">
             <Link href={item.src}>
-              <a>{item.title}</a>
+              {item.title}
             </Link>
           </li>
         ))}

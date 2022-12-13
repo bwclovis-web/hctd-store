@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import Link from 'next/link'
 
 import { MdOutlineFavoriteBorder, MdFavorite } from 'react-icons/md'
@@ -34,45 +34,43 @@ const FavoritesComponent = () => {
     }
   }, [ modalOpen, router.events, toggleModal ])
 
-  return (
-    <>
-      <button onClick={() => toggleModal("favorites")} className="px-3 py-3 relative" disabled={!favorites?.length} aria-label={`you have ${favorites?.length} favorites saved`}>
-        {favorites?.length ? <MdFavorite size={40} fill={'red'}/> : <MdOutlineFavoriteBorder size={40}/>}
-        <span className="absolute top-[16px] font-bold right-[26px] text-white text-lg">{favorites?.length > 0 && favorites?.length}</span>
-      </button>
-      
-      {modalOpen && modalId === "favorites" && <Modal>
-        <div className="w-full">
-          <h2 className="font-display text-h2-dynamic">My Favorites</h2>
-          <ul className="mt-8">
-            {favorites?.map(item => (
-              <li key={item.id} className="text-2xlw-full mb-4 relative">  
-                <div className="relative w-full h-20">
-                  <Image
-                    alt=""
-                    src={item.image}
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                </div>
-                <div className="flex justify-between w-full h-20 items-center absolute top-0">
-                  <span className="flex flex-col bg-slate-200 h-full justify-center px-4">
-                    <Link href={item.slug}>
-                      <a className="text-2xl underline text-violet-700">{item.title}</a>
-                    </Link>
-                    <p>Added on {item.timeStamp}</p>
-                  </span>
-                  <button onClick={() => handleRemoveFromDb(item)} className="text-white mr-4 transition shadow bg-rose-600 border-2 border-rose-600 flex items-center w-12 h-12 justify-center rounded-full hover:bg-rose-600 active:translate-y-2">
-                    <FaTrash size={24} />
-                  </button>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </Modal>}
-    </>
-  )
+  return <>
+    <button onClick={() => toggleModal("favorites")} className="px-3 py-3 relative" disabled={!favorites?.length} aria-label={`you have ${favorites?.length} favorites saved`}>
+      {favorites?.length ? <MdFavorite size={40} fill={'red'}/> : <MdOutlineFavoriteBorder size={40}/>}
+      <span className="absolute top-[16px] font-bold right-[26px] text-white text-lg">{favorites?.length > 0 && favorites?.length}</span>
+    </button>
+    
+    {modalOpen && modalId === "favorites" && <Modal>
+      <div className="w-full">
+        <h2 className="font-display text-h2-dynamic">My Favorites</h2>
+        <ul className="mt-8">
+          {favorites?.map(item => (
+            <li key={item.id} className="text-2xlw-full mb-4 relative">  
+              <div className="relative w-full h-20">
+                <Image
+                  alt=""
+                  src={item.image}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+              <div className="flex justify-between w-full h-20 items-center absolute top-0">
+                <span className="flex flex-col bg-slate-200 h-full justify-center px-4">
+                  <Link href={item.slug} className="text-2xl underline text-violet-700">
+                    {item.title}
+                  </Link>
+                  <p>Added on {item.timeStamp}</p>
+                </span>
+                <button onClick={() => handleRemoveFromDb(item)} className="text-white mr-4 transition shadow bg-rose-600 border-2 border-rose-600 flex items-center w-12 h-12 justify-center rounded-full hover:bg-rose-600 active:translate-y-2">
+                  <FaTrash size={24} />
+                </button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </Modal>}
+  </>
 }
 
 export default FavoritesComponent

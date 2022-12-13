@@ -32,8 +32,10 @@ const DisplayGrid = ({ data, cols, type, title, cat, filter }) => {
       </ul>
       {
         (data.length >= 4 && cat) &&
-        <Link href={`/shop/category/${cat}`}>
-          <a className="absolute bottom-0 right-3 text-link text-xl">shop more {cat}</a>
+        <Link
+          href={`/shop/category/${cat}`}
+          className="absolute bottom-0 right-3 text-link text-xl">
+          shop more{cat}
         </Link>
       }
     </div>
