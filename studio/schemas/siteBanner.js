@@ -6,7 +6,7 @@ const siteBanner =  {
     name: 'content',
     type: 'string',
     title: 'Content',
-    validation: Rule => Rule.required().min(10).max(80)
+    validation: Rule => Rule.required().min(10).max(160)
   },
   {
     name: 'startDate',
