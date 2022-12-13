@@ -9,8 +9,8 @@
     {
         "date": "12/13/2022",
         "updates": [
-            {"heading": "Started upgrade to Next.13 to fix some of the known bugs and issues."},
-            {"heading": "Connected to CMS to ease content updates for non shop related content. "}
+            {"heading": "Next.js 13", "body": "Started upgrade to Next.13 to fix some of the known bugs and issues."},
+            {"heading": "Sanity CMS", "body": "Connected to CMS to ease content updates for non shop related content. "}
         ]
     }
 ]

@@ -4,6 +4,7 @@ import ShopContext from 'provider/ShopProvider'
 
 import DeleteFromCartButton from "./DeleteFromCartButton"
 import QuantityControls from './QuantityControls'
+import { formatPrice } from 'lib/formatPrice'
 
 const ShoppingCartItem = ({ data }) => {
   const { attrs, image } = data.variant
@@ -17,8 +18,7 @@ const ShoppingCartItem = ({ data }) => {
 
   useEffect(() => {
     updateLineItem(checkout.id, data.id, itemQuantity)
-  }, [itemQuantity])
-
+  }, [ itemQuantity, checkout.id, data.id ])
 
   return(
     <li className="flex content-start w-full mb-4">
@@ -28,7 +28,7 @@ const ShoppingCartItem = ({ data }) => {
             <span className="text-xl tracking-wider">{data.title}</span>
             <div className="flex flex-col mr-4">
               {dyeTitle && <span className="text-base">{attrs.title.value}</span>}
-              <span className="text-md mt-2 flex items-center">${attrs.price.value} {dyeTitle && <QuantityControls action={updateItemQuantity} quantity={itemQuantity} />}</span>
+              <span className="text-md mt-2 flex items-center">{formatPrice(attrs.price.amount, 'USD')} {dyeTitle && <QuantityControls action={updateItemQuantity} quantity={itemQuantity} />}</span>
             </div>
           </div>
         </div>

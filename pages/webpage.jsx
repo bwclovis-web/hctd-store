@@ -16,7 +16,7 @@ const WebsitePage = () => <>
   <section id="changelog" className="content-container p-dynamic-container-y lg:w-2/3">
     <h2 className="font-display text-h3-dynamic mt-16 bg-emerald-600 w-auto inline-block rounded p-4 text-cyan-100 tracking-wide mb-2">Site Updates</h2>
     <p>As our website grows, we want to let you know of all the new features available.  Please note this will not include content updates, only features.</p>
-    <ul className="mt-5 border-b-2 pb-4">{data.map(log => <li key={log.date}>
+    <ul className="mt-5 border-b-2 pb-4">{data.map(log => <li key={log.date} className="mt-10">
       <span className="font-bold bg-purple-600 p-1 text-slate-50 rounded">{log.date}</span>
       <ul className="mt-3 list-disc list-inside ">
         {log.updates.map(item => <li key={item.heading} className="pt-3">

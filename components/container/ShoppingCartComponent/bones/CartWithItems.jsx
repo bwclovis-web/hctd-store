@@ -27,11 +27,11 @@ const CartWithItems = () => {
         <div className="checkout-details h-max pb-20 px-4">
           <p>
             <span>Subtotal: </span>
-            <span>{formatPrice(checkout.subtotalPrice, "USD")}</span>
+            <span>{formatPrice(checkout.subtotalPrice.amount, "USD")}</span>
           </p>
           <p>
             <span>Taxes: </span>
-            <span>{formatPrice(checkout.totalTax, "USD")}</span>
+            <span>{formatPrice(checkout.totalTax.amount, "USD")}</span>
           </p>
           <p>
             <span>Shipping(est): </span>
@@ -39,7 +39,7 @@ const CartWithItems = () => {
           </p>
           <p>
             <span>Total at checkout: </span>
-            <span>{formatPrice(checkout.totalPrice, "USD")}</span>
+            <span>{formatPrice(checkout.totalPrice.amount, "USD")}</span>
           </p>
         </div>
       </div>
