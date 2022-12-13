@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { useState, useContext, useEffect } from "react"
-import Image from "next/legacy/image";
+import Image from "next/legacy/image"
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
 import { RiHeartAddFill } from 'react-icons/ri'
@@ -121,7 +121,7 @@ const SingleProductPage = ({ product }) => {
       </section> */}
       <Toast item={product} openToast={toast} />
     </div>
-  );
+  )
 }
 
 export const getStaticProps = async ({ params }) => {

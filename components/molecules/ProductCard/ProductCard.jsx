@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/legacy/image"
 import Link from "next/link"
 import { formatPrice } from "lib/formatPrice"
 import { getImageUrl } from "./util"
@@ -61,9 +61,8 @@ const ProductCard = ({ product, type, index, filter }) => {
           blurDataURL={`/_next/image?url=${imageUrl}&w=16&q=1`}
         />
       </div>
-      
     </li>
-  );
+  )
 }
 
 export default ProductCard

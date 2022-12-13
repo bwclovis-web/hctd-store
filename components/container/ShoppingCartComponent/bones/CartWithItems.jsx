@@ -53,7 +53,7 @@ const CartWithItems = () => {
         </Link>
       </div>
     </div>
-  );
+  )
 }
 
 export default CartWithItems

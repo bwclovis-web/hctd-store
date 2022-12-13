@@ -48,7 +48,7 @@ const HomePage = ({ products, collections, seo }) => {
     </section>
 
     {/* <VendingCalendarComponent /> */}
-  </>;
+  </>
 }
 
 export async function getStaticProps() {

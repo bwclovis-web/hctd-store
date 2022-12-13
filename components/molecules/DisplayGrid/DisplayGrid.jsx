@@ -39,7 +39,7 @@ const DisplayGrid = ({ data, cols, type, title, cat, filter }) => {
         </Link>
       }
     </div>
-  );
+  )
 }
 
 export default DisplayGrid

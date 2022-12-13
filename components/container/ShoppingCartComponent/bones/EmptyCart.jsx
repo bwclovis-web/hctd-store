@@ -14,7 +14,7 @@ const EmptyCart = () => {
         </Link>
       </div>
     </section>
-  );
+  )
 }
 
 export default EmptyCart 

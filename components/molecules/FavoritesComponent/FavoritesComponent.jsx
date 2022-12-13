@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react'
-import Image from "next/legacy/image";
+import Image from "next/legacy/image"
 import Link from 'next/link'
 
 import { MdOutlineFavoriteBorder, MdFavorite } from 'react-icons/md'
@@ -70,7 +70,7 @@ const FavoritesComponent = () => {
         </ul>
       </div>
     </Modal>}
-  </>;
+  </>
 }
 
 export default FavoritesComponent
