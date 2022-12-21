@@ -74,12 +74,70 @@ export const allProductsQuery = `{
     }
   }
 }`
-
 export const productByCollection = handle => `{
   collection(handle:"${handle}"){
     title
-    products(first: 40) {
+    products(first: 8 ) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+        startCursor
+        endCursor
+      }
       edges {
+        cursor
+        node {
+          availableForSale
+          handle
+          tags
+          title
+          featuredImage {
+            url
+          }
+        }
+      }
+    }
+  }
+}`
+
+export const paginatedCollection = (handle, cursor) => `{
+  collection(handle:"${handle}"){
+    title
+    products(first: 8, after:"${cursor}" ) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+        startCursor
+        endCursor
+      }
+      edges {
+        cursor
+        node {
+          availableForSale
+          handle
+          tags
+          title
+          featuredImage {
+            url
+          }
+        }
+      }
+    }
+  }
+}`
+
+export const paginatedCollectionBack = (handle, cursor) => `{
+  collection(handle:"${handle}"){
+    title
+    products(last: 8, before:"${cursor}" ) {
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+        startCursor
+        endCursor
+      }
+      edges {
+        cursor
         node {
           availableForSale
           handle

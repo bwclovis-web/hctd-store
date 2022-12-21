@@ -13,7 +13,7 @@ const Button = forwardRef(({ children, size, config, onClick, type, disabled, id
     'border-0 shadow-none px-2': config === 'svg',
     'border-0 shadow-none p-4 -mr-12': config === 'cart',
     'bg-indigo-500 border-indigo-700 hover:bg-indigo-700 hover:border-indigo-500 text-white shadow-xl active:translate-y-4 active:shadow-none': config === 'default',
-    'bg-slate-300 text-slate-400 focus:bg-slate-300 border-slate-400 focus:border-slate-400': disabled === true
+    'bg-slate-300 text-slate-400 focus:bg-slate-300 border-slate-400 focus:border-slate-400 hover:bg-slate-300 active:translate-y-0 drop-shadow-none shadow-none': disabled === true
   })
   return (
     <button id={id} aria-label={label} ref={ref} className={ButtonClasses} onClick={onClick} disabled={disabled} type={type ? type : 'button'}>

@@ -2,9 +2,9 @@ import Link from "next/link"
 import classNames from "classnames"
 import ProductCard from "../ProductCard/ProductCard"
 
-const DisplayGrid = ({ data, cols, type, title, cat, filter }) => {
+const DisplayGrid = ({ data, cols, type, title, cat, filter, updating }) => {
   const GridClasses = classNames({
-    'grid grid-cols-1 md:grid-cols-2 gap-4': true,
+    'grid grid-cols-1 md:grid-cols-2 gap-4 min-h-full': true,
     'xl:grid-cols-4': cols === 4,
     'xl:grid-cols-5': cols === 5
   })
@@ -18,9 +18,13 @@ const DisplayGrid = ({ data, cols, type, title, cat, filter }) => {
     return
   }
 
+  if(updating){
+    return <div className="h-[1400px]"><span className="font-bold text-6xl">LOADING MOTYHERR</span></div>
+  }
+
   return (
     <div className={containerClasses}>
-      {title ? <h2 className="font-display text-h2-dynamic capitalize">{title}</h2> : null}
+      {title ? <h2 className="font-display text-h2-dynamic capitalize mi">{title}</h2> : null}
       <ul className={GridClasses}>
         {data?.map((item, index) => {
           const hasTags = item?.node?.tags?.length && item.node.tags
@@ -35,7 +39,7 @@ const DisplayGrid = ({ data, cols, type, title, cat, filter }) => {
         <Link
           href={`/shop/category/${cat}`}
           className="absolute bottom-0 right-3 text-link text-xl">
-          shop more{cat}
+          shop more {cat}
         </Link>
       }
     </div>
