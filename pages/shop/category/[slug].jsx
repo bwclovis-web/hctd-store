@@ -17,7 +17,7 @@ const CategoryProducts = ({ collection, content }) => {
   const handleFilterChange = evt => {
     setFilter(evt.target.value)
   }
-  console.log(`%c content.pageHero`, 'background: #0047ab; color: #fff; padding: 2px:', content.pageHero)
+
   return (
     <>
       <NextSeo
