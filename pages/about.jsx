@@ -22,10 +22,23 @@ const AboutPage = ({ content }) => (
 )
 
 export async function getStaticProps() {
-  const contentProps = await sanityClient.fetch(`*[_type == "page" && pageTitle == "about"]`)
+  const contentProps = await sanityClient.fetch(`{
+    "mySanityData": *[_type == "page" && pageTitle == "about"] {
+      pageHero {
+        heading,
+        eyebrow,
+        heroImage {
+          asset -> {
+            ...,
+            metadata
+          }
+        }
+      }
+    }
+  }`)
   return {
     props: {
-      content: contentProps[0]
+      content: contentProps.mySanityData[0]
     },
     revalidate: 120,
   }

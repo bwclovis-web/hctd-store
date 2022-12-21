@@ -18,6 +18,7 @@ const hero = {
     type: 'image',
     options: {
       hotspot: true,
+      metadata: [ 'lqip', 'blurhash' ]
     },
   }]
 } 

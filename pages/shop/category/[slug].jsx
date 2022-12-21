@@ -17,13 +17,13 @@ const CategoryProducts = ({ collection, content }) => {
   const handleFilterChange = evt => {
     setFilter(evt.target.value)
   }
-
+  console.log(`%c content.pageHero`, 'background: #0047ab; color: #fff; padding: 2px:', content.pageHero)
   return (
     <>
       <NextSeo
         title={`Shop | Category | ${collection.title}}`}
       />
-      <HeroComponent heading={collection.title} {...content.pageHero}/>
+      <HeroComponent {...content.pageHero} heading={collection.title} />
       <article className="container p-dynamic-container-y">
         <div className="flex justify-between items-center">
           {collection.title.toLowerCase() === 'dyes' && allTags &&
@@ -44,11 +44,24 @@ const CategoryProducts = ({ collection, content }) => {
 
 export const getStaticProps = async ({ params }) => {
   const productsByCollection = await getProductByCollection(params.slug)
-  const contentProps = await sanityClient.fetch(`*[_type == "page" && pageTitle == "category"]`)
+  const contentProps = await sanityClient.fetch(`{
+    "mySanityData": *[_type == "page" && pageTitle == "category"] {
+      pageHero {
+        heading,
+        eyebrow,
+        heroImage {
+          asset -> {
+            ...,
+            metadata
+          }
+        }
+      }
+    }
+  }`)
   return {
     props: {
       collection: JSON.parse(JSON.stringify(productsByCollection)),
-      content: contentProps[0]
+      content: contentProps.mySanityData[0]
     },
     revalidate: 120
   }

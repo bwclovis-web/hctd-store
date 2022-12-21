@@ -17,7 +17,6 @@ const HomePage = ({ products, collections, seo, content }) => {
     category: products[0].node.collections.edges[0].node.handle,
     slug: products[0].node.handle,
   })
-
   return <>
     <SiteSeo data={seo} />
     <HeroComponent {...content.pageHero} />
@@ -55,13 +54,26 @@ const HomePage = ({ products, collections, seo, content }) => {
 
 export async function getStaticProps() {
   const pageProps = await getHomePageProps()
-  const contentProps = await sanityClient.fetch(`*[_type == "page" && pageTitle == "home"]`)
+  const contentProps = await sanityClient.fetch(`{
+    "mySanityData": *[_type == "page" && pageTitle == "home"] {
+      pageHero {
+        heading,
+        eyebrow,
+        heroImage {
+          asset -> {
+            ...,
+            metadata
+          }
+        }
+      }
+    }
+  }`)
   return {
     props: {
       products: pageProps.products.edges,
       collections: pageProps.collections.edges,
       seo: data.home,
-      content: contentProps[0]
+      content: contentProps.mySanityData[0]
     },
     revalidate: 120,
   }

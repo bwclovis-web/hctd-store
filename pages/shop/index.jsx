@@ -27,7 +27,20 @@ const ShopPage = ({ dyes, tops, bottoms, outerwear, accessories, content }) => (
 
 export async function getStaticProps() {
   const pageProps = await getShopPageProps()
-  const contentProps = await sanityClient.fetch(`*[_type == "page" && pageTitle == "shop"]`)
+  const contentProps = await sanityClient.fetch(`{
+    "mySanityData": *[_type == "page" && pageTitle == "shop"] {
+      pageHero {
+        heading,
+        eyebrow,
+        heroImage {
+          asset -> {
+            ...,
+            metadata
+          }
+        }
+      }
+    }
+  }`)
   return {
     props: {
       dyes: pageProps.dyeProducts.edges,
@@ -35,7 +48,7 @@ export async function getStaticProps() {
       bottoms: pageProps.bottoms.edges,
       outerwear: pageProps.outerwear.edges,
       accessories: pageProps.accessories.edges,
-      content: contentProps[0]
+      content: contentProps.mySanityData[0]
     },
     revalidate: 120
   }
