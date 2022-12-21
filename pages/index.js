@@ -1,15 +1,17 @@
 import { useState } from 'react'
 import Link from 'next/link'
-import { getHomePageProps } from 'lib/shopifyGraphql'
-import data from 'Data/seo.json'
 
+import { getHomePageProps } from 'lib/shopifyGraphql'
+import sanityClient from 'lib/sanityClient'
+
+import data from 'Data/seo.json'
 
 import VendingCalendarComponent from 'components/container/VendingCalender/VendingCalender'
 import DyeShopBanner from 'components/container/DyeShopBanner/DyeShopBanner'
 import HeroComponent from 'components/molecules/Hero/Hero'
 import DisplayGrid from 'components/molecules/DisplayGrid/DisplayGrid'
 import SiteSeo from 'components/molecules/SiteSeo/SiteSeo'
-import sanityClient from 'lib/sanityClient'
+
 
 const HomePage = ({ products, collections, seo, content }) => {
   const [firstProduct] = useState({
