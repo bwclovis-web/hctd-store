@@ -4,8 +4,8 @@ import HeroComponent from "components/molecules/Hero/Hero"
 import sanityClient from 'lib/sanityClient'
 import { dyingNeeds } from "Data/need"
 import { NextSeo } from "next-seo"
-import data from 'Data/dyeInstructions.json'
-const InstructionPage = ({ content }) => <>
+
+const InstructionPage = ({ content }) => (<>
   <NextSeo
     title="Home Page"
     description="Custom made tie dye clothing, accessories, and dyes."
@@ -22,14 +22,15 @@ const InstructionPage = ({ content }) => <>
     </section>
     <section className="lg:w-3/5">
       <h2 className="font-display text-h3-dynamic leading-none mb-4">Basic Instructions</h2>
-      <Accordion data={data}/>
+      <Accordion data={content.faqs}/>
     </section>
   </article>
-</>
+</>)
 
 export async function getStaticProps() {
   const contentProps = await sanityClient.fetch(`{
     "mySanityData": *[_type == "page" && pageTitle == "instructions"] {
+      faqs,
       pageHero {
         heading,
         eyebrow,

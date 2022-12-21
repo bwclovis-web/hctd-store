@@ -1,6 +1,7 @@
 import classNames from "classnames"
 import { useState } from "react"
 import { BsPatchMinusFill, BsPatchPlusFill } from "react-icons/bs"
+import { PortableText } from '@portabletext/react'
 
 const AccordionItem = ({ id, question, answer }) => {
   const [ isActive, setIsActive ] = useState(false)
@@ -28,7 +29,9 @@ const AccordionItem = ({ id, question, answer }) => {
         <span>{question}</span>
       </button>
       <div className={AccordionClasses} id={id} role="region" aria-hidden={!isActive} aria-labelledby={`q-${id}`}>
-        <div className="tracking-wide font-semibold" dangerouslySetInnerHTML={{ __html: answer }}/>
+        <div className="tracking-wide font-semibold">
+          <PortableText value={answer}/>
+        </div>
       </div>
     </li>
   )

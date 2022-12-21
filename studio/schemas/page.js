@@ -13,13 +13,10 @@ const page =  {
     type: 'hero',
   },
   {
-    name: 'slug',
-    title: 'Slug',
-    type: 'slug',
-    options: {
-      source: 'title',
-      maxLength: 96,
-    },
+    name: 'faqs',
+    title: 'Frequently Asked Questions',
+    type: 'array',
+    of: [{ type: 'faq' }]
   },
     //   {
     //     name: 'author',

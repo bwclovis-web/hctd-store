@@ -105,7 +105,10 @@ const SingleProductPage = ({ product }) => {
                   </Button>
                 </span>
               </> :
-              <Accordion data={data}/>
+              <>
+                <h2 className="text-lg tracking-wider uppercase mb-2 underline">How to care for Clothing:</h2>
+                <p>Wash cold with like colors, tumble dry low.</p>
+              </>
             }
           </div>
         </section>

@@ -1,7 +1,5 @@
 import { NextSeo } from 'next-seo'
 
-import data from 'Data/faq.json'
-
 import Accordion from 'components/container/Accordion/Accordion'
 import HeroComponent from 'components/molecules/Hero/Hero'
 import ContactUsForm from 'components/container/Forms/ContactUs/ContactUs'
@@ -20,7 +18,7 @@ const ContactPage = ({ content }) => (
         <section className="lg:w-1/2 xl:w-3/5 lg:border-r-2 pr-6 mr-6">
           <div>
             <h2 className="font-display text-h3-dynamic mb-10">Frequently Asked Questions</h2>
-            <Accordion data={data} />
+            <Accordion data={content.faqs} />
           </div>
         </section>
 
@@ -36,6 +34,7 @@ const ContactPage = ({ content }) => (
 export async function getStaticProps() {
   const contentProps = await sanityClient.fetch(`{
     "mySanityData": *[_type == "page" && pageTitle == "contact"] {
+      faqs,
       pageHero {
         heading,
         eyebrow,
