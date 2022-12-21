@@ -11,7 +11,7 @@ const SizeSelection = ({ data, action }) => {
   return (
     <div className="flex flex-col">
       <div>
-        <p className="text-slate-700 pb-2 text-base">Shipped in heat sealed mylar bags.</p>
+        <p className="text-slate-700 pb-2 text-base">Shipped in durable plastic bags.</p>
         <div className="flex">
           {
             bags.map((item, i) => <RadioButtons data={item.node} key={i} changeAction={action} />)
