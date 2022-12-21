@@ -32,8 +32,9 @@ const ProductCard = ({ product, type, index, filter }) => {
   })
 
   const imageClasses = classNames({
-    "h-full relative border-4 border-purple-600 peer-hover:border-emerald-700 peer-hover:shadow-xl transition-all": true,
-    "opacity-60": !node.availableForSale
+    "h-full rounded relative border-4 peer-hover:border-emerald-700 peer-hover:shadow-xl transition-all": true,
+    "border-purple-600": node.availableForSale,
+    "opacity-40 border-slate-900": !node.availableForSale
   })
 
   const checkItem = (evt, isAvailable) => {
