@@ -1,16 +1,17 @@
 import { NextSeo } from 'next-seo'
 import { getShopPageProps } from 'lib/shopifyGraphql'
+import sanityClient from 'lib/sanityClient'
 
 import DisplayGrid from 'components/molecules/DisplayGrid/DisplayGrid'
 import HeroComponent from 'components/molecules/Hero/Hero'
 
-const ShopPage = ({ dyes, tops, bottoms, outerwear, accessories }) => (
+const ShopPage = ({ dyes, tops, bottoms, outerwear, accessories, content }) => (
   <>
     <NextSeo
       title="Current Shop Items"
       description="Custom tye die clothing and dyes for sale."
     />
-    <HeroComponent src="/images/swirl.jpg" title="The Store" heading="Clothing and Dyes"/>
+    <HeroComponent {...content.pageHero}/>
     <section>
       <div className="container py-dynamic-container-y">
         <DisplayGrid data={dyes} cat="dyes" cols={4} title="new dyes" filter={''}/>
@@ -26,13 +27,28 @@ const ShopPage = ({ dyes, tops, bottoms, outerwear, accessories }) => (
 
 export async function getStaticProps() {
   const pageProps = await getShopPageProps()
+  const contentProps = await sanityClient.fetch(`{
+    "mySanityData": *[_type == "page" && pageTitle == "shop"] {
+      pageHero {
+        heading,
+        eyebrow,
+        heroImage {
+          asset -> {
+            ...,
+            metadata
+          }
+        }
+      }
+    }
+  }`)
   return {
     props: {
       dyes: pageProps.dyeProducts.edges,
       tops: pageProps.tops.edges,
       bottoms: pageProps.bottoms.edges,
       outerwear: pageProps.outerwear.edges,
-      accessories: pageProps.accessories.edges
+      accessories: pageProps.accessories.edges,
+      content: contentProps.mySanityData[0]
     },
     revalidate: 120
   }

@@ -1,14 +1,15 @@
 
 import { NextSeo } from 'next-seo'
 import HeroComponent from 'components/molecules/Hero/Hero'
+import sanityClient from 'lib/sanityClient'
 
-const AboutPage = () => (
+const AboutPage = ({ content }) => (
   <div>
     <NextSeo
       title="About Us"
       description="a brief history on happy cat tie dye and it founders."
     />
-    <HeroComponent src={`/images/home.jpg`} title="About Happy Cat Tie Dye" heading="Meet the founder" />
+    <HeroComponent {...content.pageHero}  />
     <section className="py-dynamic-container-y content-container">
       <h2 className="font-display text-h2-dynamic"> OH HAI</h2>
       <div className="about">
@@ -19,6 +20,29 @@ const AboutPage = () => (
     </section>
   </div >
 )
+
+export async function getStaticProps() {
+  const contentProps = await sanityClient.fetch(`{
+    "mySanityData": *[_type == "page" && pageTitle == "about"] {
+      pageHero {
+        heading,
+        eyebrow,
+        heroImage {
+          asset -> {
+            ...,
+            metadata
+          }
+        }
+      }
+    }
+  }`)
+  return {
+    props: {
+      content: contentProps.mySanityData[0]
+    },
+    revalidate: 120,
+  }
+}
 
 
 export default AboutPage

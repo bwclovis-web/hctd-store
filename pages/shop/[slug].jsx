@@ -61,7 +61,6 @@ const SingleProductPage = ({ product }) => {
       </Modal>}
       <article className="content-container mt-10 flex flex-col gap-6 lg:flex-row justify-around border-indigo-100 border-2 py-20 rounded-md lg:w-5/6 mb-5">
         <section className="lg:w-1/2 2xl:mr-8">
-          
           <div>
             <Image
               src={image.url}
@@ -106,7 +105,10 @@ const SingleProductPage = ({ product }) => {
                   </Button>
                 </span>
               </> :
-              <Accordion data={data}/>
+              <>
+                <h2 className="text-lg tracking-wider uppercase mb-2 underline">How to care for Clothing:</h2>
+                <p>Wash cold with like colors, tumble dry low.</p>
+              </>
             }
           </div>
         </section>
@@ -130,7 +132,7 @@ export const getStaticProps = async ({ params }) => {
   const product = await getSingleProductPageProps(params.slug)
   return {
     props: {
-      product
+      product,
     },
     revalidate: 120
   }

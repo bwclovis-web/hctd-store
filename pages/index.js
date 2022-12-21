@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import Link from 'next/link'
+
 import { getHomePageProps } from 'lib/shopifyGraphql'
+import sanityClient from 'lib/sanityClient'
+
 import data from 'Data/seo.json'
 
 import VendingCalendarComponent from 'components/container/VendingCalender/VendingCalender'
@@ -9,16 +12,16 @@ import HeroComponent from 'components/molecules/Hero/Hero'
 import DisplayGrid from 'components/molecules/DisplayGrid/DisplayGrid'
 import SiteSeo from 'components/molecules/SiteSeo/SiteSeo'
 
-const HomePage = ({ products, collections, seo }) => {
+
+const HomePage = ({ products, collections, seo, content }) => {
   const [firstProduct] = useState({
     title: products[0].node.title,
     category: products[0].node.collections.edges[0].node.handle,
     slug: products[0].node.handle,
   })
-
   return <>
     <SiteSeo data={seo} />
-    <HeroComponent src="/images/rainbow.jpg" title="Welcome Home" heading="Clothing & Supplies" />
+    <HeroComponent {...content.pageHero} />
     <section>
       <div className="container py-dynamic-container-y">
         <DisplayGrid data={collections} cols={5} type="cat" filter={''}/>
@@ -53,11 +56,26 @@ const HomePage = ({ products, collections, seo }) => {
 
 export async function getStaticProps() {
   const pageProps = await getHomePageProps()
+  const contentProps = await sanityClient.fetch(`{
+    "mySanityData": *[_type == "page" && pageTitle == "home"] {
+      pageHero {
+        heading,
+        eyebrow,
+        heroImage {
+          asset -> {
+            ...,
+            metadata
+          }
+        }
+      }
+    }
+  }`)
   return {
     props: {
       products: pageProps.products.edges,
       collections: pageProps.collections.edges,
-      seo: data.home
+      seo: data.home,
+      content: contentProps.mySanityData[0]
     },
     revalidate: 120,
   }
