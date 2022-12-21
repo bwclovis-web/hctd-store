@@ -17,9 +17,6 @@ import DisplayGrid from "components/molecules/DisplayGrid/DisplayGrid"
 import Button from "components/atoms/Button/Button"
 import Modal from "components/container/Modal/Modal"
 import DisclaimerContent from "components/molecules/ProductModalContent/DisclaimerContent"
-import data from 'Data/care.json'
-import Accordion from "components/container/Accordion/Accordion"
-
 
 const SingleProductPage = ({ product }) => {
   const { toast, toggleModal, modalOpen, modalId } = useContext(AppCtx)
