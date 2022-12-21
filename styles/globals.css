@@ -2,6 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+.carousel .control-dots  {
+    margin: 0;
+}
+
+.carousel .control-next.control-arrow::before {
+    border-left: 22px solid #fff;
+}
+.carousel .control-prev.control-arrow::before {
+    border-right: 22px solid #fff;
+}
+.carousel .control-arrow::before, .carousel.carousel-slider .control-arrow::before {
+    width: 100%;
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+}
+
+.carousel-status {
+    display: none;
+}
+.carousel.carousel-slider .control-arrow {
+    background: rebeccapurple;
+    height: 44px;
+    width: 44px;
+    border-radius: 20%;
+    top: 40%;
+    display: flex;
+}
+.carousel .control-dots .dot {
+    width: 14px;
+    height: 14px;
+    background: violet;
+    opacity: .4;
+    margin:0 4px;
+    box-shadow: none
+}
+
 @layer base {
     html,
     body,
@@ -18,7 +54,7 @@
         & ~ p {
             @apply mt-4
         }
-    }
+    }    
 
     .open {
         @apply overflow-hidden
@@ -26,6 +62,7 @@
 }
 
 @layer components {
+    
     .checkout-details {
         p {
             @apply flex py-2 justify-between;
