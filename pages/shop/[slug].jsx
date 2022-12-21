@@ -130,7 +130,7 @@ export const getStaticProps = async ({ params }) => {
   const product = await getSingleProductPageProps(params.slug)
   return {
     props: {
-      product
+      product,
     },
     revalidate: 120
   }
