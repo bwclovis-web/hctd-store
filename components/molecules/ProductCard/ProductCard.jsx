@@ -22,12 +22,18 @@ const ProductCard = ({ product, type, index, filter }) => {
 
   const spanClasses = classNames({
     'tracking-widest text-xl': true,
+    'line-through': !node.availableForSale,
     'inline-block mx-auto': !node.priceRange
   })
   const linkClasses = classNames({
     "px-1 mt-4 py-2 border-2 shadow capitalize text-center w-full lg:w-2/3 mx-auto peer": true,
     "border-fuchsia-800 bg-fuchsia-200 text-fuchsia-800 hover:bg-fuchsia-800 hover:text-fuchsia-200 hover:border-fuchsia-300 hover:transition-all hover:shadow-md ": node.availableForSale,
     "bg-slate-600 text-slate-100 border-2 border-black pointer-events-none": !node.availableForSale
+  })
+
+  const imageClasses = classNames({
+    "h-full relative border-4 border-purple-600 peer-hover:border-emerald-700 peer-hover:shadow-xl transition-all": true,
+    "opacity-60": !node.availableForSale
   })
 
   const checkItem = (evt, isAvailable) => {
@@ -43,13 +49,13 @@ const ProductCard = ({ product, type, index, filter }) => {
 
         <div>
           <span className="flex flex-col">
-            <span className={spanClasses}>{node.availableForSale ? node.title : 'out of stock'}</span>
+            <span className={spanClasses}>{node.title}</span>
             {(node.priceRange && node.availableForSale) && renderPriceRange(node.priceRange)}
           </span>
         </div>
 
       </Link>
-      <div className="h-full relative border-4 border-purple-600 peer-hover:border-emerald-700 peer-hover:shadow-xl transition-all">
+      <div className={imageClasses}>
         <Image
           src={imageUrl}
           alt=""
