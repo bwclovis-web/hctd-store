@@ -155,7 +155,7 @@ export const homePageQuery = `{
 }`
 
 export const shopPageQuery = `{
-  dyeProducts: products(sortKey:UPDATED_AT, query:"product_type:reactive dye", first:4) {
+  dyeProducts: products(sortKey:UPDATED_AT, query:"product_type:reactive dye", first:4, reverse: true) {
       edges {
         node {
           title

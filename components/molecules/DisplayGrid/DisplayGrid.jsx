@@ -35,7 +35,7 @@ const DisplayGrid = ({ data, cols, type, title, cat, filter }) => {
         <Link
           href={`/shop/category/${cat}`}
           className="absolute bottom-0 right-3 text-link text-xl">
-          shop more{cat}
+          shop more {cat}
         </Link>
       }
     </div>
