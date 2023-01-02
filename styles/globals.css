@@ -80,7 +80,7 @@
         @apply flex ml-0;
 
         label span {
-            @apply cursor-pointer px-3 py-1 inline-block  rounded-full border-2 text-xl font-semibold border-indigo-400 first-of-type:ml-0
+            @apply cursor-pointer px-3 py-2 inline-block leading-none rounded-full border-2 text-xl font-semibold border-indigo-400 first-of-type:ml-0
         }
 
         input {
