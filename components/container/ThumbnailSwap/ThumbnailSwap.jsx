@@ -15,13 +15,13 @@ const ProductThumbnails = ({ thumbnails, action }) => {
   }
 
   return (
-    <div className=" bg-red-50 w-full h-full justify-start gap-2 px-2">
-      <div className="w-2/3 2xl:w-1/2 mx-auto">
-        <Carousel showThumbs={false}>
+    <div className=" bg-slate-100 w-full p-4 lg:p-2 pt-6">
+      <div className="mx-auto lg:w-2/3">
+        <Carousel showThumbs={false} showIndicators={false}>
           {thumbnails.map(img => (
             <button
               ref={buttonRef}
-              className=" lg:h-32 xl:h-40 w-1/2 overflow-hidden mx-3"
+              className="overflow-hidden mx-3 w-2/3"
               key={img.node.id}
               data-url={img.node.url}
               data-caption={img.node.altText}
@@ -30,7 +30,7 @@ const ProductThumbnails = ({ thumbnails, action }) => {
               <span className="sr-only">Switch to view {img.node.altText}</span>
               <Image
                 alt=""
-                width={200}
+                width={400}
                 height={300}
                 layout="responsive"
                 objectFit="contain"
@@ -40,7 +40,9 @@ const ProductThumbnails = ({ thumbnails, action }) => {
             </button>
           ))}
         </Carousel>
+        
       </div>
+      <p className="text-center text-slate-600">Click on a thumbnail to see larger image.</p>
     </div>
   )
 }

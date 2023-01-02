@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.carousel .control-dots  {
-    margin: 0;
-}
 
 .carousel .control-next.control-arrow::before {
     border-left: 22px solid #fff;
@@ -18,8 +15,15 @@
     border-bottom: 16px solid transparent;
 }
 
-.carousel-status {
-    display: none;
+.carousel .carousel-status {
+    color: black;
+    text-shadow: none;
+    font-size: 1rem;
+    color: #fff;
+    background: rgb(55,48,163);
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 0 8px;
 }
 .carousel.carousel-slider .control-arrow {
     background: rebeccapurple;
