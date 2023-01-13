@@ -53,12 +53,15 @@ const Header = () => {
 
   return(
     <>
+      <div className="text-center p-4 bg-cyan-200">
+        <div className="container">
+          <p className="text-cyan-900 font-semibold text-sm lg:text-base" >During sales and new product launches processing can take up to two weeks. Dyes are small batch and filled to order.</p>
+        </div>
+      </div>
       {displayBanner.show ? <SiteAlert bannerData={displayBanner}/> : null}
       <header className="container py-0 outline-none" ref={headerRef} tabIndex={-1}>
-        <>
-          <UtilNav />
-          <MainNavigation />
-        </>
+        <UtilNav />
+        <MainNavigation />
       </header>
     </>
   ) }
