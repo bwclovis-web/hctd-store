@@ -147,4 +147,10 @@
             @apply px-0
         }
     }
+
+    .content {
+        p {
+            @apply text-2xl
+        }
+    }
 }

@@ -13,6 +13,16 @@ const page =  {
     type: 'hero',
   },
   {
+    name: 'heading',
+    title: 'First Page Heading',
+    type: 'string'
+  },
+  {
+    name: 'body',
+    title: 'BodyContent',
+    type: 'blockContent'
+  },
+  {
     name: 'faqs',
     title: 'Frequently Asked Questions',
     type: 'array',
