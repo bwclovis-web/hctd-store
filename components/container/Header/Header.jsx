@@ -38,9 +38,11 @@ const Header = () => {
 
   const testAThing = async() => {
     const banner = await getClient().fetch(query)
-    const today = new Date().toLocaleDateString()
-    const startDate = new Date(banner[0].startDate).toLocaleDateString()
-    const endDate = new Date(banner[0].endDate).toLocaleDateString()
+    const today = new Date().toISOString()
+    const startDate = new Date(banner[0].startDate).toISOString()
+    const endDate = new Date(banner[0].endDate).toISOString()
+
+    console.log(`%c startDate`, 'background: #0047ab; color: #fff; padding: 2px:', endDate > today)
 
     if(startDate < today && endDate > today && banner[0].bannerDisplay) {
       setDisplayBanner({
