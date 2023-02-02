@@ -150,7 +150,7 @@
 
     .content {
         p {
-            @apply text-2xl
+            @apply text-xl tracking-wide
         }
     }
 }
