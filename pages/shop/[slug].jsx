@@ -21,21 +21,21 @@ import DisclaimerContent from "components/molecules/ProductModalContent/Disclaim
 const SingleProductPage = ({ product }) => {
   const { toast, toggleModal, modalOpen, modalId } = useContext(AppCtx)
   const { featuredImage, tags, title, descriptionHtml, availableForSale, variants, collections, images } = product
-  const [ image, setImage ] = useState({ url: featuredImage.url, alt: featuredImage.altText })
+  const [ image, setImage ] = useState({ url: featuredImage?.url, alt: featuredImage.altText })
   const variant = variants.edges
   const collection = collections.edges[0].node
   const thumbnailArray = images.edges
 
   useEffect(() => {
     setImage({
-      url: featuredImage.url, alt: featuredImage.altText
+      url: featuredImage?.url, alt: featuredImage?.altText
     })
   }, [featuredImage])
 
   const addToFavorite = async product => {
     const dbObject = {
       id: product.id,
-      image: product.featuredImage.url,
+      image: product.featuredImage?.url,
       title: product.title,
       slug: window.location.pathname, 
       timeStamp: new Date().toDateString()
@@ -60,7 +60,7 @@ const SingleProductPage = ({ product }) => {
         <section className="lg:w-1/2 2xl:mr-8">
           <div>
             <Image
-              src={image.url}
+              src={image?.url}
               alt={image.alt}
               layout="responsive"
               width={400}
