@@ -10,6 +10,8 @@ import faqs from './faq'
 import page from './page'
 import siteBanner from './siteBanner'
 import hero from './hero'
+import featuredArtist from './featuredArtist'
+import artistEntry from './artistEntry'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -21,5 +23,7 @@ export default createSchema({
     hero,
     siteBanner,
     faqs,
+    artistEntry,
+    featuredArtist,
     blockContent, ]),
 })

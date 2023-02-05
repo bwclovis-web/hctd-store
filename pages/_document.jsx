@@ -16,7 +16,7 @@ const Document = () => (
         rel="stylesheet"
       />
     </Head>
-    <body>
+    <body className="overflow-x-hidden">
       <Main />
       <div id="modal-portal" />
       <NextScript />

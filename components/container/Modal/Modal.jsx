@@ -40,7 +40,7 @@ const Modal = ({ children }) => {
 
 
   const template = (
-    <div id="modalContainer" className={`absolute h-full w-full z-10 flex justify-center items-center`} ref={outerRef}>
+    <div id="modalContainer" className="absolute h-full w-full z-20 flex justify-center items-center" ref={outerRef}>
       <div className={ModalClasses} onClick={toggleModal} />
       
       <div className={ModalContentClasses}>

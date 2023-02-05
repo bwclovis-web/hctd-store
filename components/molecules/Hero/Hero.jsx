@@ -9,7 +9,7 @@ const HeroComponent = ({ heroImage, eyebrow, heading }) => {
   )
 
   return(
-    <div className="flex relative w-full justify-end items-center h-[70vh]">
+    <div className="flex relative w-full justify-end items-center h-[70vh] z-20">
       <Image
         alt={''}
         {...imageProps}
