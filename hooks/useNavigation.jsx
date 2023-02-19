@@ -23,11 +23,13 @@ const UseNavigation = () => {
   }, [])
 
   useEffect(() => {
+    const root = document.documentElement
+    const nav = document.getElementById('main-navigation')
     if (navSize === "small") {
-      const root = document.documentElement
-      const nav = document.getElementById('main-navigation')
       if(navOpen) {
+        const trigger = document.getElementById('nav-close')
         root.classList.add('open')
+        trigger?.focus()
         setFocusTrap(nav)
       } else {
         root.classList.remove('open')

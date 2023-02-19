@@ -32,9 +32,12 @@ const MainNavigation = () => {
         </div>
 
         <nav className={NavClasses} id="main-navigation">
-          <span className="bg-blue-800 text-white rounded-full w-8 h-8 flex justify-center items-center absolute right-4 top-4 lg:hidden">
-            <Button id="cart-close" onClick={() => toggleNav()} config="svg" aria-label="close navigation">x</Button>
-          </span>
+          <div className="flex justify-between px-5 lg:hidden mb-6 items-center">
+            <span className="font-display text-slate-100 text-4xl tracking-wide">Happy Cat Tie Dye</span>
+            <span className="bg-blue-800 text-white rounded-full w-8 h-8 flex justify-center items-center right-4 top-4 ">
+              <Button id="nav-close" onClick={() => toggleNav()} config="svg" aria-label="close navigation">x</Button>
+            </span>
+          </div>
           <ul className="flex flex-col lg:flex-row">
             {
               navData.map(item => (

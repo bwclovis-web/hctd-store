@@ -17,8 +17,8 @@ const UseCart = () => {
 
   useEffect(() => {
     const root = document.documentElement
-    const cart = document.getElementById('cart')
     if (cartOpen) {
+      const cart = document.getElementById('cart')
       const trigger = document.getElementById('cart-close')
       root.classList.add('open')
       setFocusTrap(cart)
