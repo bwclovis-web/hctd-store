@@ -10,6 +10,11 @@ export const navData = [{
 },
 {
   id: 3,
+  src: '/featured-artist',
+  title: 'featured artist',
+},
+{
+  id: 4,
   src: '/contact',
   title: 'drop us a line',
 }]

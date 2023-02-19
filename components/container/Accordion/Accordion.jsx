@@ -2,10 +2,10 @@ import AccordionItem from "./AccordionItem"
 
 const Accordion = ({ data }) => (
   <ul className="w-full">
-    {data.map(item => (
+    {data.map((item, i) => (
       <AccordionItem 
-        key={item.id} 
-        id={item.id} 
+        key={i} 
+        id={`item-${i}`} 
         question={item.question} 
         answer={item.answer}
       />
