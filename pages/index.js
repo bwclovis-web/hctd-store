@@ -50,7 +50,7 @@ const HomePage = ({ products, collections, seo, content, featuredArtist }) => {
         <DisplayGrid data={products} cols={4} title="New to the shop" filter={''}/>
       </div>
     </section>
-    <HeroComponent {...featuredArtist.pageHero} config="mini" pos="start" link={{ "href": '/featured-artist', "text": "featured artist" }}/>
+    <HeroComponent {...featuredArtist.pageHero} config="mini" pos="start" link={{ "href": '/featured-artist', "text": "featured artist sign-up" }}/>
 
     {/* <VendingCalendarComponent /> */}
   </>
