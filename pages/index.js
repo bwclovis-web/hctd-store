@@ -6,19 +6,20 @@ import sanityClient from 'lib/sanityClient'
 
 import data from 'Data/seo.json'
 
-import VendingCalendarComponent from 'components/container/VendingCalender/VendingCalender'
+// import VendingCalendarComponent from 'components/container/VendingCalender/VendingCalender'
 import DyeShopBanner from 'components/container/DyeShopBanner/DyeShopBanner'
 import HeroComponent from 'components/molecules/Hero/Hero'
 import DisplayGrid from 'components/molecules/DisplayGrid/DisplayGrid'
 import SiteSeo from 'components/molecules/SiteSeo/SiteSeo'
 
 
-const HomePage = ({ products, collections, seo, content }) => {
+const HomePage = ({ products, collections, seo, content, featuredArtist }) => {
   const [firstProduct] = useState({
     title: products[0].node.title,
     category: products[0].node.collections.edges[0].node.handle,
     slug: products[0].node.handle,
   })
+
   return <>
     <SiteSeo data={seo} />
     <HeroComponent {...content.pageHero} />
@@ -49,6 +50,7 @@ const HomePage = ({ products, collections, seo, content }) => {
         <DisplayGrid data={products} cols={4} title="New to the shop" filter={''}/>
       </div>
     </section>
+    <HeroComponent {...featuredArtist.pageHero} config="mini" pos="start" link={{ "href": '/featured-artist', "text": "featured artist" }}/>
 
     {/* <VendingCalendarComponent /> */}
   </>
@@ -57,7 +59,19 @@ const HomePage = ({ products, collections, seo, content }) => {
 export async function getStaticProps() {
   const pageProps = await getHomePageProps()
   const contentProps = await sanityClient.fetch(`{
-    "mySanityData": *[_type == "page" && pageTitle == "home"] {
+    "pageContent": *[_type == "page" && pageTitle == "home"] {
+      pageHero {
+        heading,
+        eyebrow,
+        heroImage {
+          asset -> {
+            ...,
+            metadata
+          }
+        }
+      }
+    },
+    "featuredArtist": *[_type == "featuredArtist" && isFeatured == true]  {
       pageHero {
         heading,
         eyebrow,
@@ -75,7 +89,8 @@ export async function getStaticProps() {
       products: pageProps.products.edges,
       collections: pageProps.collections.edges,
       seo: data.home,
-      content: contentProps.mySanityData[0]
+      featuredArtist: contentProps.featuredArtist[0],
+      content: contentProps.pageContent[0]
     },
     revalidate: 120,
   }
