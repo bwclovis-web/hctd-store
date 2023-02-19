@@ -11,7 +11,7 @@ const MainNavigation = () => {
   const { toggleNav, navOpen } = useContext(AppContext)
 
   const NavClasses = classNames({
-    'fixed lg:relative backdrop-blur-lg top-0 left-0 h-full w-full lg:w-auto bg-violet-600/80 lg:bg-transparent z-[200] flex flex-col lg:flex-row pt-10 lg:pt-0 lg:justify-between lg:my-1 lg:mt-0 translate-x-full lg:translate-x-0 transition lg:transition-none': true, 
+    'fixed lg:relative backdrop-blur-lg top-0 left-0 h-full w-full lg:w-auto bg-violet-600/80 lg:bg-transparent z-[200] lg:z-0 flex flex-col lg:flex-row pt-10 lg:pt-0 lg:justify-between lg:my-1 lg:mt-0 translate-x-full lg:translate-x-0 transition lg:transition-none': true, 
     'translate-x-0': navOpen
   })
 
