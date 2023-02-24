@@ -22,7 +22,6 @@ const FavoritesComponent = () => {
     hctdFavorites.delete(item.id)
   }
 
-  
 
   useEffect(() => {
     const handleFavoritesOnRouteChange = () => {

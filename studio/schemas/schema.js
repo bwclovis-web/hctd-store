@@ -14,17 +14,15 @@ import featuredArtist from './featuredArtist'
 import artistEntry from './artistEntry'
 import socialMediaLinks from './socialMedia'
 import socialMediaTypes from './socialMediaTypes'
+import configuredLink from './configuredLink'
 
-// Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
-  // We name our schema
   name: 'default',
-  // Then proceed to concatenate our document type
-  // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([ page,
     hero,
     siteBanner,
     faqs,
+    configuredLink,
     artistEntry,
     featuredArtist,
     socialMediaLinks,

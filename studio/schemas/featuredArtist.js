@@ -6,6 +6,17 @@ const featuredArtist = {
     name: 'pageTitle',
     title: 'Page Title',
     type: 'string'
+  }, {
+    title: 'Slug',
+    name: 'slug',
+    type: 'slug',
+    options: {
+      source: 'pageTitle',
+      slugify: input => input
+        .toLowerCase()
+        .replace(/\s+/g, '-')
+        .slice(0, 200)
+    }
   },
   {
     name: "firstName",
@@ -35,7 +46,7 @@ const featuredArtist = {
   {
     name: "websiteLink",
     title: "Link To Artist site",
-    type: 'string'
+    type: 'configuredLink'
   },
   {
     name: "socialMedia",
