@@ -16,6 +16,7 @@ import socialMediaLinks from './socialMedia'
 import socialMediaTypes from './socialMediaTypes'
 import configuredLink from './configuredLink'
 import seoSchema from './seoSchema'
+import dyeSchema from './dyeSchema'
 
 export default createSchema({
   name: 'default',
@@ -24,6 +25,7 @@ export default createSchema({
     siteBanner,
     faqs,
     seoSchema,
+    dyeSchema,
     configuredLink,
     artistEntry,
     featuredArtist,

@@ -29,12 +29,14 @@ const Modal = ({ children }) => {
   }, [ mounted, windowPosition ])
 
   const ModalClasses = classNames({
-    "fixed w-full h-full bg-violet-700/90 z-20 transition-all opacity-0 top-0": true,
-    "opacity-100 transition-all": animate
+    "fixed w-full h-full bg-violet-700/90 z-20 transition-all top-0": true,
+    "opacity-100 transition-all": animate,
+    "opacity-0": !animate
   })
   
   const ModalContentClasses = classNames({
-    'fixed lg:-translate-y-80 opacity-0 z-30 rounded transition-all delay-300 p-4 xl:p-8 duration-500 backdrop-blur-md w-full lg:w-4/5 xl:w-2/5 pointer-none flex h-auto': true,
+    'fixed  z-30 rounded transition-all delay-300 p-4 xl:p-8 duration-500 backdrop-blur-md w-full lg:w-4/5 xl:w-2/5 pointer-none flex h-auto': true,
+    'opacity-0 lg:-translate-y-80': !animate,
     'opacity-100 lg:-translate-y-0 transition-animate delay-200 bg-white/80 shadow-2xl duration-300 top-3 overflowY-auto h-3/4': animate
   })
 

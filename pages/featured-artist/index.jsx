@@ -32,7 +32,7 @@ const FeaturedArtistPage = ({ featuredArtist, previousFeatured }) => {
       {
         previousFeatured.length && 
         <section className="content-container py-6 text-center">
-          <h2 className="font-display text-h3-dynamic mb-10 text-slate-900">Previous featured artists</h2>
+          <h2 className="font-display text-h3-dynamic mb-10 text-slate-900 capitalize">view previous featured artists</h2>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 xl:grid-cols-4">
             {previousFeatured.map(item => (
               <li key={item.slug.current}>

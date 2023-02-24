@@ -1,5 +1,5 @@
-import renderKeywords from 'lib/renderKeywords'
 import { NextSeo } from 'next-seo'
+import { renderKeywords } from 'utils/utils'
 
 const SiteSeo = ({ data }) => <NextSeo
   title={data.pageTitle}

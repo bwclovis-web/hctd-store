@@ -7,3 +7,12 @@ export const throttle = (func, limit) => {
     }
   }
 }
+
+export const renderKeywords = keywords => {
+  const keywordArray = [{
+    keywords 
+  }]
+  return keywordArray ? keywordArray : null
+}
+
+export const slugify = string => string.toLowerCase().replace(/\s+/g, '-').slice(0, 200)

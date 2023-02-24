@@ -18,11 +18,14 @@ const artistEntry =  {
   },
   {
     name: 'colors',
-    type: 'array',
+    type: 'dyeSchema',
     title: 'Colors Used',
-    of: [{
-      type: 'block'
-    }]
+    
+  }, {
+    name: "otherColors",
+    type: 'array',
+    title: 'Other Colors',
+    of: [{ type: 'string' }],
   }]
 }
   

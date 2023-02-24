@@ -47,7 +47,7 @@
     body,
     #__next,
     #main {
-        @apply min-h-screen font-base
+        @apply min-h-screen font-base text-slate-800 bg-cyan-50
     }
     h2 {
         @apply leading-none mb-4
@@ -107,7 +107,7 @@
 
 @layer utilities {
     .tag-link {
-        @apply bg-indigo-800 border-2 border-sky-700 text-white rounded px-2 pb-1 capitalize tracking-wide font-semibold focus:underline hover:underline focus:rounded-3xl hover:rounded-3xl transition-all
+        @apply bg-indigo-800 border-2 border-sky-700 text-white rounded px-2 py-1 capitalize tracking-wide focus:underline hover:underline focus:rounded-3xl hover:rounded-3xl transition-all
     }
     .text-link {
         @apply border-0 text-indigo-700 underline hover:bg-indigo-700 hover:text-white p-1 transition-all
@@ -150,7 +150,7 @@
 
     .content {
         p {
-            @apply text-xl tracking-wide
+            @apply lg:text-xl tracking-wide
         }
     }
 }

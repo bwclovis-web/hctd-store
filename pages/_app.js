@@ -1,14 +1,15 @@
+import { useEffect } from 'react'
+import { DefaultSeo } from 'next-seo'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import '../styles/globals.css'
 import SEO from '../next-seo.config'
-import { DefaultSeo } from 'next-seo'
 
 import { CartProvider } from 'provider/ShopProvider'
 import { AppProvider } from 'provider/AppProvider'
 
 import Header from 'components/container/Header/Header'
 import Footer from 'components/container/Footer/Footer'
-import { useEffect } from 'react'
+
 
 function MyApp({ Component, pageProps, ...appProps }) {
   useEffect(() => {

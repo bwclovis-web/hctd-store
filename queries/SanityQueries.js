@@ -4,17 +4,24 @@ export const previousArtistSlugQuery = `
 
 export const previousFeaturedArtistQuery = `
 *[_type == "featuredArtist" && slug.current == $slug][0] {
-    pageTitle,
-    pageHero {
-      heading,
-      eyebrow,
-      heroImage {
-        asset -> {
-          ...,
-          metadata
-        }
+  pageTitle,
+  isFeatured,
+  bio,
+  artistEntry | order(_createdAt desc),
+  socialMedia,
+  firstName,
+  lastName,
+  websiteLink,
+  pageHero {
+    heading,
+    eyebrow,
+    heroImage {
+      asset -> {
+        ...,
+        metadata
       }
     }
+  }
   }
 `
 

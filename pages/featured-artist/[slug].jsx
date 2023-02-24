@@ -1,9 +1,13 @@
 import FeaturedArtistContainer from 'components/container/FeaturedArtistContainer/FeaturedArtistContainer'
+import SiteSeo from 'components/molecules/SiteSeo/SiteSeo'
 import sanityClient from 'lib/sanityClient'
 import { previousArtistSlugQuery, previousFeaturedArtistQuery } from 'queries/SanityQueries'
 
 const PreviousFeaturedArtistsPage = ({ content }) => (
-  <FeaturedArtistContainer content={content}/>
+  <>
+    <SiteSeo data={{ pageTitle: `Featured Artist | ${content.pageTitle}` }}/>
+    <FeaturedArtistContainer content={content}/>
+  </>
 )
 
 export const getStaticPaths = async () => {
