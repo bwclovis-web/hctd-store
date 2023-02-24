@@ -1,9 +1,10 @@
+import renderKeywords from 'lib/renderKeywords'
 import { NextSeo } from 'next-seo'
 
 const SiteSeo = ({ data }) => <NextSeo
-  title={data.title}
-  description={data.description}
-  additionalMetaTags={data.additional}
+  title={data.pageTitle}
+  description={data.pageDescription}
+  additionalMetaTags={renderKeywords(data.keywords)}
 />
 
 export default SiteSeo

@@ -47,7 +47,7 @@
     body,
     #__next,
     #main {
-        @apply min-h-screen
+        @apply min-h-screen font-base
     }
     h2 {
         @apply leading-none mb-4

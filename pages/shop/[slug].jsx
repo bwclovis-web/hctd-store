@@ -13,7 +13,7 @@ import AddToCart from 'components/container/AddToCart/AddToCart'
 import ProductThumbnails from 'components/container/ThumbnailSwap/ThumbnailSwap'
 import Toast from 'components/molecules/Toast/Toast'
 import TagList from "components/molecules/TagList/TagList"
-import DisplayGrid from "components/molecules/DisplayGrid/DisplayGrid"
+
 import Button from "components/atoms/Button/Button"
 import Modal from "components/container/Modal/Modal"
 import DisclaimerContent from "components/molecules/ProductModalContent/DisclaimerContent"
@@ -110,16 +110,6 @@ const SingleProductPage = ({ product }) => {
           </div>
         </section>
       </article>
-      {/* <section className="bg-indigo-400/30 pb-10 pt-5 mt-12">
-        <div className="container">
-          <h2 className="text-h3-dynamic font-display mb-4">
-            <Link href={`/shop/category/${collection.handle}`}>
-              <a className="underline">{`Other items in ${collection.title}`}</a>
-            </Link>
-          </h2>
-          <DisplayGrid data={collection.products.edges} cols={4} filter={''}/>
-        </div>
-      </section> */}
       <Toast item={product} openToast={toast} />
     </div>
   )

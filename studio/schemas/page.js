@@ -3,6 +3,10 @@ const page =  {
   title: 'Page',
   type: 'document',
   fields: [{
+    name: 'pageSeo',
+    type: 'seoSchema',
+    title: 'Page SEO'
+  }, {
     name: 'pageTitle',
     title: 'Page Title',
     type: 'string'

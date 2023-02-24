@@ -15,6 +15,7 @@ import artistEntry from './artistEntry'
 import socialMediaLinks from './socialMedia'
 import socialMediaTypes from './socialMediaTypes'
 import configuredLink from './configuredLink'
+import seoSchema from './seoSchema'
 
 export default createSchema({
   name: 'default',
@@ -22,6 +23,7 @@ export default createSchema({
     hero,
     siteBanner,
     faqs,
+    seoSchema,
     configuredLink,
     artistEntry,
     featuredArtist,

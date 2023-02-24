@@ -53,5 +53,107 @@ export const featuredArtistPageQuery = `
     }
   }
 }
+`
 
+export const sanityHomepageQuery = `{
+  "pageContent": *[_type == "page" && pageTitle == "home"] {
+    pageSeo,
+    pageHero {
+      heading,
+      eyebrow,
+      heroImage {
+        asset -> {
+          ...,
+          metadata
+        }
+      }
+    }
+  },
+  "featuredArtist": *[_type == "featuredArtist" && isFeatured == true]  {
+    pageHero {
+      heading,
+      eyebrow,
+      heroImage {
+        asset -> {
+          ...,
+          metadata
+        }
+      }
+    }
+  }
+}
+`
+
+export const sanityContactPageQuery = `
+{
+  "mySanityData": *[_type == "page" && pageTitle == "contact"] {
+    faqs,
+    pageSeo,
+    pageHero {
+      heading,
+      eyebrow,
+      heroImage {
+        asset -> {
+          ...,
+          metadata
+        }
+      }
+    }
+  }
+}
+`
+
+export const sanityAboutPageQuery = `
+{
+  "mySanityData": *[_type == "page" && pageTitle == "about"] {
+    pageSeo,
+    pageHero {
+      heading,
+      eyebrow,
+      heroImage {
+        asset -> {
+          ...,
+          metadata
+        }
+      }
+    }
+  }
+}
+`
+
+export const sanityInstructionPageQuery = `
+{
+  "mySanityData": *[_type == "page" && pageTitle == "Instructions"] {
+    faqs,
+    pageSeo,
+    pageHero {
+      heading,
+      eyebrow,
+      heroImage {
+        asset -> {
+          ...,
+          metadata
+        }
+      }
+    }
+  }
+}
+`
+
+export const sanityShopPageQuery = `
+{
+  "mySanityData": *[_type == "page" && pageTitle == "shop"] {
+    pageSeo,
+    pageHero {
+      heading,
+      eyebrow,
+      heroImage {
+        asset -> {
+          ...,
+          metadata
+        }
+      }
+    }
+  }
+}
 `
