@@ -22,7 +22,7 @@ const FeaturedSubmission = ({ item }) => {
       <p className="text-2xl border-b-2 border-blue-200 mb-2">Happy Cat colors used:</p>
       {item.colors.length && <ul className="flex gap-3 py-2">
         {item?.colors?.map(color => <li key={color}>
-          <Link href={`shop/${slugify(color)}`} className="tag-link">{color}</Link>
+          <Link href={`/shop/${slugify(color)}`} className="tag-link">{color}</Link>
         </li>)}
       </ul>}
       {item.otherColors && <>
