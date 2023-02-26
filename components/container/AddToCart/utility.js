@@ -5,3 +5,10 @@ export const getPriceByVariantId = (variants, id) => {
 
   return formatPrice(price?.node?.priceV2?.amount, 'USD')
 }
+
+export const getFirstJarVariant = variant => variant.filter(item => filterSelectedItems(item.node.selectedOptions).length && item)
+
+export const filterSelectedItems = items => {
+  const newArray = items.filter(item => item.value.includes('Jar')) 
+  return newArray
+}

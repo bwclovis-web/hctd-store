@@ -55,7 +55,7 @@ const Header = () => {
     <>
       <div className="text-center p-4 bg-cyan-200">
         <div className="container">
-          <p className="text-cyan-900 font-semibold text-sm lg:text-base" >During sales and new product launches processing can take up to two weeks. Dyes are small batch and filled to order.</p>
+          <p className="text-cyan-900 font-semibold text-sm lg:text-base" >Dyes can take up to three weeks to ship during times of high order volume. Dyes are small batch and filled to order.</p>
         </div>
       </div>
       {displayBanner.show ? <SiteAlert bannerData={displayBanner}/> : null}
