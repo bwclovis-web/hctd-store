@@ -20,7 +20,7 @@ const ContactPage = ({ content }) => (
           </div>
         </section>
 
-        <section className=" lg:w-1/2 xl:w-2/5 bg-violet-500/50 p-10 rounded-md shadow-lg border-violet-500 border-2 self-start">
+        <section className=" lg:w-1/2 xl:w-2/5 bg-violet-500/50 p-10 rounded-md shadow-lg border-violet-500 border-2 self-start text-violet-900">
           <h2 className="font-display text-h3-dynamic">Contact Us</h2>
           <p className="mb-7">If this is regarding an order, please include the order number in the message.</p>
           <ContactUsForm />

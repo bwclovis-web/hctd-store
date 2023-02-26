@@ -48,7 +48,7 @@
     body,
     #__next,
     #main {
-        @apply min-h-screen font-base text-slate-800 bg-cyan-50
+        @apply min-h-screen font-base text-slate-800
     }
     h2 {
         @apply leading-none mb-4

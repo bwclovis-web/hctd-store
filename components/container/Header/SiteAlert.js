@@ -13,7 +13,7 @@ const SiteAlert = ({ bannerData }) => {
 
   return (
     <div className={BannerClasses}>
-      <p className="text-xl tracking-wide">{content}</p>
+      <p className="lg:text-xl tracking-wide">{content}</p>
     </div>
   )
 }
