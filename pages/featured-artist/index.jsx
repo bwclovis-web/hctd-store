@@ -23,7 +23,7 @@ const FeaturedArtistPage = ({ featuredArtist, previousFeatured }) => {
       <section className="text-center mb-6 bg-emerald-200 border-t-4 border-b-4 border-emerald-500">
         <div className="content-container py-6">
           <h2 className="font-display text-h3-dynamic mb-10 text-emerald-900">Interested in being a featured artist?</h2>
-          <Button config="default" onClick={() => toggleModal("aotm")}>Sign up details</Button>
+          <Button config="default" size="large" onClick={() => toggleModal("aotm")}>Sign up details</Button>
         </div >
       </section>
       {modalOpen && modalId === "aotm" && <Modal>

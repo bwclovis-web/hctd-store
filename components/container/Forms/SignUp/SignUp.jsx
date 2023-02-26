@@ -45,7 +45,7 @@ const SignUpForm = () => {
             onChange={handleChange}
           />
         </fieldset>
-        <Button type="submit" config="default">OH HAI</Button>
+        <Button type="submit" config="default" size="large">OH HAI</Button>
       </form>
     </div>
   )
