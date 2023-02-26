@@ -29,20 +29,21 @@ const Modal = ({ children }) => {
   }, [ mounted, windowPosition ])
 
   const ModalClasses = classNames({
-    "fixed w-full h-full bg-violet-700/90 z-20 transition-all opacity-0 top-0": true,
-    "opacity-100 transition-all": animate
+    "fixed w-full h-full bg-violet-700/90 z-20 transition-all top-0 backdrop-blur-md ": true,
+    "opacity-100 transition-all": animate,
+    "opacity-0": !animate
   })
   
   const ModalContentClasses = classNames({
-    'fixed lg:-translate-y-80 opacity-0 z-30 rounded transition-all delay-300 p-4 xl:p-8 duration-500 backdrop-blur-md w-full lg:w-4/5 xl:w-2/5 pointer-none flex': true,
-    'opacity-100 lg:-translate-y-0 transition-animate delay-200 bg-white/80 shadow-2xl duration-300 top-3 overflowY-auto h-3/4': animate
+    'fixed  z-30 rounded transition-all delay-300 p-4 xl:p-8 duration-500 w-full lg:w-4/5 xl:w-2/5 pointer-none flex': true,
+    'opacity-0 lg:-translate-y-80   h-3/4': !animate,
+    'opacity-100 lg:-translate-y-0 transition-animate delay-200 bg-white/80 shadow-2xl duration-300 top-3 overflowY-auto h-auto': animate
   })
 
 
   const template = (
     <div id="modalContainer" className="absolute h-full w-full z-20 flex justify-center items-center" ref={outerRef}>
       <div className={ModalClasses} onClick={toggleModal} />
-      
       <div className={ModalContentClasses}>
         <button className="absolute top-5 right-5" onClick={toggleModal}>
           <AiOutlineCloseCircle size={34} fill={'purple'}/>

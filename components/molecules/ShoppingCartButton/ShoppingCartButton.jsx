@@ -29,7 +29,8 @@ const ShoppingCartButton = () => {
   }
 
   const cartIconClasses = classNames({
-    "bg-orange-400 block rounded-full h-6 w-6 opacity-0 flex justify-center items-center transition-all border-[1px] border-white ": true,
+    "bg-orange-400 block rounded-full h-6 w-6 flex justify-center items-center transition-all border-[1px] border-white ": true,
+    "opacity-0": !checkout.lineItems.length,
     "opacity-100 -translate-x-3 -translate-y-1": checkout.lineItems.length
   })
 

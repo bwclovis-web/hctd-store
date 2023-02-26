@@ -5,7 +5,8 @@ import ShopContext from "provider/ShopProvider"
 const Toast = ({ item, openToast }) => {
   const { cartDisplayPrice } = useContext(ShopContext)
   const ToastClasses = classNames({
-    'fixed bg-green-700 z-20 bottom-0 right-0 shadow-xl opacity-0 p-4 border-2 rounded-tl-xl text-white translate-x-full transition-all': true,
+    'fixed bg-green-700 z-20 bottom-0 right-0 shadow-xl  p-4 border-2 rounded-tl-xl text-white  transition-all': true,
+    'opacity-0 translate-x-full': !openToast,
     'opacity-100 translate-x-0': openToast
   })
 

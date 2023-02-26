@@ -22,7 +22,6 @@ const FavoritesComponent = () => {
     hctdFavorites.delete(item.id)
   }
 
-  
 
   useEffect(() => {
     const handleFavoritesOnRouteChange = () => {
@@ -37,7 +36,7 @@ const FavoritesComponent = () => {
   return <>
     <button onClick={() => toggleModal("favorites")} className="px-3 py-3 relative" disabled={!favorites?.length} aria-label={`you have ${favorites?.length} favorites saved`}>
       {favorites?.length ? <MdFavorite size={40} fill={'red'}/> : <MdOutlineFavoriteBorder size={40}/>}
-      <span className="absolute top-[16px] font-bold right-[26px] text-white text-lg">{favorites?.length > 0 && favorites?.length}</span>
+      <span className="absolute top-[17px] font-bold right-[27.5px] text-white text-lg">{favorites?.length > 0 && favorites?.length}</span>
     </button>
     
     {modalOpen && modalId === "favorites" && <Modal>

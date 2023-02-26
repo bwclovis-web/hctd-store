@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       display: ['Chicle'],
+      base: ['Libre Franklin']
     },
     extend: {
       rotate: {

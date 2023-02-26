@@ -1,16 +1,14 @@
-import { NextSeo } from 'next-seo'
-
 import Accordion from 'components/container/Accordion/Accordion'
 import HeroComponent from 'components/molecules/Hero/Hero'
 import ContactUsForm from 'components/container/Forms/ContactUs/ContactUs'
 import sanityClient from 'lib/sanityClient'
 
+import { sanityContactPageQuery } from 'queries/SanityQueries'
+import SiteSeo from 'components/molecules/SiteSeo/SiteSeo'
+
 const ContactPage = ({ content }) => (
   <>
-    <NextSeo
-      title="Have a question"
-      description="Tye die clothing and dye questions answered."
-    />
+    <SiteSeo data={content.pageSeo} />
     <div>
       <HeroComponent {...content.pageHero} />
 
@@ -32,21 +30,7 @@ const ContactPage = ({ content }) => (
   </>
 )
 export async function getStaticProps() {
-  const contentProps = await sanityClient.fetch(`{
-    "mySanityData": *[_type == "page" && pageTitle == "contact"] {
-      faqs,
-      pageHero {
-        heading,
-        eyebrow,
-        heroImage {
-          asset -> {
-            ...,
-            metadata
-          }
-        }
-      }
-    }
-  }`)
+  const contentProps = await sanityClient.fetch(sanityContactPageQuery)
   return {
     props: {
       content: contentProps.mySanityData[0]

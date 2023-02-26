@@ -1,16 +1,15 @@
-import { NextSeo } from 'next-seo'
 import { getShopPageProps } from 'lib/shopifyGraphql'
 import sanityClient from 'lib/sanityClient'
 
 import DisplayGrid from 'components/molecules/DisplayGrid/DisplayGrid'
 import HeroComponent from 'components/molecules/Hero/Hero'
+import SiteSeo from 'components/molecules/SiteSeo/SiteSeo'
+
+import { sanityShopPageQuery } from 'queries/SanityQueries'
 
 const ShopPage = ({ dyes, tops, bottoms, outerwear, accessories, content }) => (
   <>
-    <NextSeo
-      title="Current Shop Items"
-      description="Custom tye die clothing and dyes for sale."
-    />
+    <SiteSeo data={content.pageSeo} />
     <HeroComponent {...content.pageHero}/>
     <section>
       <div className="container py-dynamic-container-y">
@@ -20,27 +19,13 @@ const ShopPage = ({ dyes, tops, bottoms, outerwear, accessories, content }) => (
         <DisplayGrid data={outerwear} cat="outerwear" cols={4} title="new outerwear" filter={''}/>
         <DisplayGrid data={accessories} cat="accessories"  cols={4} title="new accessories" filter={''}/>
       </div>
-      
     </section>
   </>
 )
 
 export async function getStaticProps() {
   const pageProps = await getShopPageProps()
-  const contentProps = await sanityClient.fetch(`{
-    "mySanityData": *[_type == "page" && pageTitle == "shop"] {
-      pageHero {
-        heading,
-        eyebrow,
-        heroImage {
-          asset -> {
-            ...,
-            metadata
-          }
-        }
-      }
-    }
-  }`)
+  const contentProps = await sanityClient.fetch(sanityShopPageQuery)
   return {
     props: {
       dyes: pageProps.dyeProducts.edges,

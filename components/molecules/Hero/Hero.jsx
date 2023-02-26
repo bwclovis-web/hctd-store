@@ -11,7 +11,8 @@ const HeroComponent = ({ heroImage, eyebrow, heading, config, pos, link }) => {
   )
 
   const BannerWrapperClasses = classNames({
-    'flex relative w-full items-center h-[70vh] z-20': true,
+    'flex relative w-full items-center z-20': true,
+    'h-[70vh] ': config !== "mini",
     'justify-end': pos !== "start",
     'h-auto': config === "mini",
     'justify-start': pos === "start"

@@ -11,15 +11,6 @@ const SizeSelection = ({ data, action }) => {
   return (
     <div className="flex flex-col">
       <div>
-        <p className="text-slate-700 pb-2 text-base">Shipped in durable plastic bags.</p>
-        <div className="flex">
-          {
-            bags.map((item, i) => <RadioButtons data={item.node} key={i} changeAction={action} />)
-          }
-        </div>
-      </div>
-
-      <div className="mt-3">
         <p className="text-slate-700 pb-2 text-base">Shipped in re-usable plastic jars.</p>
         <div className="flex">
           {
@@ -28,6 +19,14 @@ const SizeSelection = ({ data, action }) => {
         </div>
       </div>
 
+      <div className="mt-3">
+        <p className="text-slate-700 pb-2 text-base">Shipped in durable plastic bags.</p>
+        <div className="flex">
+          {
+            bags.map((item, i) => <RadioButtons data={item.node} key={i} changeAction={action} />)
+          }
+        </div>
+      </div>
     </div>
   )
 }
