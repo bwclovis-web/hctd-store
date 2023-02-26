@@ -17,7 +17,7 @@ const FeaturedArtistPage = ({ featuredArtist, previousFeatured }) => {
     <>
       <NextSeo
         title={ `Featured artist | ${featuredArtist.pageTitle}`}
-        description="Tye die clothing and dye questions answered."
+        description={`Happy Cat Tie Dye's featured artist ${featuredArtist.pageTitle}`}
       />
       <FeaturedArtistContainer content={featuredArtist} />
       <section className="text-center mb-6 bg-emerald-200 border-t-4 border-b-4 border-emerald-500">
