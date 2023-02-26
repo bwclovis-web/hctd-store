@@ -42,7 +42,7 @@ const MainNavigation = () => {
             {
               navData.map(item => (
                 <li key={item.id} className="pl-8 lg:pl-0 my-4 lg:my-0 pr-4 last:pr-0 " onClick={() => handleNavClick()}>
-                  <Link href={item.src} className="uppercase p-4 lg:p-0 text-lg font-medium tracking-wider bg-violet-800/40 lg:bg-transparent text-slate-50 lg:text-inherit rounded-md">
+                  <Link href={item.src} className="uppercase p-4 lg:p-0 text-base font-medium tracking-wider bg-violet-800/40 lg:bg-transparent text-slate-50 lg:text-inherit rounded-md">
                     {item.title}
                   </Link>
                 </li>

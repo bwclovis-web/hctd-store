@@ -10,7 +10,7 @@ const FeaturedSubmission = ({ item }) => {
     item.submissionImage
   )
 
-  return <li>
+  return <li className="text-center lg:text-left w-full">
     <h3 className="font-display text-h3-dynamic mb-10">{item.title}</h3>
     <Image
       alt={''}
@@ -18,7 +18,7 @@ const FeaturedSubmission = ({ item }) => {
       width={400}
       height={400}
     />
-    <div className="border-2 p-6 rounded">
+    <div className="border-2 p-6 rounded text-left">
       <p className="text-2xl border-b-2 border-blue-200 mb-2">Happy Cat colors used:</p>
       {item.colors.length && <ul className="flex gap-3 py-2">
         {item?.colors?.map(color => <li key={color}>
