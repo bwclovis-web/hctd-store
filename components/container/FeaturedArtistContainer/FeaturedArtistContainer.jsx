@@ -2,6 +2,7 @@ import BlockContent from "@sanity/block-content-to-react"
 import FeaturedSubmission from 'components/molecules/FeaturedSubmissions/FeaturedSubmissions'
 import SocialMediaBlock from 'components/container/SocialMediaBlock/SocialMediaBlock'
 import HeroComponent from 'components/molecules/Hero/Hero'
+import { formatFirstName } from "utils/utils"
 
 const FeaturedArtistContainer = ({ content }) => (
   <>
@@ -16,7 +17,7 @@ const FeaturedArtistContainer = ({ content }) => (
           {
             content?.websiteLink?.title && content?.websiteLink?.url &&
               <div className="mb-6 text-xl">
-                <h3>View more of {content.firstName}`s work:</h3>
+                <h3>View more of {formatFirstName(content.firstName)} work:</h3>
                 <a href={content.websiteLink.url} className="text-link capitalize">{content.websiteLink.title}</a>
               </div>
           }
@@ -25,7 +26,7 @@ const FeaturedArtistContainer = ({ content }) => (
           {
             content?.socialMedia?.length &&
                 <>
-                  <h3 className="font-display text-h4-dynamic ">{`${content.firstName}'s Social Media`}</h3>
+                  <h3 className="font-display text-h4-dynamic ">{formatFirstName(content.firstName)} Social Media</h3>
                   <SocialMediaBlock socialMedia={content.socialMedia}/>
                 </>
           }

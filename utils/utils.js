@@ -16,3 +16,9 @@ export const renderKeywords = keywords => {
 }
 
 export const slugify = string => string.toLowerCase().replace(/\s+/g, '-').slice(0, 200)
+
+export const formatFirstName = name => {
+  const lastLetter = name.slice(-1)
+  const pluralName = lastLetter === 's' ? `${name}'` : `${name}'s`
+  return pluralName
+}
