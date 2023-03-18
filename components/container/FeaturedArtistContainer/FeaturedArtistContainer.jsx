@@ -9,7 +9,7 @@ const FeaturedArtistContainer = ({ content }) => (
     <div className="flex py-dynamic-container-y content-container gap-8 flex-col lg:flex-row">
       <section className="w-full lg:w-1/2 xl:w-3/5 lg:border-r-2 lg:pr-6 lg:mr-6 border-b-4 lg:border-b-0 pb-6 lg:pb-0 flex flex-col justify-between">
         <div>
-          <h2 className="font-display text-h2-dynamic mb-10">{content.pageTitle}'s Bio</h2>
+          <h2 className="font-display text-h2-dynamic mb-10">About {content.pageTitle}</h2>
           <div className="content lg:pr-6 mb-8">
             <BlockContent blocks={content.bio}/>
           </div>

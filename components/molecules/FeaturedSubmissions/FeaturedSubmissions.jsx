@@ -20,11 +20,17 @@ const FeaturedSubmission = ({ item }) => {
     />
     <div className="border-2 p-6 rounded text-left">
       <p className="text-2xl border-b-2 border-blue-200 mb-2">Happy Cat colors used:</p>
-      {item.colors.length && <ul className="flex gap-3 py-2">
-        {item?.colors?.map(color => <li key={color}>
-          <Link href={`/shop/${slugify(color)}`} className="tag-link">{color}</Link>
-        </li>)}
-      </ul>}
+      {item.colors.length && 
+        <ul className="flex gap-3 py-2 flex-wrap">
+          {item?.colors?.map(color => {
+            const display_color = color === 'jars' ? "Schnozzberry" : color
+            return(
+              <li key={color}>
+                <Link href={`/shop/${slugify(color)}`} className="tag-link block">{display_color}</Link>
+              </li>
+            )
+          })}
+        </ul>}
       {item.otherColors && <>
         <p className="text-xl font-medium mb-2">Other colors used:</p><ul className="list-disc list-inside">
           {item.otherColors.map(color => <li key={color}>
