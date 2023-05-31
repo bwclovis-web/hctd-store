@@ -95,7 +95,7 @@ export const productByCollection = handle => `{
 }`
 
 export const allCollectionsQuery = `{
-  collections(first:40){
+  collections(first:60){
     edges {
       node {
         handle
@@ -106,7 +106,7 @@ export const allCollectionsQuery = `{
 }`
 
 export const getFullAllCollections = `{
-  collections(first: 10) {
+  collections(first: 60) {
     edges {
       node {
         id
