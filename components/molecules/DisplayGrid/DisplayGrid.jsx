@@ -23,6 +23,7 @@ const DisplayGrid = ({ data, cols, type, title, cat, filter }) => {
       {title ? <h2 className="font-display text-h2-dynamic capitalize">{title}</h2> : null}
       <ul className={GridClasses}>
         {data?.map((item, index) => {
+          console.log(item)
           const hasTags = item?.node?.tags?.length && item.node.tags
           const filterItem = hasTags && hasTags?.includes(filter) || filter === ''
           return(

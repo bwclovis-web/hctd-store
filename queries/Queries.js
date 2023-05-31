@@ -78,7 +78,7 @@ export const allProductsQuery = `{
 export const productByCollection = handle => `{
   collection(handle:"${handle}"){
     title
-    products(first: 40, reverse: true) {
+    products(first: 60, reverse: true) {
       edges {
         node {
           availableForSale
@@ -127,7 +127,7 @@ export const homePageQuery = `{
             title
             handle
             availableForSale
-            collections(first: 10) {
+            collections(first: 40) {
               edges {
                 node {
                   handle
@@ -140,7 +140,7 @@ export const homePageQuery = `{
           }
         }
       }
-      collections(first: 10) {
+      collections(first: 40) {
         edges {
           node {
             id
