@@ -127,7 +127,7 @@ export const homePageQuery = `{
             title
             handle
             availableForSale
-            collections(first: 40) {
+            collections(first: 60) {
               edges {
                 node {
                   handle
@@ -140,7 +140,7 @@ export const homePageQuery = `{
           }
         }
       }
-      collections(first: 40) {
+      collections(first: 60) {
         edges {
           node {
             id
@@ -255,7 +255,7 @@ export const shopPageQuery = `{
         }
       }
     }
-    collections(first: 10) {
+    collections(first: 60) {
       edges {
         node {
           id
