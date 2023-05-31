@@ -4,6 +4,7 @@ import Button from "./Button"
 
 describe("Button", () => {
   it('should render a button', () => {
+    const button = render(<Button />)
     render(<Button />)
   })
 

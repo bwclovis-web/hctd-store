@@ -6,7 +6,7 @@ const ArtistDisclaimerContent = () => {
     "href": "mailto:hctd.featured.artist@gmail.com?subject=New Entry"
   }
   return (
-    <section className="px-3">
+    <section className="px-3 mb-6">
       <h2 className="text-h3-dynamic font-display">Featured Artist Requirements</h2>
       <p>
         Please note, this is NOT a contest. Everyone who participates will be featured at some point, and hopefully several times.
