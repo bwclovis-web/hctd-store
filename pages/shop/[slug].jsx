@@ -129,7 +129,7 @@ export const getStaticPaths = async () => {
   const allProducts = await getAllProductsQuery()
   const paths = allProducts.map(item => ({
     params: {
-      slug: item.node.handle
+      slug: item?.node?.handle
     }
   }))
   return {
