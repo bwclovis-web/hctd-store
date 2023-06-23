@@ -26,7 +26,7 @@ const MainNavigation = () => {
           <Link href="/" className="text-h3-dynamic font-display">
           Happy Cat Tie Dye
           </Link>
-          <button id="hctd-nav" className="lg:hidden" onClick={() => toggleNav()} type="button">
+          <button id="hctd-nav" className="lg:hidden" onClick={() => toggleNav()} type="button" aria-label="open navigation">
             <GiHamburgerMenu size={30}/>
           </button>
         </div>
