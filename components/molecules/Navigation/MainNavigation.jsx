@@ -6,6 +6,7 @@ import { navData } from 'Data/nav'
 import AppContext from "provider/AppProvider"
 import Button from "components/atoms/Button/Button"
 import { getScreenSize } from "utils/getScreenSize"
+import Image from "next/image"
 
 const MainNavigation = () => {
   const { toggleNav, navOpen } = useContext(AppContext)
@@ -23,8 +24,16 @@ const MainNavigation = () => {
     <div className="container">
       <div className="flex justify-center items-center lg:justify-between py-2 flex-col lg:flex-row">
         <div className="flex justify-between w-full lg:w-auto items-center">
-          <Link href="/" className="text-h3-dynamic font-display">
-          Happy Cat Tie Dye
+          <Link href="/" className="text-h3-dynamic font-display flex flex-col xl:flex-row justify-center items-center gap-4">
+            <span className="hidden xl:block">
+              <Image
+                alt={''}
+                src="/images/hctd-logo.png"
+                width={120}
+                height={100}
+              />
+            </span>
+            <span>Happy Cat Tie Dye</span>
           </Link>
           <button id="hctd-nav" className="lg:hidden" onClick={() => toggleNav()} type="button" aria-label="open navigation">
             <GiHamburgerMenu size={30}/>
@@ -33,6 +42,7 @@ const MainNavigation = () => {
 
         <nav className={NavClasses} id="main-navigation">
           <div className="flex justify-between px-5 lg:hidden mb-6 items-center">
+            
             <span className="font-display text-slate-100 text-4xl tracking-wide">Happy Cat Tie Dye</span>
             <span className="bg-blue-800 text-white rounded-full w-8 h-8 flex justify-center items-center right-4 top-4 ">
               <Button id="nav-close" onClick={() => toggleNav()} config="svg" aria-label="close navigation">x</Button>
