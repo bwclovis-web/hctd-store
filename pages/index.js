@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 
 import { getHomePageProps } from 'lib/shopifyGraphql'
@@ -16,6 +16,13 @@ const HomePage = ({ products, collections, content, featuredArtist }) => {
     title: products[0].node.title,
     category: products[0].node.collections.edges[0].node.handle,
     slug: products[0].node.handle,
+  })
+
+  collections.forEach((item, idx) => {
+    if(item.node.handle === 'dyes') {
+      collections.splice(idx, 1)
+      collections.unshift(item)
+    }
   })
 
   return <>
