@@ -35,7 +35,7 @@ const Modal = ({ children }) => {
   })
   
   const ModalContentClasses = classNames({
-    'fixed  max-h-[700px] overflow-x-scroll z-30 rounded transition-all delay-300 lg:max-h-full p-4 xl:p-8 duration-500 w-full lg:w-4/5 xl:w-2/5 pointer-none flex': true,
+    'fixed max-h-full overflow-scroll z-30 rounded transition-all delay-300 py-2 pb-10 xl:p-8 duration-500 w-full lg:w-4/5 xl:w-2/5 pointer-none flex': true,
     'opacity-0 lg:-translate-y-80 h-0': !animate,
     'opacity-100 lg:-translate-y-0 transition-animate delay-200 bg-white/80 shadow-2xl duration-300 top-3 overflowY-auto h-auto': animate
   })

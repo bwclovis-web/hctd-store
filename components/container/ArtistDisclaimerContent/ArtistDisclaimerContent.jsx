@@ -35,7 +35,7 @@ const ArtistDisclaimerContent = () => {
         <li>Happy Cat dyes used</li>
       </ul>
       <p>We are looking forward to seeing all the amazing things made with Happy Cat dyes!</p>
-      <div className="flex justify-start gap-6 pt-6">
+      <div className="flex justify-start gap-6 pt-6 flex-col mb-6">
         <a {...mailDataNew} className="text-xl bg-violet-600 p-3 text-center rounded-md text-slate-100 hover:bg-violet-700 uppercase font-semibold">I'm a new artist</a>
         <a {...mailDataResubmit} className="text-xl bg-violet-600 text-center p-3 rounded-md text-slate-100 hover:bg-violet-700 uppercase font-semibold">I have a new art piece</a>
       </div>
