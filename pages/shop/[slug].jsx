@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { useState, useContext, useEffect } from "react"
+import { useState, useContext, useEffect, useRef, useCallback } from "react"
 import Image from "next/legacy/image"
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
@@ -19,6 +19,7 @@ import Modal from "components/container/Modal/Modal"
 import DisclaimerContent from "components/molecules/ProductModalContent/DisclaimerContent"
 
 const SingleProductPage = ({ product }) => {
+  const imageRef = useRef(null)
   const { toast, toggleModal, modalOpen, modalId } = useContext(AppCtx)
   const { featuredImage, tags, title, descriptionHtml, availableForSale, variants, collections, images } = product
   const [ image, setImage ] = useState({ url: featuredImage?.url, alt: featuredImage.altText })
@@ -31,6 +32,7 @@ const SingleProductPage = ({ product }) => {
       url: featuredImage?.url, alt: featuredImage?.altText
     })
   }, [featuredImage])
+
 
   const addToFavorite = async product => {
     const dbObject = {
@@ -56,7 +58,7 @@ const SingleProductPage = ({ product }) => {
       {modalOpen && modalId === "disclaimer" && <Modal>
         <DisclaimerContent />
       </Modal>}
-      <article className="content-container lg:mt-10 flex flex-col lg:flex-row gap-6 justify-around border-indigo-100 lg:border-2 py-20 rounded-md lg:w-5/6 mb-5">
+      <article className="content-container lg:mt-10 flex flex-col lg:flex-row gap-6 justify-around border-indigo-100 lg:border-2 py-20 rounded-md lg:w-5/6 mb-5 " ref={imageRef}>
         <section className="lg:w-1/2 2xl:mr-8">
           <div>
             <Image
@@ -69,7 +71,7 @@ const SingleProductPage = ({ product }) => {
               blurDataURL={`/_next/image?url=${image.url}&w=16&q=1`}
             />
             <p className="text-base text-center py-2 text-slate-600 capitalize italic">Displaying {image.alt}</p>
-            {thumbnailArray.length > 1 && <ProductThumbnails thumbnails={thumbnailArray} action={setImage} />}
+            {thumbnailArray.length > 1 && <ProductThumbnails thumbnails={thumbnailArray} action={setImage} passedRef={imageRef}/>}
           </div>
         </section>
         <section className="md:w-4/5 flex flex-col justify-between">

@@ -1,9 +1,19 @@
 import { useRef } from "react"
 import Image from "next/legacy/image"
+import { getScreenSize } from "utils/getScreenSize"
 import { Carousel } from 'react-responsive-carousel'
-const ProductThumbnails = ({ thumbnails, action }) => {
+
+const ProductThumbnails = ({ thumbnails, action, passedRef }) => {
   const buttonRef = useRef(null)
+  
   const handleThumbnailClick = evt => {
+    if(getScreenSize() === "small") {
+      window.scrollTo({
+        behavior: "smooth",
+        top: passedRef.current.offsetTop
+      })
+    }
+    
     buttonRef?.current?.dataset.url && action({
       url: evt.currentTarget.dataset.url,
       alt: evt.currentTarget.dataset.caption
