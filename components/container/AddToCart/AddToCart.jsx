@@ -20,7 +20,7 @@ const AddToCart = ({ variant, availableForSale }) => {
   }, [variationId])
 
   return (
-    <section className="mt-8 mb-6 pt-10 border-t-2 border-indigo-400 flex gap-1 flex-col md:flex-row lg:flex-col xl:flex-row justify-between">
+    <section className="lg:mt-8 lg:mb-6 pt-6 lg:pt-10 border-t-2 border-indigo-400 flex gap-1 flex-col md:flex-row lg:flex-col xl:flex-row justify-between">
       <div className="flex flex-col">
         <p className="font-display pb-3.5 flex items-start">
           <span className="text-3xl pr-2">Price: </span>

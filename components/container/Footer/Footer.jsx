@@ -1,8 +1,6 @@
-import SiteAlertComponent from 'components/molecules/SiteAlertComponent/SiteAlertComponent'
 import { navData } from 'Data/footer'
 import Link from 'next/link'
 const Footer = () =>   <>
-  <SiteAlertComponent />
   <footer className="bg-violet-800 py-3 text-slate-100 relative">
     <div className="container text-center">
       <span className="font-semibold tracking-wide text-lg">Copyright ©2023 Happy Cat Tie Dye. All Rights Reserved </span>

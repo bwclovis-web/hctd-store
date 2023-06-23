@@ -15,14 +15,14 @@ function MyApp({ Component, pageProps, ...appProps }) {
   useEffect(() => {
     const setBanner = window.localStorage.getItem('hctd_banner')
     const bannerClosedTime = window.localStorage.getItem('banner_closed')
-    const bannerClosedOn = new Date(parseInt(bannerClosedTime)).getTime()
-    const currentBanner = process.env.NEXT_PUBLIC_BANNER_TYPE
-    const bannerTimestamp = new Date(process.env.NEXT_PUBLIC_BANNER_START).getTime()
 
-    if(bannerClosedOn < bannerTimestamp && setBanner === 'visited') {
-      window.localStorage.setItem('hctd_banner', currentBanner)
-    } 
-    !setBanner && currentBanner && window.localStorage.setItem('hctd_banner', currentBanner)
+    if(setBanner) {
+      window.localStorage.removeItem('hctd_banner')
+    }
+
+    if(bannerClosedTime) {
+      window.localStorage.removeItem('banner_closed')
+    }
   }, [])
   if(appProps.router.pathname === '/coming-soon') {
     return(
