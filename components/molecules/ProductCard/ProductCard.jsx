@@ -26,7 +26,7 @@ const ProductCard = ({ product, type, index, filter }) => {
     'inline-block mx-auto': !node.priceRange
   })
   const linkClasses = classNames({
-    "px-1 mt-4 py-2 border-2 shadow capitalize text-center w-full lg:w-2/3 mx-auto peer": true,
+    "px-1 mt-4 py-2 border-2 shadow capitalize text-center w-full  mx-auto peer": true,
     "border-fuchsia-800 bg-fuchsia-200 text-fuchsia-600 hover:bg-fuchsia-800 hover:text-fuchsia-200 hover:border-fuchsia-300 hover:transition-all hover:shadow-md ": node.availableForSale,
     "bg-slate-600 text-slate-100 border-2 border-black pointer-events-none": !node.availableForSale
   })

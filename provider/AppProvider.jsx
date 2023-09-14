@@ -1,9 +1,8 @@
 import UseModal from 'hooks/UseModal'
-import { createContext, useState, useEffect, useLayoutEffect } from 'react'
+import { createContext } from 'react'
 import UseCart from 'hooks/useCart'
 import UseToast from 'hooks/UseToast'
 import UseNavigation from 'hooks/useNavigation'
-import { getScreenSize } from 'utils/getScreenSize'
 
 const ctxDefaults = {
   toggleCart: () => { },

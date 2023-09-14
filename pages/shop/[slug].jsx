@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { useState, useContext, useEffect, useRef, useCallback } from "react"
+import { useState, useContext, useEffect, useRef } from "react"
 import Image from "next/legacy/image"
 import Link from 'next/link'
 import { NextSeo } from 'next-seo'
