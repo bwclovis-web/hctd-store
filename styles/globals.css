@@ -64,6 +64,12 @@
     .open {
         @apply overflow-hidden
     }
+
+    button {
+        outline: none;
+        background: transparent;
+        border: none;
+    }
 }
 
 @layer components {

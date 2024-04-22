@@ -18,7 +18,7 @@ const UtilNav = () => (
         <li>
           <a href="https://www.facebook.com/groups/1259074817923302">
             <span className="sr-only">Happy cat tie dye facebook group</span>
-            <GrFacebook size={25}/>
+            <GrFacebook size={25} fill="black"/>
           </a>
         </li>
         <li>

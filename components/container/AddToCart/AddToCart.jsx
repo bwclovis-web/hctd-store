@@ -1,21 +1,24 @@
 import { useContext, useEffect, useState } from 'react'
-
-
-import { getPriceByVariantId } from './utility'
+import { getPriceByVariantId, initProductPrice } from './utility'
 import ShopContext from 'provider/ShopProvider'
-import RadioButtons from 'components/atoms/RadioButtons/RadioButtons'
 import AddToCartButton from 'components/molecules/AddToCartButton/AddToCartButton'
 import SizeSelection from './Bones/SizeSelector'
 
 const AddToCart = ({ variant, availableForSale }) => {
   const [ variationId, setVariationId ] = useState(variant[0].node.id)
   const { setCartDisplayPrice, cartDisplayPrice } = useContext(ShopContext)
+  const [ initPage, setInitPage ] = useState(false)
 
   useEffect(() => {
     setVariationId(variant[0].node.id)
   }, [variant[0].node.id])
 
   useEffect(() => {
+    if(!initPage) {
+      setInitPage(true)
+      setCartDisplayPrice(initProductPrice(variant))
+      return
+    }
     variationId && setCartDisplayPrice(getPriceByVariantId(variant, variationId))
   }, [variationId])
 
