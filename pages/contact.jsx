@@ -33,7 +33,7 @@ export async function getStaticProps() {
   const contentProps = await sanityClient.fetch(sanityContactPageQuery)
   return {
     props: {
-      content: contentProps.mySanityData[0]
+      content: contentProps?.mySanityData[0]
     },
     revalidate: 120,
   }

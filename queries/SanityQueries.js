@@ -93,7 +93,7 @@ export const sanityHomepageQuery = `{
 
 export const sanityContactPageQuery = `
 {
-  "mySanityData": *[_type == "page" && pageTitle == "contact"] {
+  "mySanityData": *[_type == "page" && pageTitle == "Contact"] {
     faqs,
     pageSeo,
     pageHero {
