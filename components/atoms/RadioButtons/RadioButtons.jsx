@@ -5,8 +5,9 @@ const RadioButtons = ({ data, changeAction }) => {
     !available ? evt.preventDefault() : changeAction(evt.target.value)
   }
   useEffect(() => {
-    const inputs = document.querySelectorAll('.radio-buttons')
-    const firstRadio = inputs[0]?.firstChild
+    const inputs = Array.from(document.querySelectorAll('.radio-buttons'))
+    const firstToSelect = inputs.filter(item => item.querySelector('[aria-disabled="false"]'))
+    const firstRadio = firstToSelect[0]?.firstChild
     firstRadio && firstRadio.setAttribute('checked', 'true')
   }, [])
 
