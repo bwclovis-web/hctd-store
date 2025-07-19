@@ -1,7 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+@import "tailwindcss";
 
 .carousel .control-next.control-arrow::before {
     border-left: 40px solid rgb(241, 245, 249);
@@ -48,7 +45,7 @@
     body,
     #__next,
     #main {
-        @apply min-h-screen font-base text-slate-800
+        @apply min-h-screen text-slate-800
     }
     h2 {
         @apply leading-none mb-4
