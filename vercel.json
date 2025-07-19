@@ -10,7 +10,7 @@
       "source": "/static/:all*",
       "destination": "/static/:all*",
       "permanent": false
-    }
+    },
     {
       "source": "/images/:all*",
       "destination": "/images/:all*",
