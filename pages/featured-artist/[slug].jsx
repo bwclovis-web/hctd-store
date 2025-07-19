@@ -24,7 +24,7 @@ export const getStaticPaths = async () => {
 export async function getStaticProps({ params }) {
   const contentProps = await sanityClient.fetch(previousFeaturedArtistQuery, { slug: params.slug })
   if (!contentProps) {
-    return { notFound: true };
+    return { notFound: true }
   }
   return {
     props: {
