@@ -20,6 +20,6 @@
       "source": "/_next/:all*",
       "destination": "/_next/:all*",
       "permanent": false
-    },
+    }
   ]
 }
