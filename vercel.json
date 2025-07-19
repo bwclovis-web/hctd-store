@@ -7,7 +7,22 @@
   ],
   "redirects": [
     {
-      "source": "/((?!.*\\.(gltf|bin|png|jpg|jpeg|svg|webp|js|css|ico)$).*)",
+      "source": "/static/:all*",
+      "destination": "/static/:all*",
+      "permanent": false
+    },
+    {
+      "source": "/images/:all*",
+      "destination": "/images/:all*",
+      "permanent": false
+    },
+    {
+      "source": "/_next/:all*",
+      "destination": "/_next/:all*",
+      "permanent": false
+    },
+    {
+      "source": "/:path*",
       "destination": "/your-redirect-target",
       "permanent": false
     }
