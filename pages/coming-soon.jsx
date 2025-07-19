@@ -48,7 +48,7 @@ const MaintenancePage = () => {
             <Image alt="Flufferton" src="/images/flufferton.png" width={240} height={300} className="w-40 sm:w-60 md:w-80 h-auto self-start" />
           </div>
           <div className="flex-1 flex justify-center">
-            <Image alt="Paisley" src="/images/paisley.png" width={220} height={180} className="w-36 sm:w-56 md:w-72 h-auto scale-x-[-1] self-start" />
+            <Image alt="Paisley" src="/images/Paisley.png" width={220} height={180} className="w-36 sm:w-56 md:w-72 h-auto scale-x-[-1] self-start" />
           </div>
         </div>
       </div>
