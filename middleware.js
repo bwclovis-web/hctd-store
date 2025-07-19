@@ -12,7 +12,8 @@ const allowList = [ '/coming-soon',
   '/images',
   '/static',
   '/Soda-can.gltf',
-  '/Soda-can.bin' ]
+  '/Soda-can.bin',
+  '/textures' ]
 
 export function middleware(request) {
   const { pathname } = request.nextUrl
