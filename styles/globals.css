@@ -145,7 +145,7 @@
     }
 
     .content-container {
-        @apply mx-auto px-dynamic-container-x w-full max-w-[1400px] justify-around;
+        @apply mx-auto w-full max-w-[1400px] justify-around;
 
         > .container {
             @apply px-0
