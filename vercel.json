@@ -1,3 +1,15 @@
 {
-    "rewrites": [{ "source": "/studio/(.*)", "destination": "/studio/index.html" }]
+  "rewrites": [
+    {
+      "source": "/studio/(.*)",
+      "destination": "/studio/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/((?!.*\\.(gltf|bin|png|jpg|jpeg|svg|webp|js|css|ico)$).*)",
+      "destination": "/your-redirect-target",
+      "permanent": false
+    }
+  ]
 }
