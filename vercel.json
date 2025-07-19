@@ -5,26 +5,5 @@
       "destination": "/studio/index.html"
     }
   ],
-  "redirects": [
-    {
-      "source": "/static/:all*",
-      "destination": "/static/:all*",
-      "permanent": false
-    },
-    {
-      "source": "/images/:all*",
-      "destination": "/images/:all*",
-      "permanent": false
-    },
-    {
-      "source": "/_next/static/:all*",
-      "destination": "/_next/static/:all*",
-      "permanent": false
-    },
-    {
-      "source": "/_next/:all*",
-      "destination": "/_next/:all*",
-      "permanent": false
-    }
-  ]
+  "redirects": []
 }
