@@ -8,7 +8,6 @@ function FloatingCan() {
 
   useEffect(() => {
     if (!group.current) { return }
-    // Start above, slide down, bounce, then float
     group.current.position.y = 4.5
     const tl = gsap.timeline()
     tl.to(group.current.position, {
@@ -17,7 +16,7 @@ function FloatingCan() {
       ease: 'bounce.out',
       onComplete: () => {
         gsap.to(group.current.position, {
-          y: '+=0.18',
+          y: '+=0.28',
           duration: 5.5,
           repeat: -1,
           yoyo: true,
@@ -38,9 +37,9 @@ export default function Can3D() {
   return (
     <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 30, pointerEvents: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <div style={{ width: '620px', height: '620px' }}>
-        <Canvas camera={{ position: [ 0, 0, 6 ], fov: 50 }}>
-          <ambientLight intensity={4.7} />
-          <directionalLight position={[ 5, 5, 8 ]} intensity={7.7} />
+        <Canvas camera={{ position: [ 2, -0.5, 6 ], fov: 50 }}>
+          <ambientLight intensity={0.7} />
+          <directionalLight position={[ 5, 5, 0 ]} intensity={1.7} />
           <FloatingCan />
         </Canvas>
       </div>

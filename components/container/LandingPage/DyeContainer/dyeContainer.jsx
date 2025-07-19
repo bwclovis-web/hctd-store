@@ -20,10 +20,16 @@ export function SodaCan({
   const canPosition = [ 0, 0, 2 ]
 
   // White plastic for jar body (base)
-  const label = useTexture("/images/about.jpg")
+  const label = useTexture("/images/test.png")
+  // Make label smaller and upright
+  label.repeat.set(4.6, 1.4) // smaller label (adjust as needed)
+  label.offset.set(-0.5, -0.3) // center label (adjust as needed)
+  // label.wrapS = label.wrapT = THREE.RepeatWrapping
+  label.flipY = false // No flip, so do not set flipY
+  // No flip, so do not set flipY
   const jarMaterial = new THREE.MeshStandardMaterial({
     color: "#ffffff",
-    roughness: 2.15,
+    roughness: 4.15,
     metalness: 0,
     map: label,
   })
@@ -42,7 +48,6 @@ export function SodaCan({
     canMeshClone.material = jarMaterial
   }
 
-  // Render the can and tab meshes from Soda-can.gltf
   return (
     <group {...props} dispose={null} scale={scale} rotation={[ 0, -Math.PI, 0 ]}>
       {nodes.cylinder && (
@@ -51,6 +56,7 @@ export function SodaCan({
           receiveShadow
           geometry={nodes.cylinder.geometry}
           material={jarMaterial}
+          scale={canScale}
         />
       )}
       {nodes.cylinder_1 && (
@@ -59,6 +65,7 @@ export function SodaCan({
           receiveShadow
           geometry={nodes.cylinder_1.geometry}
           material={jarMaterial}
+          scale={canScale}
         />
       )}
 
