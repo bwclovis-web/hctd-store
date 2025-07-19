@@ -10,7 +10,7 @@
       "source": "/static/:all*",
       "destination": "/static/:all*",
       "permanent": false
-    },
+    }
     {
       "source": "/images/:all*",
       "destination": "/images/:all*",
@@ -21,10 +21,5 @@
       "destination": "/_next/:all*",
       "permanent": false
     },
-    {
-      "source": "/:path*",
-      "destination": "/your-redirect-target",
-      "permanent": false
-    }
   ]
 }
