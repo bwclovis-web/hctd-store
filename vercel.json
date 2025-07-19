@@ -17,6 +17,11 @@
       "permanent": false
     },
     {
+      "source": "/_next/static/:all*",
+      "destination": "/_next/static/:all*",
+      "permanent": false
+    },
+    {
       "source": "/_next/:all*",
       "destination": "/_next/:all*",
       "permanent": false
