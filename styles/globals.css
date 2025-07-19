@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@theme inline {
+  --font-heading: var(--font-heading); /* From next/font/google */
+  --font-mono: var(--font-mono);
+  --font-main: var(--font-sans); /* Token for the main font */
+}
+
 .carousel .control-next.control-arrow::before {
     border-left: 40px solid rgb(241, 245, 249);
     margin-left: -10px;
@@ -47,8 +53,18 @@
     #main {
         @apply min-h-screen text-slate-800
     }
+    body {
+        @apply bg-white text-base font-main;
+    }
+    h1,h2,h3 {
+        @apply font-heading text-slate-900;
+    }
+    h1 {
+        font-size: clamp(2rem, 6vw, 30rem);
+    }
     h2 {
-        @apply leading-none mb-4
+        @apply leading-none mb-4;
+        font-size: clamp(1.5rem, 4vw, 3.5rem);
     }
     p, li {
         @apply text-lg;

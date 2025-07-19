@@ -5,10 +5,17 @@ import classNames from "classnames"
 import Link from "next/link"
 
 const HeroComponent = ({ heroImage, eyebrow, heading, config, pos, link }) => {
-  const imageProps = useNextSanityImage(
+  let imageProps = useNextSanityImage(
     sanityClient,
     heroImage
   )
+  // Remove width and height if present, as they are not needed with layout="fill"
+  if (imageProps && 'width' in imageProps) {
+    delete imageProps.width
+  }
+  if (imageProps && 'height' in imageProps) {
+    delete imageProps.height
+  }
 
   const BannerWrapperClasses = classNames({
     'flex relative w-full items-center z-20': true,

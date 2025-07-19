@@ -1,3 +1,18 @@
+import { IBM_Plex_Sans, Chicle } from "next/font/google"
+
+const plexSans = IBM_Plex_Sans({
+  variable: "--font-sans",
+  subsets: ["latin"],
+  weight: [ "400", "500", "600", "700" ],
+  display: "swap",
+})
+
+const chicle = Chicle({
+  variable: "--font-heading",
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
+})
 import { useEffect } from 'react'
 import { DefaultSeo } from 'next-seo'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
@@ -24,11 +39,12 @@ function MyApp({ Component, pageProps, ...appProps }) {
       window.localStorage.removeItem('banner_closed')
     }
   }, [])
+  const fontVars = `${plexSans.variable} ${chicle.variable} font-main antialiased overflow-x-hidden`
   if(appProps.router.pathname === '/coming-soon') {
     return(
       <>
         <DefaultSeo {...SEO} />
-        <main id="main">
+        <main id="main" className={fontVars}>
           <Component {...pageProps} />
         </main>
       </>
@@ -40,7 +56,7 @@ function MyApp({ Component, pageProps, ...appProps }) {
       <AppProvider>
         <CartProvider>
           <Header />
-          <main id="main" className="min-h-full">
+          <main id="main" className={`min-h-full ${fontVars}`}>
             <Component {...pageProps} />
           </main>
           <Footer />
