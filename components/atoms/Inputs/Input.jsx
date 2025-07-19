@@ -2,8 +2,8 @@ import classNames from "classnames"
 
 const Input = ({ type, id, onChange, required, value, name, label, autoComplete, rows }) => {
   const labelClasses = classNames({
-    "text-xl rounded uppercase tracking-wide p-1 -translate-y-12 translate-x-4 inline-block transition-all peer-focus:-translate-y-[6rem] peer-focus:-translate-x-0 peer-focus:bg-white/40": true,
-    "-translate-y-[6rem] -translate-x-0 bg-white/20": value,
+    "text-xl rounded uppercase tracking-wide p-1 -translate-y-12 translate-x-4 inline-block transition-all peer-focus:-translate-y-24 peer-focus:-translate-x-0 peer-focus:bg-white/40": true,
+    "-translate-y-24 -translate-x-0 bg-white/20": value,
     "-translate-y-14 peer-focus:-translate-y-2": type === 'textArea'
   })
   if(type === 'textArea') {
