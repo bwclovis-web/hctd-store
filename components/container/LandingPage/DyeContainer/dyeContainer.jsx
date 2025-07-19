@@ -12,9 +12,6 @@ export function SodaCan({
   ...props
 }) {
   const { nodes } = useGLTF("/Soda-can.gltf")
-  // Debug: log available node keys
-  console.log('GLTF nodes:', Object.keys(nodes))
-
   // Jar-like proportions: shorter and wider
   const canScale = [ 1.2, 0.55, 1.2 ]
   const canPosition = [ 0, 0, 2 ]
